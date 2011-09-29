@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.fenggui</groupId>
+  <artifactId>fenggui</artifactId>
+  <version>2.0</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.lwjgl</groupId>
+  		<artifactId>lwjgl</artifactId>
+  		<version>2.7.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.lwjgl</groupId>
+  		<artifactId>lwjgl-util</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.java.jinput</groupId>
+  		<artifactId>jinput</artifactId>
+  		<version>2.0.5</version>
+  	</dependency>
+  </dependencies>
+  <name>FengGUI</name>
+  <url>http://www.fenggui.org</url>
+  <description>LWJGL GUI Framework forked by KokaKiwi (http://kokaelkiwi.tk) for Kowy Maker (http://www.kowymaker.com).
+Contains somes changes and improvements. And include LWJGL 2.X support!</description>
+</project>
