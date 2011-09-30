@@ -29,22 +29,14 @@ Contains somes changes and improvements. And include LWJGL 2.X support!</descrip
            <id>kokabsolu-repo</id>
            <url>http://maven.kokabsolu.com/maven2/</url>
        </repository>
+       <repository>
+        <id>jenkins-kokakiwi</id>
+        <url>http://ci.kokaelkiwi.tk:8080/plugin/repository/everything/</url>
+       </repository>
     </repositories>
     <build>
         <finalName>fenggui</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Main-Class>com.kowymaker.client.KowyMakerClient</Main-Class>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

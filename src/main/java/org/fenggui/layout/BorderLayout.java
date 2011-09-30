@@ -74,7 +74,6 @@ public class BorderLayout extends LayoutManager
             if (bld.getValue() == BorderLayoutData.NORTH_VALUE)
             {
                 heightNorth = getValidMinHeight(c);
-                System.out.println(heightNorth);
             }
             else if (bld.getValue() == BorderLayoutData.SOUTH_VALUE)
             {
