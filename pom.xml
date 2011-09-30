@@ -31,7 +31,7 @@ Contains somes changes and improvements. And include LWJGL 2.X support!</descrip
        </repository>
     </repositories>
     <build>
-        <finalName>kowymaker-client-${project.version}</finalName>
+        <finalName>fenggui</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
