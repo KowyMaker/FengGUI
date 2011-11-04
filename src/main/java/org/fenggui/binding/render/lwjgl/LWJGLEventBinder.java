@@ -16,24 +16,24 @@ import org.lwjgl.input.Mouse;
  */
 public class LWJGLEventBinder
 {
-    private Display                      display;
-    private Map<MouseButton, MouseState> states = new HashMap<MouseButton, MouseState>();
+    private Display                 display;
+    private Map<MouseButton, State> mouseStates = new HashMap<MouseButton, State>();
     
     public LWJGLEventBinder(Display display)
     {
         this.display = display;
         
-        states.put(MouseButton.LEFT,
-                new MouseState(Mouse.isButtonDown(MouseButton.LEFT.getCode())));
-        states.put(MouseButton.RIGHT,
-                new MouseState(Mouse.isButtonDown(MouseButton.RIGHT.getCode())));
-        states.put(
-                MouseButton.MIDDLE,
-                new MouseState(Mouse.isButtonDown(MouseButton.MIDDLE.getCode())));
+        mouseStates.put(MouseButton.LEFT,
+                new State(Mouse.isButtonDown(MouseButton.LEFT.getCode())));
+        mouseStates.put(MouseButton.RIGHT,
+                new State(Mouse.isButtonDown(MouseButton.RIGHT.getCode())));
+        mouseStates.put(MouseButton.MIDDLE,
+                new State(Mouse.isButtonDown(MouseButton.MIDDLE.getCode())));
     }
     
     /**
      * Get Display attached to this binder.
+     * 
      * @return The display attached to this class
      */
     public Display getDisplay()
@@ -43,7 +43,9 @@ public class LWJGLEventBinder
     
     /**
      * Attach a new Display to this!
-     * @param display THE Display
+     * 
+     * @param display
+     *            THE Display
      */
     public void setDisplay(Display display)
     {
@@ -55,40 +57,45 @@ public class LWJGLEventBinder
      */
     public void update()
     {
-        if(Mouse.isInsideWindow())
+        if (Mouse.isInsideWindow())
         {
-            display.fireMouseMovedEvent(Mouse.getX(), Mouse.getY(), MouseButton.LEFT, 1);
+            display.fireMouseMovedEvent(Mouse.getX(), Mouse.getY(),
+                    MouseButton.LEFT, 1);
         }
         
-        for(MouseButton mouseButton : states.keySet())
+        for (MouseButton mouseButton : mouseStates.keySet())
         {
-            MouseState state = states.get(mouseButton);
+            State state = mouseStates.get(mouseButton);
             long current = System.currentTimeMillis();
             long diff = current - state.getLastPressed();
             
-            if(Mouse.isButtonDown(mouseButton.getCode()))
+            if (Mouse.isButtonDown(mouseButton.getCode()))
             {
-                if(!state.isPressed())
+                if (!state.isPressed())
                 {
-                    display.fireMousePressedEvent(Mouse.getX(), Mouse.getY(), mouseButton, 1);
+                    display.fireMousePressedEvent(Mouse.getX(), Mouse.getY(),
+                            mouseButton, 1);
                     state.setPressed(true);
                     state.setLastPressed(current);
                 }
                 
-                if(mouseButton == MouseButton.LEFT)
+                if (mouseButton == MouseButton.LEFT)
                 {
-                    display.fireMouseDraggedEvent(Mouse.getX(), Mouse.getY(), mouseButton, 1);
+                    display.fireMouseDraggedEvent(Mouse.getX(), Mouse.getY(),
+                            mouseButton, 1);
                 }
             }
             else
             {
-                if(state.isPressed())
+                if (state.isPressed())
                 {
-                    display.fireMouseReleasedEvent(Mouse.getX(), Mouse.getY(), mouseButton, 1);
+                    display.fireMouseReleasedEvent(Mouse.getX(), Mouse.getY(),
+                            mouseButton, 1);
                     
-                    if(diff < 300)
+                    if (diff < 300)
                     {
-                        display.fireMouseClickEvent(Mouse.getX(), Mouse.getY(), mouseButton, 1);
+                        display.fireMouseClickEvent(Mouse.getX(), Mouse.getY(),
+                                mouseButton, 1);
                     }
                     
                     state.setPressed(false);
@@ -97,27 +104,27 @@ public class LWJGLEventBinder
         }
     }
     
-    public static class MouseState
+    public static class State
     {
         private boolean pressed;
         private long    lastPressed;
         
-        public MouseState()
+        public State()
         {
             this(false, 0);
         }
         
-        public MouseState(long lastPressed)
+        public State(long lastPressed)
         {
             this(false, lastPressed);
         }
         
-        public MouseState(boolean pressed)
+        public State(boolean pressed)
         {
             this(pressed, 0);
         }
         
-        public MouseState(boolean pressed, long lastPressed)
+        public State(boolean pressed, long lastPressed)
         {
             this.pressed = pressed;
             this.lastPressed = lastPressed;
