@@ -140,7 +140,7 @@ public class MenuItem extends Item
         }
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {

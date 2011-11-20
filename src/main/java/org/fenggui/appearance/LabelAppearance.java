@@ -67,7 +67,7 @@ public class LabelAppearance extends TextAppearance
         this.gap = gap;
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -83,7 +83,7 @@ public class LabelAppearance extends TextAppearance
      * @see
      * org.fenggui.appearance.TextAppearance#clone(org.fenggui.StandardWidget)
      */
-    @Override
+    
     public LabelAppearance clone(StandardWidget widget)
     {
         return (LabelAppearance) super.clone(widget);

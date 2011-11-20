@@ -160,6 +160,7 @@ public abstract class LayoutManager implements IXMLStreamable
      */
     public abstract Dimension computeMinSize(java.util.List<IWidget> content);
     
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;

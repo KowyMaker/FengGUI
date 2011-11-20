@@ -62,6 +62,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     
     private final ISizeChangedListener       contentListener      = new ISizeChangedListener() {
                                                                       
+                                                                      
                                                                       public void sizeChanged(
                                                                               SizeChangedEvent event)
                                                                       {
@@ -90,6 +91,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         manager.addSizeChangedListener(contentListener);
     }
     
+    
     public ContentManager getManager()
     {
         return manager;
@@ -100,6 +102,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * 
      * @see org.fenggui.theme.xml.IXMLStreamable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -111,6 +114,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * @see org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml.
      * InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -124,15 +128,18 @@ public class EditableTextContentManager implements IEditableTextContentManager,
                 Color.BLACK, Color.class);
     }
     
+    
     public boolean isWordWarping()
     {
         return manager.isAutoWarp();
     }
     
+    
     public boolean isMultiline()
     {
         return manager.isMultiline();
     }
+    
     
     public void setWordWarping(boolean warping, TextAppearance appearance)
     {
@@ -141,6 +148,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
             manager.setAutoWarp(warping, width, appearance);
         }
     }
+    
     
     public void setMultiline(boolean multiline, TextAppearance appearance)
     {
@@ -168,6 +176,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         }
     }
     
+    
     public void clickedOn(int x, int y, Set<Key> modifiers,
             TextAppearance appearance)
     {
@@ -185,6 +194,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         }
         manager.updateContent(width, appearance);
     }
+    
     
     public void dragedTo(int x, int y, Set<Key> modifiers,
             TextAppearance appearance)
@@ -212,10 +222,12 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         }
     }
     
+    
     public boolean addMinSizeChangedListener(ISizeChangedListener listener)
     {
         return sizeChangedListeners.add(listener);
     }
+    
     
     public boolean removeMinSizeChangedListener(ISizeChangedListener listener)
     {
@@ -226,6 +238,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     /**
      * @return the editMode
      */
+    
     public boolean isEditMode()
     {
         return editMode;
@@ -235,6 +248,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * @param editMode
      *            the editMode to set
      */
+    
     public void setEditMode(boolean editMode)
     {
         if (this.editMode != editMode)
@@ -280,6 +294,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     {
         this.cursorColor = cursorColor;
     }
+    
     
     public boolean handleKeyPresses(Key key, Set<Key> modifiers,
             TextAppearance appearance)
@@ -490,6 +505,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         return result;
     }
     
+    
     public boolean handleTextInput(char character, TextAppearance appearance)
     {
         boolean result = false;
@@ -509,6 +525,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * @return
      * @see org.fenggui.text.content.ContentManager#addSizeChangedListener(org.fenggui.event.ISizeChangedListener)
      */
+    
     public boolean addSizeChangedListener(ISizeChangedListener listener)
     {
         return manager.addSizeChangedListener(listener);
@@ -519,83 +536,100 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * @return
      * @see org.fenggui.text.content.ContentManager#removeSizeChangedListener(org.fenggui.event.ISizeChangedListener)
      */
+    
     public boolean removeSizeChangedListener(ISizeChangedListener listener)
     {
         return manager.removeSizeChangedListener(listener);
     }
+    
     
     public Dimension getSize()
     {
         return manager.getSize();
     }
     
+    
     public void addContentAtBeginning(Object content, TextAppearance appearance)
     {
         manager.addContentAtBeginning(content, appearance);
     }
+    
     
     public void addContentAtEnd(Object content, TextAppearance appearance)
     {
         manager.addContentAtEnd(content, appearance);
     }
     
+    
     public void removeContentLineFromBeginning()
     {
     }
     
+    
     public void removeContentLineFromEnd()
     {
     }
+    
     
     public int getContentLineCount()
     {
         return manager.getContentLineCount();
     }
     
+    
     public int getMaxLines()
     {
         return manager.getMaxLines();
     }
+    
     
     public void setMaxLines(int lines)
     {
         manager.setMaxLines(lines);
     }
     
+    
     public boolean isReadonly()
     {
         return readonly;
     }
+    
     
     public void setReadonly(boolean readonly)
     {
         this.readonly = readonly;
     }
     
+    
     public int getActivePositionIndex()
     {
         return (int) manager.getActiveAtom();
     }
+    
     
     public boolean hasSelection()
     {
         return manager.hasSelection();
     }
     
+    
     public int getSelectionEndIndex()
     {
         return manager.getSelectionEnd();
     }
+    
     
     public int getSelectionStartIndex()
     {
         return manager.getSelectionStart();
     }
     
+    
     public void setActivePositionIndex(int index)
     {
         manager.setActiveAtom(index);
     }
+    
     
     public void setSelectionIndex(int index1, int index2,
             TextAppearance appearance)
@@ -607,6 +641,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     {
         this.manager = manager;
     }
+    
     
     public String getContent()
     {
@@ -620,6 +655,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * org.fenggui.text.advanced.IAdvancedTextRendererData#getSelectedContentString
      * ()
      */
+    
     public String getSelectedContent()
     {
         return manager.getSelectedContent();
@@ -632,6 +668,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * org.fenggui.text.advanced.IAdvancedTextRendererData#isValidChar(org.fenggui
      * .text.IComplexTextRendererData, char)
      */
+    
     public boolean isValidChar(char c, TextAppearance appearance)
     {
         return manager.isValidCharacter(c, appearance);
@@ -643,6 +680,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * @see org.fenggui.text.IComplexTextRendererData#adaptChange(int, int,
      * org.fenggui.appearance.TextAppearance)
      */
+    
     public void adaptChange(int width, int height, TextAppearance appearance)
     {
         // boolean updated = false;
@@ -673,6 +711,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * 
      * @see org.fenggui.text.IComplexTextRendererData#isEmpty()
      */
+    
     public boolean isEmpty()
     {
         return manager.isEmpty();
@@ -685,6 +724,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * org.fenggui.binding.render.Graphics,
      * org.fenggui.appearance.TextAppearance)
      */
+    
     public void render(int x, int y, Graphics g, TextAppearance appearance)
     {
         manager.render(x, y, g, isEditMode(), appearance);
@@ -697,6 +737,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * org.fenggui.text.IComplexTextRendererData#setContent(java.lang.String,
      * org.fenggui.appearance.TextAppearance)
      */
+    
     public void setContent(String text, TextAppearance appearance)
     {
         manager.removeAll(appearance);
@@ -710,6 +751,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * org.fenggui.text.IComplexTextRendererData#setContent(java.lang.Object,
      * org.fenggui.appearance.TextAppearance)
      */
+    
     public void setContent(Object text, TextAppearance appearance)
     {
         manager.removeAll(appearance);
@@ -722,6 +764,7 @@ public class EditableTextContentManager implements IEditableTextContentManager,
      * @see org.fenggui.text.ITextContentManager#Update(org.fenggui.appearance.
      * TextAppearance)
      */
+    
     public void Update(TextAppearance appearance)
     {
         manager.updateContent(width, appearance);

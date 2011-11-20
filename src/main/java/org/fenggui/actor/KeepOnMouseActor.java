@@ -46,12 +46,14 @@ public class KeepOnMouseActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#hook(org.fenggui.IWidget)
      */
+    
     public void hook(final IWidget widget)
     {
         final Display display = widget.getDisplay();
         if (display != null)
         {
             mouseListener = new IEventListener() {
+                
                 
                 public void processEvent(Event event)
                 {
@@ -80,6 +82,7 @@ public class KeepOnMouseActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook(org.fenggui.IWidget)
      */
+    
     public void unHook(IWidget widget)
     {
         if (mouseListener != null)

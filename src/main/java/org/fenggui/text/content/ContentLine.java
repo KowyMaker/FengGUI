@@ -64,6 +64,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * 
      * @see org.fenggui.binding.render.text.advanced.IContent#getContent()
      */
+    
     public void getContent(StringBuilder result)
     {
         for (final AbstractContentPart part : content)
@@ -71,6 +72,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
             part.getContent(result);
         }
     }
+    
     
     public void getSelectedContent(StringBuilder result)
     {
@@ -234,6 +236,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * 
      * @see org.fenggui.binding.render.text.advanced.IContent#removeAll()
      */
+    
     public void removeAll(IContentFactory factory, TextAppearance appearance)
     {
         final boolean activePart = this.hasActivePart();
@@ -284,6 +287,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContent#mergeLines(org.fenggui
      * .binding.render.text.advanced.ContentLine)
      */
+    
     public void mergeContent(ContentLine line)
     {
         content.addAll(line.content);
@@ -302,6 +306,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * 
      * @see org.fenggui.binding.render.text.advanced.IContent#optimizeParts()
      */
+    
     public void optimizeContent(TextAppearance appearance)
     {
         final List<AbstractContentPart> newContent = new ArrayList<AbstractContentPart>(
@@ -531,6 +536,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContentSelection#setSelection
      * (int, int)
      */
+    
     public void setSelection(int start, int end, TextAppearance appearance)
     {
         long index = 0;
@@ -565,6 +571,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContentSelection#getSelectionStart
      * ()
      */
+    
     public int getSelectionStart()
     {
         int currentIndex = 0;
@@ -589,6 +596,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContentSelection#getSelectionEnd
      * ()
      */
+    
     public int getSelectionEnd()
     {
         int currentIndex = 0;
@@ -624,6 +632,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * @see
      * org.fenggui.binding.render.text.advanced.IContentSelection#hasSelection()
      */
+    
     public boolean hasSelection()
     {
         for (final AbstractContentPart part : content)
@@ -643,6 +652,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContentSelection#clearSelection
      * ()
      */
+    
     public void clearSelection(TextAppearance appearance)
     {
         for (final AbstractContentPart part : content)
@@ -661,6 +671,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContentSelection#removeSelection
      * ()
      */
+    
     public void removeSelection(IContentFactory factory,
             TextAppearance appearance)
     {
@@ -725,6 +736,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * 
      * @see org.fenggui.binding.render.text.advanced.IContent#getSize()
      */
+    
     public Dimension getSize()
     {
         return size;
@@ -905,6 +917,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * 
      * @see org.fenggui.binding.render.text.advanced.IContent#addChar(char)
      */
+    
     public boolean addChar(char c, TextAppearance appearance)
     {
         if (this.hasActivePart())
@@ -927,6 +940,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.binding.render.text.advanced.IContent#addContent(java.lang
      * .String, org.fenggui.binding.render.text.advanced.IContentFactory)
      */
+    
     public void addContent(Object content, int width, boolean wordwarp,
             IContentFactory factory, TextAppearance appearance)
     {
@@ -1130,6 +1144,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * 
      * @see org.fenggui.binding.render.text.advanced.IContent#getAtomCount()
      */
+    
     public int getAtomCount()
     {
         return atomCount;
@@ -1182,6 +1197,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * org.fenggui.text.content.IContent#addContentAtBegining(java.lang.Object
      * ,int, org.fenggui.text.content.IContentFactory)
      */
+    
     public boolean addContentAtBegining(Object content, int width,
             boolean wordwarp, IContentFactory factory, TextAppearance appearance)
     {
@@ -1202,6 +1218,7 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
      * @see org.fenggui.text.content.IContent#addContentAtEnd(java.lang.Object,
      * int, org.fenggui.text.content.IContentFactory)
      */
+    
     public boolean addContentAtEnd(Object content, int width, boolean wordwarp,
             IContentFactory factory, TextAppearance appearance)
     {

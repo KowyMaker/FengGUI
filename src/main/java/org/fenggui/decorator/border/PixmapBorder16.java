@@ -152,7 +152,7 @@ public class PixmapBorder16 extends Border
         process(stream);
     }
     
-    @Override
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         g.setColor(modulationColor);
@@ -220,7 +220,7 @@ public class PixmapBorder16 extends Border
     /**
      * XML streaming not supported yet for PixmapBorde16
      */
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -277,7 +277,7 @@ public class PixmapBorder16 extends Border
      * 
      * @see org.fenggui.decorator.border.Border#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         final PixmapBorder16 result = new PixmapBorder16(tex);

@@ -39,6 +39,7 @@ public class KeepOnPositionActor implements IActor
     private Point                         offset   = new Point(0, 0);
     private final IDisplayResizedListener listener = new IDisplayResizedListener() {
                                                        
+                                                       
                                                        public void displayResized(
                                                                DisplayResizedEvent displayResizedEvent)
                                                        {
@@ -70,6 +71,7 @@ public class KeepOnPositionActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#hook(org.fenggui.IWidget)
      */
+    
     public void hook(IWidget widget)
     {
         if (this.widget != null)
@@ -90,6 +92,7 @@ public class KeepOnPositionActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook(org.fenggui.IWidget)
      */
+    
     public void unHook(IWidget widget)
     {
         if (widget != this.widget)

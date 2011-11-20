@@ -42,7 +42,7 @@ public class BorderLayout extends LayoutManager
      * @see windowtoolkit.ILayoutManager#doLayout(windowtoolkit.Container,
      * windowtoolkit.event.List)
      */
-    @Override
+    
     public void doLayout(Container container, List<IWidget> content)
     {
         int widthWest = 0;
@@ -221,11 +221,12 @@ public class BorderLayout extends LayoutManager
         return leftColumn + middleColumn + rightColumn;
     }
     
-    @Override
+    
     public Dimension computeMinSize(List<IWidget> content)
     {
         return new Dimension(getMinWidth(content), getMinHeight(content));
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

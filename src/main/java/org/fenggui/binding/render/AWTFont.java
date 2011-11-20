@@ -56,6 +56,7 @@ public class AWTFont extends org.fenggui.binding.render.Font implements IFont,
         process(stream);
     }
     
+    
     public Dimension calculateSize(String text)
     {
         return null;
@@ -71,31 +72,37 @@ public class AWTFont extends org.fenggui.binding.render.Font implements IFont,
         return metric;
     }
     
+    
     public int getLineHeight()
     {
         
         return getMetric().getHeight();
     }
     
+    
     public int getWidth(String text)
     {
         return getMetric().stringWidth(text);
     }
+    
     
     public boolean isCharacterMapped(char c)
     {
         return font.canDisplay(c);
     }
     
+    
     public Font getFont()
     {
         return font;
     }
     
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

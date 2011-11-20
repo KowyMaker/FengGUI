@@ -224,7 +224,7 @@ public class Spacing implements IXMLStreamable, Cloneable
     
     public static final Spacing ZERO_SPACING = new Spacing(0, 0, 0, 0);
     
-    @Override
+    
     public String toString()
     {
         return "(l: " + left + ", r: " + right + ", t: " + top + ", b: "
@@ -237,6 +237,7 @@ public class Spacing implements IXMLStreamable, Cloneable
      * @see
      * org.fenggui.io.IOStreamSaveable#process(org.fenggui.io.InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -266,6 +267,7 @@ public class Spacing implements IXMLStreamable, Cloneable
      * 
      * @see org.fenggui.io.IOStreamSaveable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -276,7 +278,7 @@ public class Spacing implements IXMLStreamable, Cloneable
      * 
      * @see java.lang.Object#clone()
      */
-    @Override
+    
     public Spacing clone()
     {
         try

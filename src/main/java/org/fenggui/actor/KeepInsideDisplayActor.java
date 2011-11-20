@@ -45,6 +45,7 @@ public class KeepInsideDisplayActor implements IActor
         this.display = display;
         listener = new IDisplayResizedListener() {
             
+            
             public void displayResized(DisplayResizedEvent displayResizedEvent)
             {
                 for (final IWidget widget : display.getWidgets())
@@ -90,6 +91,7 @@ public class KeepInsideDisplayActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#hook(org.fenggui.IWidget)
      */
+    
     public void hook(IWidget widget)
     {
         display.getBinding().addDisplayResizedListener(listener);
@@ -100,6 +102,7 @@ public class KeepInsideDisplayActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook()
      */
+    
     public void unHook(IWidget widget)
     {
         display.getBinding().removeDisplayResizedListener(listener);

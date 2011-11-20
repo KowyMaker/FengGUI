@@ -60,6 +60,7 @@ public class SimpleWindowPositioningActor implements IActor
         this.reader = reader;
         listener = new IWidgetListChangedListener() {
             
+            
             public void widgetAdded(WidgetListChangedEvent widgetAddedEvent)
             {
                 final IWidget[] widgets = widgetAddedEvent.getAddedWidget();
@@ -73,6 +74,7 @@ public class SimpleWindowPositioningActor implements IActor
                 }
             }
             
+            
             public void widgetRemoved(WidgetListChangedEvent widgetAddedEvent)
             {
                 // DO nothing
@@ -81,6 +83,7 @@ public class SimpleWindowPositioningActor implements IActor
         };
         
         resizeListener = new IDisplayResizedListener() {
+            
             
             public void displayResized(DisplayResizedEvent displayResizedEvent)
             {
@@ -96,6 +99,7 @@ public class SimpleWindowPositioningActor implements IActor
         this.padding = padding;
     }
     
+    
     public void hook(IWidget widget)
     {
         if (widget instanceof Display)
@@ -110,6 +114,7 @@ public class SimpleWindowPositioningActor implements IActor
         display.addWidgetListChangedListener(listener);
         display.getBinding().addDisplayResizedListener(resizeListener);
     }
+    
     
     public void unHook(IWidget widget)
     {

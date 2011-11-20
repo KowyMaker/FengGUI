@@ -63,6 +63,7 @@ public abstract class StaticTooltipActor implements IActor
     public StaticTooltipActor()
     {
         sizeListener = new ISizeChangedListener() {
+            
             public void sizeChanged(SizeChangedEvent event)
             {
                 if (isTooltipReady())
@@ -74,6 +75,7 @@ public abstract class StaticTooltipActor implements IActor
         };
         
         positionListener = new IPositionChangedListener() {
+            
             public void positionChanged(PositionChangedEvent event)
             {
                 if (isTooltipReady())
@@ -90,6 +92,7 @@ public abstract class StaticTooltipActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#hook(org.fenggui.IWidget)
      */
+    
     public void hook(IWidget widget)
     {
         display = widget.getDisplay();
@@ -102,6 +105,7 @@ public abstract class StaticTooltipActor implements IActor
         if (listener == null)
         {
             listener = new IEventListener() {
+                
                 
                 public void processEvent(Event event)
                 {
@@ -144,6 +148,7 @@ public abstract class StaticTooltipActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook(org.fenggui.IWidget)
      */
+    
     public void unHook(IWidget widget)
     {
         if (listener != null)

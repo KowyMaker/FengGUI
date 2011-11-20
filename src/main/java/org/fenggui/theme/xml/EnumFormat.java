@@ -36,6 +36,7 @@ public class EnumFormat<T extends Enum<?>> implements StorageFormat<T, String>
      * 
      * @see org.fenggui.io.StorageFormat#encode(java.lang.Object)
      */
+    
     public String encode(T obj) throws EncodingException
     {
         return encodeName(obj.name());
@@ -46,6 +47,7 @@ public class EnumFormat<T extends Enum<?>> implements StorageFormat<T, String>
      * 
      * @see org.fenggui.io.StorageFormat#decode(java.lang.Object)
      */
+    
     public T decode(String encodedObj)
     {
         final String name = decodeName(encodedObj);

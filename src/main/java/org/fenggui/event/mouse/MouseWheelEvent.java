@@ -58,7 +58,7 @@ public class MouseWheelEvent extends MouseEvent
      * 
      * @see org.fenggui.event.mouse.MouseEvent#getDisplayX()
      */
-    @Override
+    
     public int getDisplayX()
     {
         return displayX;
@@ -69,7 +69,7 @@ public class MouseWheelEvent extends MouseEvent
      * 
      * @see org.fenggui.event.mouse.MouseEvent#getDisplayY()
      */
-    @Override
+    
     public int getDisplayY()
     {
         return displayY;

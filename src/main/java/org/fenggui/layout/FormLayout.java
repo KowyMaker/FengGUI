@@ -134,7 +134,7 @@ public class FormLayout extends LayoutManager
      * 
      * @see joglui.LayoutManager#doLayout(joglui.Container, joglui.List)
      */
-    @Override
+    
     public void doLayout(Container container, List<IWidget> content)
     {
         
@@ -347,7 +347,7 @@ public class FormLayout extends LayoutManager
         order.clear();
     }
     
-    @Override
+    
     public Dimension computeMinSize(List<IWidget> list)
     {
         // I can not calculate the min size in an exact manner...
@@ -365,6 +365,7 @@ public class FormLayout extends LayoutManager
         
         return new Dimension(width, height);
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

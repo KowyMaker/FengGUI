@@ -49,6 +49,7 @@ public class LinearWidgetMovementActor implements IActor
         this.endPosition = endPosition;
         listener = new IEventListener() {
             
+            
             public void processEvent(Event event)
             {
                 if (event instanceof TickEvent)
@@ -61,6 +62,7 @@ public class LinearWidgetMovementActor implements IActor
             
         };
     }
+    
     
     public void hook(IWidget widget)
     {
@@ -84,6 +86,7 @@ public class LinearWidgetMovementActor implements IActor
             display.addGlobalEventListener(listener);
         }
     }
+    
     
     public void unHook(IWidget widget)
     {

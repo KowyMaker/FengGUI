@@ -72,7 +72,7 @@ public class Reader extends DefaultHandler
         return doc;
     }
     
-    @Override
+    
     public void setDocumentLocator(Locator l)
     {
         super.setDocumentLocator(l);
@@ -82,20 +82,20 @@ public class Reader extends DefaultHandler
         // " "+l.getColumnNumber()+" "+l.getLineNumber());
     }
     
-    @Override
+    
     public void endDocument() throws SAXException
     {
         super.endDocument();
     }
     
-    @Override
+    
     public void endElement(String uri, String localName, String qName)
             throws SAXException
     {
         pop();
     }
     
-    @Override
+    
     public void startElement(String uri, String localName, String qName,
             Attributes attribs) throws SAXException
     {
@@ -138,11 +138,13 @@ public class Reader extends DefaultHandler
     class MyDocumentLocator implements Locator
     {
         
+        
         public String getPublicId()
         {
             System.out.println("get public ID");
             return null;
         }
+        
         
         public String getSystemId()
         {
@@ -150,11 +152,13 @@ public class Reader extends DefaultHandler
             return null;
         }
         
+        
         public int getLineNumber()
         {
             System.out.println("get getLineNumber ID");
             return 0;
         }
+        
         
         public int getColumnNumber()
         {

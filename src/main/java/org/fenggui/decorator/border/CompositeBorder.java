@@ -97,7 +97,7 @@ public class CompositeBorder extends Border
         return borders.size();
     }
     
-    @Override
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         for (final Border b : borders)
@@ -117,7 +117,7 @@ public class CompositeBorder extends Border
      * 
      * @see org.fenggui.decorator.border.Border#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         final CompositeBorder result = new CompositeBorder(borders);

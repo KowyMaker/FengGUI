@@ -34,6 +34,7 @@ public class KeyAdapter implements IKeyListener
      * org.fenggui.event.IKeyListener#keyPressed(org.fenggui.event.KeyPressedEvent
      * )
      */
+    
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         // TODO Auto-generated method stub
@@ -47,6 +48,7 @@ public class KeyAdapter implements IKeyListener
      * org.fenggui.event.IKeyListener#keyReleased(org.fenggui.event.KeyReleasedEvent
      * )
      */
+    
     public void keyReleased(KeyReleasedEvent keyReleasedEvent)
     {
         // TODO Auto-generated method stub
@@ -59,6 +61,7 @@ public class KeyAdapter implements IKeyListener
      * @see
      * org.fenggui.event.IKeyListener#keyTyped(org.fenggui.event.KeyTypedEvent)
      */
+    
     public void keyTyped(KeyTypedEvent keyTypedEvent)
     {
         // TODO Auto-generated method stub

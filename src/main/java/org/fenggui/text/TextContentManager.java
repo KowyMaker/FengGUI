@@ -168,6 +168,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         }
     }
     
+    
     public void setContent(String text, TextAppearance appearance)
     {
         if (!this.text.equals(text))
@@ -176,6 +177,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
             updateText(getRenderer(appearance));
         }
     }
+    
     
     public void setContent(Object text, TextAppearance appearance)
     {
@@ -190,25 +192,30 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         }
     }
     
+    
     public String getContent()
     {
         return text;
     }
+    
     
     public String getUniqueName()
     {
         return GENERATE_NAME;
     }
     
+    
     public boolean isMultiline()
     {
         return multiline;
     }
     
+    
     public boolean isWordWarping()
     {
         return wordWarping;
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
@@ -220,6 +227,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         wordWarping = stream.processAttribute("wordwarped", wordWarping, false);
     }
     
+    
     public void setMultiline(boolean multiline, TextAppearance appearance)
     {
         if (multiline != this.multiline)
@@ -229,6 +237,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
             updateText(getRenderer(appearance));
         }
     }
+    
     
     public void setWordWarping(boolean warp, TextAppearance appearance)
     {
@@ -248,10 +257,12 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         }
     }
     
+    
     public boolean addSizeChangedListener(ISizeChangedListener listener)
     {
         return sizeChangedListeners.add(listener);
     }
+    
     
     public boolean removeSizeChangedListener(ISizeChangedListener listener)
     {
@@ -259,10 +270,12 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         
     }
     
+    
     public Dimension getSize()
     {
         return contentSizeCache;
     }
+    
     
     public void adaptChange(int x, int y, TextAppearance appearance)
     {
@@ -292,6 +305,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
      * @see org.fenggui.text.IComplexTextRendererData#render(int, int, int, int,
      * org.fenggui.binding.render.Graphics)
      */
+    
     public void render(int x, int y, Graphics g, TextAppearance appearance)
     {
         final TextStyle style = appearance.getStyle(TextStyle.DEFAULTSTYLEKEY);
@@ -306,6 +320,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
      * 
      * @see org.fenggui.text.IComplexTextRendererData#isEmpty()
      */
+    
     public boolean isEmpty()
     {
         return content.length <= 0;
@@ -316,6 +331,7 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
      * 
      * @see org.fenggui.text.ITextContentManager#Update()
      */
+    
     public void Update(TextAppearance appearance)
     {
         final Dimension oldSize = contentSizeCache;

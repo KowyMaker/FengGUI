@@ -151,6 +151,7 @@ public class GradientBackground extends Background
      * 
      * @see joglui.background.Background#paint(joglui.binding.Binding)
      */
+    
     public void paint(Graphics b, int localX, int localY, int width, int height)
     {
         b.drawBlendedFilledRect(localX, localY, width, height, lowerLeft,
@@ -163,7 +164,7 @@ public class GradientBackground extends Background
      * @see
      * org.fenggui.io.IOStreamSaveable#process(org.fenggui.io.InputOutputStream)
      */
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -182,7 +183,7 @@ public class GradientBackground extends Background
      * 
      * @see org.fenggui.decorator.background.Background#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         final GradientBackground result = new GradientBackground(lowerLeft,

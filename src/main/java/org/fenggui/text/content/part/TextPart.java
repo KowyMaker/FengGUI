@@ -69,7 +69,7 @@ public class TextPart extends AbstractContentPart
         this(text, styleKey, 0, 0, appearance);
     }
     
-    @Override
+    
     public void getContent(StringBuilder result)
     {
         result.append(text);
@@ -99,7 +99,7 @@ public class TextPart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#splitAt(int,
      * boolean)
      */
-    @Override
+    
     public TextPart splitAtWord(int width, boolean firstPart,
             TextAppearance appearance)
     {
@@ -164,7 +164,7 @@ public class TextPart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#isBreakable
      * ()
      */
-    @Override
+    
     public boolean isSplittable()
     {
         // return (text.indexOf(' ') >= 0);
@@ -178,7 +178,7 @@ public class TextPart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#mergePart
      * (org.fenggui.binding.render.text.advanced.AbstractContentPart)
      */
-    @Override
+    
     public void mergePart(AbstractContentPart part, TextAppearance appearance)
     {
         if (canMerge(part))
@@ -205,7 +205,7 @@ public class TextPart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#canMerge
      * (org.fenggui.binding.render.text.advanced.AbstractContentPart)
      */
-    @Override
+    
     public boolean canMerge(AbstractContentPart part)
     {
         if (part instanceof TextPart)
@@ -228,7 +228,7 @@ public class TextPart extends AbstractContentPart
      * int, org.fenggui.binding.render.Graphics,
      * org.fenggui.binding.render.IOpenGL)
      */
-    @Override
+    
     public void render(int x, int y, Graphics g, TextAppearance appearance)
     {
         final TextStyleEntry style = appearance.getStyle(getStyleKey())
@@ -252,13 +252,13 @@ public class TextPart extends AbstractContentPart
         }
     }
     
-    @Override
+    
     public int getAtomCount()
     {
         return text.length();
     }
     
-    @Override
+    
     public int calculatePositionInAtoms(int x, TextAppearance appearance)
     {
         final ITextRenderer renderer = appearance.getStyle(getStyleKey())
@@ -314,7 +314,7 @@ public class TextPart extends AbstractContentPart
         return curChar;
     }
     
-    @Override
+    
     public int getAtomPosition(int atom, TextAppearance appearance)
     {
         if (atom < 0 || atom > text.length())
@@ -327,7 +327,7 @@ public class TextPart extends AbstractContentPart
         return renderer.getWidth(text.substring(0, atom));
     }
     
-    @Override
+    
     public boolean addChar(char c, TextAppearance appearance)
     {
         if (activeAtom >= 0)
@@ -345,7 +345,7 @@ public class TextPart extends AbstractContentPart
         }
     }
     
-    @Override
+    
     public boolean addContent(String content, TextAppearance appearance)
     {
         if (activeAtom >= 0)
@@ -362,7 +362,7 @@ public class TextPart extends AbstractContentPart
         }
     }
     
-    @Override
+    
     public Character removeNextAtom(TextAppearance appearance)
     {
         int activeAtom = this.activeAtom;
@@ -389,7 +389,7 @@ public class TextPart extends AbstractContentPart
         return null;
     }
     
-    @Override
+    
     public Character removePreviousAtom(TextAppearance appearance)
     {
         int activeAtom = this.activeAtom;
@@ -412,25 +412,25 @@ public class TextPart extends AbstractContentPart
         return null;
     }
     
-    @Override
+    
     public void setActiveAtom(int atom)
     {
         activeAtom = atom;
     }
     
-    @Override
+    
     public int getActivePosition(TextAppearance appearance)
     {
         return getAtomPosition(activeAtom, appearance);
     }
     
-    @Override
+    
     public boolean hasActiveAtom()
     {
         return activeAtom >= 0;
     }
     
-    @Override
+    
     public boolean isEmpty()
     {
         if (text == null || text.length() <= 0)
@@ -440,7 +440,7 @@ public class TextPart extends AbstractContentPart
         return false;
     }
     
-    @Override
+    
     public AbstractContentPart splitAtChar(int width, TextAppearance appearance)
     {
         final ITextRenderer renderer = appearance.getStyle(getStyleKey())
@@ -450,7 +450,7 @@ public class TextPart extends AbstractContentPart
         return splitAtAtom(h, appearance);
     }
     
-    @Override
+    
     public AbstractContentPart splitAtAtom(int atom, TextAppearance appearance)
     {
         String part1, part2;
@@ -477,7 +477,7 @@ public class TextPart extends AbstractContentPart
      * 
      * @see org.fenggui.text.content.part.AbstractContentPart#getActiveAtom()
      */
-    @Override
+    
     public int getActiveAtom()
     {
         return activeAtom;
@@ -490,7 +490,7 @@ public class TextPart extends AbstractContentPart
      * org.fenggui.text.content.part.AbstractContentPart#splittAtActivePosition
      * (org.fenggui.appearance.TextAppearance)
      */
-    @Override
+    
     public AbstractContentPart splittAtActivePosition(TextAppearance appearance)
     {
         if (activeAtom < 0 || activeAtom > text.length())
@@ -526,7 +526,7 @@ public class TextPart extends AbstractContentPart
      * org.fenggui.text.content.part.AbstractContentPart#isValidCharacter(char,
      * org.fenggui.appearance.TextAppearance)
      */
-    @Override
+    
     public boolean isValidCharacter(char character, TextAppearance appearance)
     {
         final TextStyleEntry style = appearance.getStyle(getStyleKey())

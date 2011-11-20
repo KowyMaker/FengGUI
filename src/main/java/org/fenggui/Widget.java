@@ -170,6 +170,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getLayoutData()
      */
+    
     public ILayoutData getLayoutData()
     {
         return layoutData;
@@ -180,6 +181,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getParent()
      */
+    
     public IBasicContainer getParent()
     {
         return parent;
@@ -202,6 +204,7 @@ public class Widget implements IWidget
      * org.fenggui.IWidget#mouseEntered(org.fenggui.event.mouse.MouseEnteredEvent
      * )
      */
+    
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         if (!mouseEnteredEvent.isAlreadyUsed() && this.getParent() != null)
@@ -216,6 +219,7 @@ public class Widget implements IWidget
      * @see
      * org.fenggui.IWidget#mouseExited(org.fenggui.event.mouse.MouseExitedEvent)
      */
+    
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         if (!mouseExitedEvent.isAlreadyUsed() && this.getParent() != null)
@@ -231,6 +235,7 @@ public class Widget implements IWidget
      * org.fenggui.IWidget#mousePressed(org.fenggui.event.mouse.MousePressedEvent
      * )
      */
+    
     public void mousePressed(MousePressedEvent mp)
     {
         if (!mp.isAlreadyUsed() && this.getParent() != null)
@@ -244,6 +249,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#mouseMoved(int, int)
      */
+    
     public void mouseMoved(int displayX, int displayY)
     {
         if (this.getParent() != null)
@@ -259,6 +265,7 @@ public class Widget implements IWidget
      * org.fenggui.IWidget#mouseDragged(org.fenggui.event.mouse.MouseDraggedEvent
      * )
      */
+    
     public void mouseDragged(MouseDraggedEvent mp)
     {
         if (!mp.isAlreadyUsed() && this.getParent() != null)
@@ -274,6 +281,7 @@ public class Widget implements IWidget
      * org.fenggui.IWidget#mouseReleased(org.fenggui.event.mouse.MouseReleasedEvent
      * )
      */
+    
     public void mouseReleased(MouseReleasedEvent mr)
     {
         if (!mr.isAlreadyUsed() && this.getParent() != null)
@@ -288,6 +296,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#mouseDoubleClicked(org.fenggui.event.mouse.
      * MouseDoubleClickedEvent)
      */
+    
     public void mouseDoubleClicked(MouseDoubleClickedEvent event)
     {
         if (!event.isAlreadyUsed() && this.getParent() != null)
@@ -303,6 +312,7 @@ public class Widget implements IWidget
      * org.fenggui.IWidget#mouseClicked(org.fenggui.event.mouse.MouseClickedEvent
      * )
      */
+    
     public void mouseClicked(MouseClickedEvent event)
     {
         if (!event.isAlreadyUsed() && this.getParent() != null)
@@ -317,6 +327,7 @@ public class Widget implements IWidget
      * @see
      * org.fenggui.IWidget#mouseWheel(org.fenggui.event.mouse.MouseWheelEvent)
      */
+    
     public void mouseWheel(MouseWheelEvent mouseWheelEvent)
     {
         if (!mouseWheelEvent.isAlreadyUsed() && this.getParent() != null)
@@ -330,6 +341,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#keyPressed(org.fenggui.event.KeyPressedEvent)
      */
+    
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         if (!keyPressedEvent.isAlreadyUsed() && this.getParent() != null)
@@ -343,6 +355,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#keyReleased(org.fenggui.event.KeyReleasedEvent)
      */
+    
     public void keyReleased(KeyReleasedEvent keyReleasedEvent)
     {
         if (!keyReleasedEvent.isAlreadyUsed() && this.getParent() != null)
@@ -356,6 +369,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#keyTyped(org.fenggui.event.KeyTypedEvent)
      */
+    
     public void keyTyped(KeyTypedEvent keyTypedEvent)
     {
         if (!keyTypedEvent.isAlreadyUsed() && this.getParent() != null)
@@ -371,6 +385,7 @@ public class Widget implements IWidget
      * org.fenggui.IWidget#positionChanged(org.fenggui.event.PositionChangedEvent
      * )
      */
+    
     public void positionChanged(PositionChangedEvent event)
     {
         if (!this.isVisible() || !this.isInWidgetTree())
@@ -389,6 +404,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#sizeChanged(org.fenggui.event.SizeChangedEvent)
      */
+    
     public void sizeChanged(SizeChangedEvent event)
     {
         if (!this.isVisible() || !this.isInWidgetTree())
@@ -409,6 +425,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#addSizeChangedListener(org.fenggui.event.
      * ISizeChangedListener)
      */
+    
     public void addSizeChangedListener(ISizeChangedListener l)
     {
         sizeHook.add(l);
@@ -420,6 +437,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#removeSizeChangedListener(org.fenggui.event.
      * ISizeChangedListener)
      */
+    
     public void removeSizeChangedListener(ISizeChangedListener l)
     {
         sizeHook.remove(l);
@@ -431,6 +449,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#addPositionChangedListener(org.fenggui.event.
      * IPositionChangedListener)
      */
+    
     public void addPositionChangedListener(IPositionChangedListener l)
     {
         positionHook.add(l);
@@ -442,6 +461,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#removePositionChangedListener(org.fenggui.event.
      * IPositionChangedListener)
      */
+    
     public void removePositionChangedListener(IPositionChangedListener l)
     {
         positionHook.remove(l);
@@ -452,6 +472,7 @@ public class Widget implements IWidget
      * 
      * @return true if registered, else otherwise
      */
+    
     public boolean isInWidgetTree()
     {
         if (this.getDisplay() == null)
@@ -469,6 +490,7 @@ public class Widget implements IWidget
      * <li>it is not layouted anymore by its parent container</li>
      * <ol>
      */
+    
     public void removedFromWidgetTree()
     {
         // does nothing. Supposed to be overridden
@@ -478,6 +500,7 @@ public class Widget implements IWidget
      * Called when this widget is added to the widget tree.
      * 
      */
+    
     public void addedToWidgetTree()
     {
         // does nothing. Supposed to be overridden
@@ -488,6 +511,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#layout()
      */
+    
     public void layout()
     {
         // does nothing. Supposed to be overridden
@@ -498,6 +522,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getDisplayX()
      */
+    
     public int getDisplayX()
     {
         // FIXME Is it the right thing to do, if parent == null ?
@@ -514,6 +539,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getDisplayY()
      */
+    
     public int getDisplayY()
     {
         // FIXME Is it the right thing to do, if parent == null ?
@@ -530,6 +556,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getDisplay()
      */
+    
     public Display getDisplay()
     {
         if (parent == null)
@@ -544,6 +571,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getWidget(int, int)
      */
+    
     public IWidget getWidget(int x, int y)
     {
         if (this.isVisible() && x > 0 && y > 0 && x < this.getWidth()
@@ -568,6 +596,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#setSize(org.fenggui.util.Dimension)
      */
+    
     public void setSize(Dimension s)
     {
         final Dimension oldSize = size;
@@ -608,6 +637,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#updateMinSize()
      */
+    
     public void updateMinSize()
     {
         // does nothing. Supposed to be overridden
@@ -619,12 +649,13 @@ public class Widget implements IWidget
      * @param parent
      *            parent
      */
+    
     public final void setParent(IBasicContainer parent)
     {
         this.parent = parent;
     }
     
-    @Override
+    
     public String toString()
     {
         final StringBuffer sb = new StringBuffer();
@@ -648,6 +679,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#focusChanged(org.fenggui.event.FocusEvent)
      */
+    
     public void focusChanged(FocusEvent focusEvent)
     {
         // does nothing. Supposed to be overridden
@@ -661,6 +693,7 @@ public class Widget implements IWidget
      * @param y
      *            <code>y</code> coordinate
      */
+    
     public void setY(int y)
     {
         this.setPosition(new Point(this.getX(), y));
@@ -671,6 +704,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getY()
      */
+    
     public int getY()
     {
         return position.getY();
@@ -705,6 +739,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#isTraversable()
      */
+    
     public boolean isTraversable()
     {
         return false;
@@ -731,6 +766,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#isExpandable()
      */
+    
     public boolean isExpandable()
     {
         return expandable;
@@ -751,6 +787,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#isShrinkable()
      */
+    
     public boolean isShrinkable()
     {
         return shrinkable;
@@ -761,6 +798,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getSize()
      */
+    
     public Dimension getSize()
     {
         return size;
@@ -771,6 +809,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getMinSize()
      */
+    
     public Dimension getMinSize()
     {
         return minSize;
@@ -804,6 +843,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#paint(org.fenggui.binding.render.Graphics)
      */
+    
     public void paint(Graphics g)
     {
         // does nothing. Supposed to be overridden
@@ -814,6 +854,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getPosition()
      */
+    
     public Point getPosition()
     {
         return position;
@@ -883,6 +924,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#setX(int)
      */
+    
     public void setX(int x)
     {
         this.setPosition(new Point(x, this.getY()));
@@ -893,6 +935,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getX()
      */
+    
     public int getX()
     {
         return position.getX();
@@ -903,6 +946,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#setPosition(org.fenggui.util.Point)
      */
+    
     public void setPosition(Point p)
     {
         final Point oldPosition = position;
@@ -917,6 +961,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#isVisible()
      */
+    
     public boolean isVisible()
     {
         if (this.getParent() != null)
@@ -934,6 +979,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#setVisible(boolean)
      */
+    
     public void setVisible(boolean visible)
     {
         this.visible = visible;
@@ -948,6 +994,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#getData(java.lang.String)
      */
+    
     public Object getData(String key)
     {
         if (data == null)
@@ -965,6 +1012,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.IWidget#setData(java.lang.String, java.lang.Object)
      */
+    
     public void setData(String key, Object data)
     {
         if (this.data == null)
@@ -999,6 +1047,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#addMinSizeChangedListener(org.fenggui.event.
      * ISizeChangedListener)
      */
+    
     public void addMinSizeChangedListener(ISizeChangedListener l)
     {
         minSizeHook.add(l);
@@ -1010,6 +1059,7 @@ public class Widget implements IWidget
      * @see org.fenggui.IWidget#removeMinSizeChangedListener(org.fenggui.event.
      * ISizeChangedListener)
      */
+    
     public void removeMinSizeChangedListener(ISizeChangedListener l)
     {
         minSizeHook.remove(l);
@@ -1020,6 +1070,7 @@ public class Widget implements IWidget
      * 
      * @see org.fenggui.theme.xml.IXMLStreamable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return IXMLStreamable.GENERATE_NAME;
@@ -1031,6 +1082,7 @@ public class Widget implements IWidget
      * @see org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml.
      * InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -1042,7 +1094,7 @@ public class Widget implements IWidget
      * restriction is that it will not copy any content Items or child Widgets
      * of this widget.
      */
-    @Override
+    
     public Widget clone()
     {
         Widget result;

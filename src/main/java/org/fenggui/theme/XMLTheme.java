@@ -263,6 +263,7 @@ public class XMLTheme implements ITheme
         return s;
     }
     
+    
     public void setUp(IWidget widget)
     {
         if (!(widget instanceof StandardWidget))

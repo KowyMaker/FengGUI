@@ -109,11 +109,13 @@ public class LWJGLTexture implements ITexture
     /**
      * Bind the specified GL context to a texture
      */
+    
     public void bind()
     {
         assertCorrectTextureID();
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureID);
     }
+    
     
     public void dispose()
     {
@@ -127,6 +129,7 @@ public class LWJGLTexture implements ITexture
      * 
      * @return The height of the original image
      */
+    
     public int getImageHeight()
     {
         return imgHeight;
@@ -137,6 +140,7 @@ public class LWJGLTexture implements ITexture
      * 
      * @return The width of the original image
      */
+    
     public int getImageWidth()
     {
         return imgWidth;
@@ -147,6 +151,7 @@ public class LWJGLTexture implements ITexture
      * 
      * @see joglui.binding.Texture#getTextureWidth()
      */
+    
     public int getTextureWidth()
     {
         return texWidth;
@@ -157,15 +162,18 @@ public class LWJGLTexture implements ITexture
      * 
      * @see joglui.binding.Texture#getTextureHeight()
      */
+    
     public int getTextureHeight()
     {
         return texHeight;
     }
     
+    
     public boolean hasAlpha()
     {
         return true;
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
@@ -185,6 +193,7 @@ public class LWJGLTexture implements ITexture
      * 
      * @see org.fenggui.io.IOStreamSaveable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -254,6 +263,7 @@ public class LWJGLTexture implements ITexture
         return new LWJGLTexture(textureID, awtImage.getWidth(),
                 awtImage.getHeight(), texWidth, texHeight);
     }
+    
     
     public int getID()
     {

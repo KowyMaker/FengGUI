@@ -61,7 +61,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#addChar(
      * char)
      */
-    @Override
+    
     public boolean addChar(char c, TextAppearance appearance)
     {
         return false;
@@ -74,7 +74,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#canMerge
      * (org.fenggui.binding.render.text.advanced.AbstractContentPart)
      */
-    @Override
+    
     public boolean canMerge(AbstractContentPart part)
     {
         return false;
@@ -86,7 +86,7 @@ public class ImagePart extends AbstractContentPart
      * @see org.fenggui.binding.render.text.advanced.AbstractContentPart#
      * getActivePosition()
      */
-    @Override
+    
     public int getActivePosition(TextAppearance appearance)
     {
         return activePosition;
@@ -99,7 +99,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#getAtomCount
      * ()
      */
-    @Override
+    
     public int getAtomCount()
     {
         if (img == null)
@@ -119,7 +119,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#getAtomPosition
      * (int)
      */
-    @Override
+    
     public int getAtomPosition(int atom, TextAppearance appearance)
     {
         if (atom == 0)
@@ -138,7 +138,7 @@ public class ImagePart extends AbstractContentPart
      * @see
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#getContent()
      */
-    @Override
+    
     public void getContent(StringBuilder result)
     {
         if (img != null)
@@ -154,7 +154,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#hasActiveAtom
      * ()
      */
-    @Override
+    
     public boolean hasActiveAtom()
     {
         return activePosition != -1;
@@ -167,7 +167,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#isBreakable
      * ()
      */
-    @Override
+    
     public boolean isSplittable()
     {
         return false;
@@ -179,7 +179,7 @@ public class ImagePart extends AbstractContentPart
      * @see
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#isEmpty()
      */
-    @Override
+    
     public boolean isEmpty()
     {
         return img == null;
@@ -192,7 +192,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#mergePart
      * (org.fenggui.binding.render.text.advanced.AbstractContentPart)
      */
-    @Override
+    
     public void mergePart(AbstractContentPart part, TextAppearance appearance)
     {
         throw new UnsupportedOperationException(
@@ -206,7 +206,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#removeNextChar
      * ()
      */
-    @Override
+    
     public Character removeNextAtom(TextAppearance appearance)
     {
         return null;
@@ -218,7 +218,7 @@ public class ImagePart extends AbstractContentPart
      * @see org.fenggui.binding.render.text.advanced.AbstractContentPart#
      * removePreviousChar()
      */
-    @Override
+    
     public Character removePreviousAtom(TextAppearance appearance)
     {
         return null;
@@ -231,7 +231,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#render(int,
      * int, org.fenggui.binding.render.Graphics)
      */
-    @Override
+    
     public void render(int x, int y, Graphics g, TextAppearance appearance)
     {
         g.setColor(Color.WHITE);
@@ -245,7 +245,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#setActiveAtom
      * (int)
      */
-    @Override
+    
     public void setActiveAtom(int atom)
     {
         activePosition = atom;
@@ -257,7 +257,7 @@ public class ImagePart extends AbstractContentPart
      * @see org.fenggui.binding.render.text.advanced.AbstractContentPart#
      * setActivePosition(int)
      */
-    @Override
+    
     public int calculatePositionInAtoms(int x, TextAppearance appearance)
     {
         if (x < img.getWidth() / 2)
@@ -277,7 +277,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.binding.render.text.advanced.AbstractContentPart#splitAt(int,
      * boolean)
      */
-    @Override
+    
     public AbstractContentPart splitAtWord(int width, boolean firstPart,
             TextAppearance appearance)
     {
@@ -285,20 +285,20 @@ public class ImagePart extends AbstractContentPart
                 "No split supported in ImagePart.");
     }
     
-    @Override
+    
     public AbstractContentPart splitAtChar(int width, TextAppearance appearance)
     {
         throw new UnsupportedOperationException(
                 "No split supported in ImagePart.");
     }
     
-    @Override
+    
     public boolean addContent(String content, TextAppearance appearance)
     {
         return false;
     }
     
-    @Override
+    
     public AbstractContentPart splitAtAtom(int atom, TextAppearance appearance)
     {
         throw new UnsupportedOperationException(
@@ -310,7 +310,7 @@ public class ImagePart extends AbstractContentPart
      * 
      * @see org.fenggui.text.content.part.AbstractContentPart#getActiveAtom()
      */
-    @Override
+    
     public int getActiveAtom()
     {
         return activePosition;
@@ -323,7 +323,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.text.content.part.AbstractContentPart#splittAtActivePosition
      * (org.fenggui.appearance.TextAppearance)
      */
-    @Override
+    
     public AbstractContentPart splittAtActivePosition(TextAppearance appearance)
     {
         throw new UnsupportedOperationException(
@@ -337,7 +337,7 @@ public class ImagePart extends AbstractContentPart
      * org.fenggui.text.content.part.AbstractContentPart#isValidCharacter(char,
      * org.fenggui.appearance.TextAppearance)
      */
-    @Override
+    
     public boolean isValidCharacter(char character, TextAppearance appearance)
     {
         return false;

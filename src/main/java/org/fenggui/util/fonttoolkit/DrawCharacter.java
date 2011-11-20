@@ -61,7 +61,7 @@ public class DrawCharacter extends RenderStage
     /**
      * Renders a character in the buffer.
      */
-    @Override
+    
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

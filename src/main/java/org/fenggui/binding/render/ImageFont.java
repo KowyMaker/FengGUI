@@ -225,6 +225,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
      * procedure, which is why people may want to call it manually.
      * 
      */
+    
     public void uploadToVideoMemory()
     {
         final ITexture tex = Binding.getInstance().getTexture(image);
@@ -234,6 +235,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
             cp.setTexture(tex);
         }
     }
+    
     
     public boolean isCharacterMapped(char c)
     {
@@ -268,6 +270,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
      *            the string
      * @return the length in pixel of the string
      */
+    
     public int getWidth(String s)
     {
         if (s == null)
@@ -281,6 +284,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
         }
         return length;
     }
+    
     
     public BufferedImage getImage()
     {
@@ -331,6 +335,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
      *            the character to be on the texture
      * @return the texture
      */
+    
     public CharacterPixmap getCharPixMap(char ch)
     {
         // isn't this slower as the current?
@@ -362,6 +367,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
     /**
      * Unbinds all character pixmaps of this font.
      */
+    
     public void dispose()
     {
         final Hashtable<ITexture, ITexture> set = new Hashtable<ITexture, ITexture>();
@@ -376,6 +382,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
             t.dispose();
         }
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
@@ -473,6 +480,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
      * 
      * @see org.fenggui.io.IOStreamSaveable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -483,6 +491,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
      * 
      * @see org.fenggui.binding.render.IFont#calculateSize(java.lang.String)
      */
+    
     public Dimension calculateSize(String text)
     {
         final String[] lines = text.split("\n", -1);
@@ -500,6 +509,7 @@ public class ImageFont extends Font implements IDisposable, IImageFont
      * 
      * @see org.fenggui.binding.render.IFont#getLineHeight()
      */
+    
     public int getLineHeight()
     {
         return height;

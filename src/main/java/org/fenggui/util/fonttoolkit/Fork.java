@@ -42,7 +42,7 @@ public class Fork extends RenderStage
         line = new AssemblyLine();
     }
     
-    @Override
+    
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

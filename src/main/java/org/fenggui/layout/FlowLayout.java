@@ -319,7 +319,7 @@ public class FlowLayout extends LayoutManager
      * 
      * @return a string representation of this layout
      */
-    @Override
+    
     public String toString()
     {
         String str = "";
@@ -354,7 +354,7 @@ public class FlowLayout extends LayoutManager
      * @return the minimum dimensions to lay out the subcomponents of the
      *         specified container
      */
-    @Override
+    
     public Dimension computeMinSize(List<IWidget> content)
     {
         final int width = 0;
@@ -380,7 +380,7 @@ public class FlowLayout extends LayoutManager
         return dim;
     }
     
-    @Override
+    
     public void doLayout(Container container, List<IWidget> content)
     {
         // Insets insets = container.getInsets();
@@ -429,6 +429,7 @@ public class FlowLayout extends LayoutManager
         moveComponents(container, content, hgap, y, maxwidth - x, rowh, start,
                 nmembers, ltr);
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

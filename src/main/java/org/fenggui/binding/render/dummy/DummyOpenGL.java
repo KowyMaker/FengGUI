@@ -24,11 +24,13 @@ import org.fenggui.binding.render.IOpenGL;
 public class DummyOpenGL implements IOpenGL
 {
     
+    
     public void setModelMatrixMode()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void setProjectionMatrixMode()
     {
@@ -36,11 +38,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void pushMatrix()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void popMatrix()
     {
@@ -48,11 +52,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void loadIdentity()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void pushAllAttribs()
     {
@@ -60,11 +66,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void popAllAttribs()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void enableTexture2D(boolean b)
     {
@@ -72,11 +80,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void setTexEnvModeDecal()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void setTexEnvModeModulate()
     {
@@ -84,11 +94,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void setViewPort(int x, int y, int width, int height)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void setDepthFunctionToLEqual()
     {
@@ -96,11 +108,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void translateZ(float z)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void translateXY(int x, int y)
     {
@@ -108,11 +122,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void rotate(float angle)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void end()
     {
@@ -120,11 +136,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void startQuads()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void startLines()
     {
@@ -132,11 +150,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void startLineStrip()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void startLineLoop()
     {
@@ -144,11 +164,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void startTriangles()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void startTriangleStrip()
     {
@@ -156,16 +178,19 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void startQuadStrip()
     {
         // does nothing! It's a dummy implementation
         
     }
     
+    
     public void startPoints()
     {
         
     }
+    
     
     public void vertex(float x, float y)
     {
@@ -173,17 +198,20 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void texCoord(float x, float y)
     {
         // does nothing! It's a dummy implementation
         
     }
     
+    
     public void color(float red, float green, float blue, float alpha)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void scale(float scaleX, float scaleY)
     {
@@ -197,11 +225,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void enableLighting(boolean b)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void setupStateVariables(boolean disableDepthTest)
     {
@@ -209,11 +239,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void lineWidth(float width)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void enableStipple()
     {
@@ -221,11 +253,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void disableStipple()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void lineStipple(int stretch, short pattern)
     {
@@ -233,11 +267,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void enableAlpha(boolean state)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void readPixels(int x, int y, int width, int height, ByteBuffer bgr)
     {
@@ -245,11 +281,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void setOrtho2D(int x, int width, int y, int height)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void setScissor(int x, int width, int y, int height)
     {
@@ -257,15 +295,18 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void activateTexture(int i)
     {
         // does nothing! It's a dummy implementation
     }
     
+    
     public void rotate(float angle, int x, int y, int z)
     {
         // does nothing! It's a dummy implementation
     }
+    
     
     public void disable(Attribute attrib)
     {
@@ -273,16 +314,19 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void enable(Attribute attrib)
     {
         // does nothing! It's a dummy implementation
         
     }
     
+    
     public void rect(float x1, float y1, float x2, float y2)
     {
         // does nothing! It's a dummy implementation
     }
+    
     
     public boolean[] getBoolean(Attribute attrib)
     {
@@ -290,11 +334,13 @@ public class DummyOpenGL implements IOpenGL
         return null;
     }
     
+    
     public double[] getDouble(Attribute attrib)
     {
         // does nothing! It's a dummy implementation
         return null;
     }
+    
     
     public float[] getFloat(Attribute attrib)
     {
@@ -302,11 +348,13 @@ public class DummyOpenGL implements IOpenGL
         return null;
     }
     
+    
     public int[] getInt(Attribute attrib)
     {
         // does nothing! It's a dummy implementation
         return null;
     }
+    
     
     public String getString(Attribute attrib)
     {
@@ -314,10 +362,12 @@ public class DummyOpenGL implements IOpenGL
         return null;
     }
     
+    
     public void pointSize(float size)
     {
         // does nothing! It's a dummy implementation
     }
+    
     
     public void startTriangleFan()
     {
@@ -325,11 +375,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void callList(int list)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void endList()
     {
@@ -337,11 +389,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public int genLists(int range)
     {
         // does nothing! It's a dummy implementation
         return 0;
     }
+    
     
     public void startList(int list)
     {
@@ -349,11 +403,13 @@ public class DummyOpenGL implements IOpenGL
         
     }
     
+    
     public void enableAlternateBlending(boolean b)
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public boolean isOpenGLThread()
     {

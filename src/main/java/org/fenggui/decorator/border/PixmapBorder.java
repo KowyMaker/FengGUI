@@ -154,7 +154,7 @@ public class PixmapBorder extends Border
                 topEdge });
     }
     
-    @Override
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         if (useAlternateBlending)
@@ -194,7 +194,7 @@ public class PixmapBorder extends Border
         }
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -227,7 +227,7 @@ public class PixmapBorder extends Border
      * 
      * @see org.fenggui.decorator.border.Border#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         final PixmapBorder result = new PixmapBorder(tex);

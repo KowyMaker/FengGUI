@@ -50,6 +50,7 @@ public class ScreenshotActor implements IActor
     private File                 screenshotFile    = null;
     private final IEventListener keylistener       = new IEventListener() {
                                                        
+                                                       
                                                        public void processEvent(
                                                                Event event)
                                                        {
@@ -80,6 +81,7 @@ public class ScreenshotActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#hook(org.fenggui.IWidget)
      */
+    
     public void hook(IWidget widget)
     {
         if (widget instanceof Display)
@@ -93,6 +95,7 @@ public class ScreenshotActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook(org.fenggui.IWidget)
      */
+    
     public void unHook(IWidget widget)
     {
         if (widget instanceof Display)

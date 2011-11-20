@@ -36,6 +36,7 @@ public class LazyParseContext implements IParseContext
         this.pointerLine = pointerLine;
     }
     
+    
     public String parseContextString()
     {
         final StringBuilder eltStr = new StringBuilder();

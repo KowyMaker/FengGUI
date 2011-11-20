@@ -99,7 +99,7 @@ public class TextAppearance extends DefaultAppearance
      * org.fenggui.appearance.DecoratorAppearance#process(org.fenggui.theme.
      * xml.InputOutputStream)
      */
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -218,7 +218,7 @@ public class TextAppearance extends DefaultAppearance
      * org.fenggui.appearance.DefaultAppearance#clone(org.fenggui.StandardWidget
      * )
      */
-    @Override
+    
     public TextAppearance clone(StandardWidget widget)
     {
         final TextAppearance result = (TextAppearance) super.clone(widget);

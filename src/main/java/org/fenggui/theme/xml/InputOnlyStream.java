@@ -95,7 +95,7 @@ public abstract class InputOnlyStream extends InputOutputStream
         }
     }
     
-    @Override
+    
     public boolean isInputStream()
     {
         return true;

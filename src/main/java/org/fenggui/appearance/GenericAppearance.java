@@ -71,6 +71,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
          * 
          * @see org.fenggui.theme.xml.IXMLStreamable#getUniqueName()
          */
+        
         public String getUniqueName()
         {
             return IXMLStreamable.GENERATE_NAME;
@@ -83,6 +84,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
          * org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml
          * .InputOutputStream)
          */
+        
         public void process(InputOutputStream stream) throws IOException,
                 IXMLStreamableException
         {
@@ -94,7 +96,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
          * 
          * @see java.lang.Object#clone()
          */
-        @Override
+        
         public IntegerStore clone()
         {
             IntegerStore result;
@@ -142,7 +144,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
         super(w, appearance);
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -315,7 +317,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
      * org.fenggui.appearance.DecoratorAppearance#clone(org.fenggui.StandardWidget
      * )
      */
-    @Override
+    
     protected DecoratorAppearance clone(StandardWidget widget)
     {
         final GenericAppearance result = (GenericAppearance) super

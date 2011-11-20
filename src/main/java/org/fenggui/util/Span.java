@@ -41,6 +41,7 @@ public enum Span
     
     public static final StorageFormat<Span, String> STORAGE_FORMAT = new StorageFormat<Span, String>() {
                                                                        
+                                                                       
                                                                        public String encode(
                                                                                Span obj)
                                                                                throws EncodingException
@@ -48,6 +49,7 @@ public enum Span
                                                                            return obj
                                                                                    .code();
                                                                        }
+                                                                       
                                                                        
                                                                        public Span decode(
                                                                                String encodedObj)

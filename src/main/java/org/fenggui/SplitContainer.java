@@ -87,7 +87,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         this(true);
     }
     
-    @Override
+    
     public DefaultAppearance getAppearance()
     {
         return appearance;
@@ -169,7 +169,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         updateMinSize();
     }
     
-    @Override
+    
     public void addedToWidgetTree()
     {
         getDisplay().addDndListener(dndListener);
@@ -184,7 +184,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
-    @Override
+    
     public void removedFromWidgetTree()
     {
         final Display d = getDisplay();
@@ -264,10 +264,12 @@ public class SplitContainer extends StandardWidget implements IContainer
             thizz = mom;
         }
         
+        
         public boolean isDndWidget(IWidget w, int x, int y)
         {
             return w.equals(thizz);
         }
+        
         
         public void select(int displayX, int displayY, Set<Key> modifiers)
         {
@@ -280,6 +282,7 @@ public class SplitContainer extends StandardWidget implements IContainer
                 oldValue = displayX;
             }
         }
+        
         
         public void drag(int displayX, int displayY, Set<Key> modifiers)
         {
@@ -299,6 +302,7 @@ public class SplitContainer extends StandardWidget implements IContainer
             layout();
         }
         
+        
         public void drop(int x, int y, IWidget droppedOn, Set<Key> modifiers)
         {
             
@@ -306,7 +310,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         
     }
     
-    @Override
+    
     public IWidget getWidget(int x, int y)
     {
         if (!getAppearance().insideMargin(x, y))
@@ -348,7 +352,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         updateMinSize();
     }
     
-    @Override
+    
     public void layout()
     {
         final int contentHeight = getAppearance().getContentHeight();
@@ -410,7 +414,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
-    @Override
+    
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         if (horizontal)
@@ -427,12 +431,13 @@ public class SplitContainer extends StandardWidget implements IContainer
         super.mouseEntered(mouseEnteredEvent);
     }
     
-    @Override
+    
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         Binding.getInstance().getCursorFactory().getDefaultCursor().show();
         super.mouseExited(mouseExitedEvent);
     }
+    
     
     public void addWidget(IWidget... widgets)
     {
@@ -452,6 +457,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
+    
     public void addWidget(IWidget w, int position)
     {
         if (position <= 0)
@@ -466,6 +472,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
+    
     public IWidget getNextTraversableWidget(IWidget start)
     {
         if (start.equals(firstWidget) && secondWidget.isTraversable())
@@ -477,6 +484,7 @@ public class SplitContainer extends StandardWidget implements IContainer
             return getParent().getNextTraversableWidget(this);
         }
     }
+    
     
     public IWidget getPreviousTraversableWidget(IWidget start)
     {
@@ -490,6 +498,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
+    
     public IWidget getNextWidget(IWidget start)
     {
         if (start.equals(firstWidget))
@@ -501,6 +510,7 @@ public class SplitContainer extends StandardWidget implements IContainer
             return getParent().getNextWidget(this);
         }
     }
+    
     
     public IWidget getPreviousWidget(IWidget start)
     {
@@ -514,7 +524,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -555,13 +565,13 @@ public class SplitContainer extends StandardWidget implements IContainer
         
     }
     
-    @Override
+    
     public boolean isTraversable()
     {
         return true;
     }
     
-    @Override
+    
     public void focusChanged(FocusEvent focusEvent)
     {
         super.focusChanged(focusEvent);
@@ -572,7 +582,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
-    @Override
+    
     public Dimension getMinContentSize()
     {
         int firstMinHeight = 0;
@@ -612,7 +622,7 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
-    @Override
+    
     public void paintContent(Graphics g, IOpenGL gl)
     {
         final IWidget firstWidget = getFirstWidget();
@@ -661,16 +671,19 @@ public class SplitContainer extends StandardWidget implements IContainer
         }
     }
     
+    
     public void removeWidget(IWidget... c)
     {
         throw new UnsupportedOperationException();
         // TODO: Implement this
     }
     
+    
     public List<IWidget> getContent()
     {
         throw new UnsupportedOperationException();
     }
+    
     
     public boolean isKeyTraversalRoot()
     {
@@ -682,6 +695,7 @@ public class SplitContainer extends StandardWidget implements IContainer
      * 
      * @see org.fenggui.IContainer#getChildWidgetCount()
      */
+    
     public int getChildWidgetCount()
     {
         if (firstWidget != null && secondWidget != null)
@@ -703,6 +717,7 @@ public class SplitContainer extends StandardWidget implements IContainer
      * 
      * @see org.fenggui.IContainer#hasChildWidgets()
      */
+    
     public boolean hasChildWidgets()
     {
         return firstWidget != null || secondWidget != null;

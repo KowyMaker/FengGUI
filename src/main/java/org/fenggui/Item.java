@@ -107,10 +107,12 @@ public class Item implements IXMLStreamable, IToggable<Item>
         return userData;
     }
     
+    
     public boolean isSelected()
     {
         return isSelected;
     }
+    
     
     public Item setSelected(boolean b)
     {
@@ -231,6 +233,7 @@ public class Item implements IXMLStreamable, IToggable<Item>
         }
     }
     
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -242,6 +245,7 @@ public class Item implements IXMLStreamable, IToggable<Item>
      * 
      * @see org.fenggui.io.IOStreamSaveable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;

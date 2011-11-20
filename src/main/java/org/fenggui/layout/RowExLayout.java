@@ -94,7 +94,7 @@ public class RowExLayout extends LayoutManager
      * @see org.fenggui.LayoutManager#computeMinSize(org.fenggui.Container,
      * java.util.List)
      */
-    @Override
+    
     public Dimension computeMinSize(List<IWidget> content)
     {
         int minW = 0;
@@ -148,7 +148,7 @@ public class RowExLayout extends LayoutManager
      * @see org.fenggui.LayoutManager#doLayout(org.fenggui.Container,
      * java.util.List)
      */
-    @Override
+    
     public void doLayout(Container container, List<IWidget> content)
     {
         int leftSpace;
@@ -173,6 +173,7 @@ public class RowExLayout extends LayoutManager
      * @see org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml.
      * InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {

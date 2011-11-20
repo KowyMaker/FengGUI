@@ -183,6 +183,7 @@ public abstract class SpacingAppearance implements IAppearance, IXMLStreamable
         padding = clearSpacing;
     }
     
+    
     public final Dimension getMinSizeHint()
     {
         final Dimension contentSize = this.getWidget().getMinContentSize();
@@ -223,6 +224,7 @@ public abstract class SpacingAppearance implements IAppearance, IXMLStreamable
      * org.fenggui.appearance.IAppearance#paint(org.fenggui.binding.render.Graphics
      * , org.fenggui.binding.render.IOpenGL)
      */
+    
     public void paint(Graphics g, IOpenGL gl)
     {
         final int offsetX = margin.getLeft() + border.getLeft()
@@ -342,7 +344,7 @@ public abstract class SpacingAppearance implements IAppearance, IXMLStreamable
                 - getBottomMargins();
     }
     
-    @Override
+    
     public String toString()
     {
         String s = "";
@@ -355,6 +357,7 @@ public abstract class SpacingAppearance implements IAppearance, IXMLStreamable
         return s;
     }
     
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -365,6 +368,7 @@ public abstract class SpacingAppearance implements IAppearance, IXMLStreamable
         padding = stream.processChild("Padding", padding, Spacing.ZERO_SPACING,
                 Spacing.class);
     }
+    
     
     public String getUniqueName()
     {

@@ -46,7 +46,7 @@ public class DrawCharacterOutline extends RenderStage
         color = c;
     }
     
-    @Override
+    
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

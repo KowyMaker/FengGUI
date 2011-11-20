@@ -170,7 +170,7 @@ public abstract class DecoratorAppearance extends SpacingAppearance
         switches.add(sw);
     }
     
-    @Override
+    
     public final void paintBackground(Graphics g, IOpenGL gl)
     {
         for (int i = 0; i < backgroundDecorators.size(); i++)
@@ -183,7 +183,7 @@ public abstract class DecoratorAppearance extends SpacingAppearance
         }
     }
     
-    @Override
+    
     public final void paintForeground(Graphics g, IOpenGL gl)
     {
         for (int i = 0; i < foregroundDecorators.size(); i++)
@@ -278,7 +278,7 @@ public abstract class DecoratorAppearance extends SpacingAppearance
         }
     }
     
-    @Override
+    
     public String toString()
     {
         String s = "\nBackground decorators:";
@@ -308,7 +308,7 @@ public abstract class DecoratorAppearance extends SpacingAppearance
         switches.clear();
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -359,7 +359,7 @@ public abstract class DecoratorAppearance extends SpacingAppearance
      * org.fenggui.appearance.SpacingAppearance#clone(org.fenggui.StandardWidget
      * )
      */
-    @Override
+    
     protected DecoratorAppearance clone(StandardWidget widget)
     {
         final DecoratorAppearance result = (DecoratorAppearance) super

@@ -49,7 +49,7 @@ public class IXMLStreamableException extends Exception
         parseContext = null;
     }
     
-    @Override
+    
     public String getMessage()
     {
         final String message = super.getMessage();

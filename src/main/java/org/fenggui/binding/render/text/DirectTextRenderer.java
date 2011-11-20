@@ -62,6 +62,7 @@ public class DirectTextRenderer implements ITextRenderer
         this.process(stream);
     }
     
+    
     public void render(int x, int y, String[] texts, Color color, Graphics g)
     {
         if (texts == null || texts.length == 0)
@@ -146,6 +147,7 @@ public class DirectTextRenderer implements ITextRenderer
         gl.enableTexture2D(false);
     }
     
+    
     public ImageFont getFont()
     {
         return font;
@@ -156,11 +158,13 @@ public class DirectTextRenderer implements ITextRenderer
         this.font = font;
     }
     
+    
     public DirectTextRenderer copy()
     {
         final DirectTextRenderer result = new DirectTextRenderer(font);
         return result;
     }
+    
     
     public Dimension calculateSize(String[] text)
     {
@@ -180,25 +184,30 @@ public class DirectTextRenderer implements ITextRenderer
         return new Dimension(width, height);
     }
     
+    
     public int getLineHeight()
     {
         return font.getHeight();
     }
+    
     
     public boolean isValidChar(char c)
     {
         return font.isCharacterMapped(c);
     }
     
+    
     public int getWidth(String text)
     {
         return font.getWidth(text);
     }
     
+    
     public String getUniqueName()
     {
         return IXMLStreamable.GENERATE_NAME;
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
@@ -207,10 +216,12 @@ public class DirectTextRenderer implements ITextRenderer
                 ImageFont.class));
     }
     
+    
     public int getWidth(char text)
     {
         return font.getWidth(text);
     }
+    
     
     public void setFont(IFont font)
     {
@@ -224,6 +235,7 @@ public class DirectTextRenderer implements ITextRenderer
                     "Only an ImageFont can be used with a DirectTextRenderer.");
         }
     }
+    
     
     public void render(int x, int y, String text, Color color, Graphics g)
     {
@@ -303,6 +315,7 @@ public class DirectTextRenderer implements ITextRenderer
         }
         gl.enableTexture2D(false);
     }
+    
     
     public int getLineSpacing()
     {

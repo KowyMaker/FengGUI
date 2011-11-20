@@ -34,6 +34,7 @@ public class DummyClipboard implements IClipboard
      * 
      * @see org.fenggui.render.clipboard.IClipboard#getText()
      */
+    
     public String getText()
     {
         // TODO Auto-generated method stub
@@ -45,6 +46,7 @@ public class DummyClipboard implements IClipboard
      * 
      * @see org.fenggui.render.clipboard.IClipboard#setText(java.lang.String)
      */
+    
     public void setText(String text)
     {
         DummyClipboard.clipboard = text;

@@ -60,16 +60,19 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         
         textCursorRenderer = new ITextCursorRenderer() {
             
+            
             public void render(int x, int y, int w, int h, Graphics g)
             {
                 g.setColor(Color.BLACK);
                 g.drawFilledRectangle(x, y, w, h);
             }
             
+            
             public int getHeight()
             {
                 return DYNAMICSIZE;
             }
+            
             
             public int getWidth()
             {
@@ -91,16 +94,19 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         defaultStyleKey = TextStyle.DEFAULTSTYLEKEY;
         textCursorRenderer = new ITextCursorRenderer() {
             
+            
             public void render(int x, int y, int w, int h, Graphics g)
             {
                 g.setColor(Color.BLACK);
                 g.drawFilledRectangle(x, y, w, h);
             }
             
+            
             public int getHeight()
             {
                 return DYNAMICSIZE;
             }
+            
             
             public int getWidth()
             {
@@ -131,16 +137,19 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         defaultFactory = factory;
     }
     
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
     }
+    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
         
     }
+    
     
     public AbstractContentPart getEmptyContentPart(TextAppearance appearance)
     {
@@ -164,6 +173,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         this.character = character;
     }
     
+    
     public String getContentObject(Object obj)
     {
         return "";
@@ -176,6 +186,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
      * org.fenggui.binding.render.text.advanced.IContentFactory#getContentParts
      * (java.lang.Object)
      */
+    
     public List<AbstractContentPart> getContentParts(Object content,
             TextAppearance appearance)
     {
@@ -200,6 +211,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
      * @see org.fenggui.binding.render.text.advanced.IContentFactory#
      * getTextCursorRenderer()
      */
+    
     public ITextCursorRenderer getTextCursorRenderer()
     {
         return textCursorRenderer;
@@ -217,6 +229,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
      * org.fenggui.text.content.IContentFactory#getContentLines(java.lang.Object
      * )
      */
+    
     public Object[] getContentLines(Object content)
     {
         if (content instanceof String)
@@ -237,6 +250,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
      * org.fenggui.text.content.IContentFactory#addLineEnd(java.lang.StringBuilder
      * )
      */
+    
     public void addLineEnd(StringBuilder result)
     {
         result.append("\n");
@@ -249,6 +263,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
      * org.fenggui.text.content.IContentFactory#addLineStart(java.lang.StringBuilder
      * )
      */
+    
     public void addLineStart(StringBuilder result)
     {
         // Nothing to do here
@@ -261,6 +276,7 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
      * org.fenggui.text.content.IContentFactory#finalContent(java.lang.StringBuilder
      * )
      */
+    
     public void finalContent(StringBuilder result)
     {
     }

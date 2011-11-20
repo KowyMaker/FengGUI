@@ -68,6 +68,7 @@ public abstract class Switch implements IXMLStreamable
      */
     public abstract Switch copy();
     
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -75,6 +76,7 @@ public abstract class Switch implements IXMLStreamable
         reactingOnEnabled = stream.processAttribute("reactingOnEnabled",
                 reactingOnEnabled, reactingOnEnabled);
     }
+    
     
     public String getUniqueName()
     {

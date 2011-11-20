@@ -54,6 +54,7 @@ public abstract class Border extends Spacing implements IDecorator
         
     }
     
+    
     public Span getSpan()
     {
         return span;
@@ -63,6 +64,7 @@ public abstract class Border extends Spacing implements IDecorator
     {
         this.span = span;
     }
+    
     
     public void setEnabled(boolean enabled)
     {
@@ -74,10 +76,12 @@ public abstract class Border extends Spacing implements IDecorator
         this.label = label;
     }
     
+    
     public boolean isEnabled()
     {
         return enabled;
     }
+    
     
     public String getLabel()
     {
@@ -89,7 +93,7 @@ public abstract class Border extends Spacing implements IDecorator
         super(top, left, right, bottom);
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -101,10 +105,11 @@ public abstract class Border extends Spacing implements IDecorator
                 Span.STORAGE_FORMAT);
     }
     
+    
     public abstract void paint(Graphics g, int localX, int localY, int width,
             int height);
     
-    @Override
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -115,6 +120,7 @@ public abstract class Border extends Spacing implements IDecorator
      * 
      * @see org.fenggui.decorator.IDecorator#copy()
      */
+    
     public IDecorator copy()
     {
         return null;

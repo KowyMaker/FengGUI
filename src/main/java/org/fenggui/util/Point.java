@@ -83,7 +83,7 @@ public class Point implements Cloneable
      * 
      * @return string
      */
-    @Override
+    
     public String toString()
     {
         return "(" + x + ", " + y + ")";
@@ -155,7 +155,7 @@ public class Point implements Cloneable
         return new Point(x - point.x, y - point.y);
     }
     
-    @Override
+    
     public boolean equals(Object o)
     {
         if (this == o)
@@ -181,7 +181,7 @@ public class Point implements Cloneable
         return true;
     }
     
-    @Override
+    
     public int hashCode()
     {
         int result;
@@ -195,7 +195,7 @@ public class Point implements Cloneable
      * 
      * @see java.lang.Object#clone()
      */
-    @Override
+    
     public Point clone()
     {
         try

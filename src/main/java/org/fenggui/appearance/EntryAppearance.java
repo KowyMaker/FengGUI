@@ -90,7 +90,7 @@ public class EntryAppearance extends LabelAppearance
         this.rowHeight = rowHeight;
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -161,7 +161,7 @@ public class EntryAppearance extends LabelAppearance
      * @see
      * org.fenggui.appearance.LabelAppearance#clone(org.fenggui.StandardWidget)
      */
-    @Override
+    
     public LabelAppearance clone(StandardWidget widget)
     {
         final EntryAppearance result = (EntryAppearance) super.clone(widget);

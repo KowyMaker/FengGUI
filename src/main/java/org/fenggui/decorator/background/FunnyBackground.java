@@ -48,6 +48,7 @@ public class FunnyBackground extends Background
         process(stream);
     }
     
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         g.setColor(Color.RED);
@@ -64,7 +65,7 @@ public class FunnyBackground extends Background
      * @see
      * org.fenggui.io.IOStreamSaveable#process(org.fenggui.io.InputOutputStream)
      */
-    @Override
+    
     public void process(InputOutputStream stream)
     {
         // Nothing to save
@@ -75,7 +76,7 @@ public class FunnyBackground extends Background
      * 
      * @see org.fenggui.decorator.background.Background#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         return new FunnyBackground();

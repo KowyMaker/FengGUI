@@ -56,13 +56,13 @@ public class MouseEnteredEvent extends MouseEvent
         return exited;
     }
     
-    @Override
+    
     public int getDisplayX()
     {
         return displayX;
     }
     
-    @Override
+    
     public int getDisplayY()
     {
         return displaY;

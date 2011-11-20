@@ -414,7 +414,7 @@ public class LWJGLCursorFactory extends CursorFactory
         }
     }
     
-    @Override
+    
     public LWJGLCursor createCursor(int xHotspot, int yHotspot,
             BufferedImage image)
     {

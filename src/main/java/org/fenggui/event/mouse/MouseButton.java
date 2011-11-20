@@ -44,7 +44,7 @@ public enum MouseButton
     
     public static MouseButton valueOf(int value)
     {
-        for (MouseButton b : values())
+        for (final MouseButton b : values())
         {
             if (b.code == value)
             {

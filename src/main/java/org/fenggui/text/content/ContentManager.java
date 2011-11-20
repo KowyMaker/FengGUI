@@ -800,6 +800,7 @@ public class ContentManager implements IContentSelection
      * org.fenggui.binding.render.text.advanced.IContentSelection#getSelectionEnd
      * ()
      */
+    
     public int getSelectionEnd()
     {
         int selectionAtoms = 0;
@@ -853,6 +854,7 @@ public class ContentManager implements IContentSelection
      * org.fenggui.binding.render.text.advanced.IContentSelection#getSelectionStart
      * ()
      */
+    
     public int getSelectionStart()
     {
         int selectionAtoms = 0;
@@ -875,6 +877,7 @@ public class ContentManager implements IContentSelection
      * @see
      * org.fenggui.binding.render.text.advanced.IContentSelection#hasSelection()
      */
+    
     public boolean hasSelection()
     {
         for (final ContentUserLine line : content)
@@ -894,6 +897,7 @@ public class ContentManager implements IContentSelection
      * org.fenggui.binding.render.text.advanced.IContentSelection#clearSelection
      * ()
      */
+    
     public void clearSelection(TextAppearance appearance)
     {
         for (final ContentUserLine line : content)
@@ -916,6 +920,7 @@ public class ContentManager implements IContentSelection
      * org.fenggui.binding.render.text.advanced.IContentSelection#removeSelection
      * ()
      */
+    
     public void removeSelection(IContentFactory factory,
             TextAppearance appearance)
     {
@@ -975,6 +980,7 @@ public class ContentManager implements IContentSelection
      * org.fenggui.binding.render.text.advanced.IContentSelection#setSelection
      * (int, int)
      */
+    
     public void setSelection(int start, int end, TextAppearance appearance)
     {
         int selectionAtoms = 0;

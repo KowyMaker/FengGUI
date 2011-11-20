@@ -254,6 +254,7 @@ public class PixmapBackground extends Background
         }
     }
     
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         if (useAlternateBlending)
@@ -358,7 +359,7 @@ public class PixmapBackground extends Background
      * @see
      * org.fenggui.io.IOStreamSaveable#process(org.fenggui.io.InputOutputStream)
      */
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -392,7 +393,7 @@ public class PixmapBackground extends Background
      * 
      * @see org.fenggui.decorator.background.Background#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         final PixmapBackground result = new PixmapBackground(center, topLeft,

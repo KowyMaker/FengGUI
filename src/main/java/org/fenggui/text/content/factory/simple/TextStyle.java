@@ -94,6 +94,7 @@ public class TextStyle implements IXMLStreamable, Cloneable
      * 
      * @see org.fenggui.theme.xml.IXMLStreamable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -105,13 +106,14 @@ public class TextStyle implements IXMLStreamable, Cloneable
      * @see org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml.
      * InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
         stream.processChildren("Style", styles, TextStyleEntry.class);
     }
     
-    @Override
+    
     public TextStyle clone()
     {
         TextStyle result;

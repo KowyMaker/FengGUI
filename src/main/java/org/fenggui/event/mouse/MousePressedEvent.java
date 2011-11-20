@@ -74,7 +74,7 @@ public class MousePressedEvent extends MouseEvent
      * 
      * @return x coordinate
      */
-    @Override
+    
     public int getDisplayX()
     {
         return displayX;
@@ -85,7 +85,7 @@ public class MousePressedEvent extends MouseEvent
      * 
      * @return y coordinate
      */
-    @Override
+    
     public int getDisplayY()
     {
         return displayY;

@@ -52,7 +52,7 @@ public class SetPixmapSwitch extends Switch
         this.pixmap = pixmap;
     }
     
-    @Override
+    
     public void setup(IWidget widget)
     {
         try
@@ -66,7 +66,7 @@ public class SetPixmapSwitch extends Switch
         }
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -84,7 +84,7 @@ public class SetPixmapSwitch extends Switch
         }
     }
     
-    @Override
+    
     public SetPixmapSwitch copy()
     {
         return new SetPixmapSwitch(this.getLabel(), pixmap);

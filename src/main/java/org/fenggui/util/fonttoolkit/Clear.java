@@ -33,7 +33,7 @@ import java.awt.image.BufferedImage;
 public class Clear extends RenderStage
 {
     
-    @Override
+    
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

@@ -76,6 +76,7 @@ public class TextStyleEntry implements IXMLStreamable, Cloneable
      * 
      * @see org.fenggui.theme.xml.IXMLStreamable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -87,6 +88,7 @@ public class TextStyleEntry implements IXMLStreamable, Cloneable
      * @see org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml.
      * InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -157,7 +159,7 @@ public class TextStyleEntry implements IXMLStreamable, Cloneable
         return appearance.getRenderer(fontStyle);
     }
     
-    @Override
+    
     public TextStyleEntry clone()
     {
         TextStyleEntry result;

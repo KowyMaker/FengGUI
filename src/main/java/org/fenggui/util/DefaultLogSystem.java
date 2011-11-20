@@ -33,6 +33,7 @@ public final class DefaultLogSystem implements ILogSystem
      * @see org.fenggui.util.ILogSystem#debug(java.lang.String,
      * java.lang.Object[])
      */
+    
     public void debug(String debug, Object... vars)
     {
         System.out.println("Debug: " + String.format(debug, vars));
@@ -44,6 +45,7 @@ public final class DefaultLogSystem implements ILogSystem
      * @see org.fenggui.util.ILogSystem#error(java.lang.String,
      * java.lang.Object[])
      */
+    
     public void error(String error, Object... vars)
     {
         System.err.println("Error: " + String.format(error, vars));
@@ -56,6 +58,7 @@ public final class DefaultLogSystem implements ILogSystem
      * @see org.fenggui.util.ILogSystem#error(java.lang.String,
      * java.lang.Throwable, java.lang.Object[])
      */
+    
     public void error(String error, Throwable ex, Object... vars)
     {
         System.err.println("Error: " + String.format(error, vars));
@@ -68,6 +71,7 @@ public final class DefaultLogSystem implements ILogSystem
      * @see org.fenggui.util.ILogSystem#warn(java.lang.String,
      * java.lang.Object[])
      */
+    
     public void warn(String warn, Object... vars)
     {
         System.out.println("Warn: " + String.format(warn, vars));

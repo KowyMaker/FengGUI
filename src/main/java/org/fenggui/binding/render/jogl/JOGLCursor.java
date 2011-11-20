@@ -32,7 +32,7 @@ public class JOGLCursor extends Cursor
         component = awtComponent;
     }
     
-    @Override
+    
     public void show()
     {
         component.setCursor(cursor);

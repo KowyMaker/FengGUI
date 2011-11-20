@@ -138,7 +138,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         decreaseBtn.setParent(this);
         
         increaseBtn.addMouseListener(new MouseAdapter() {
-            @Override
+            
             public void mousePressed(MousePressedEvent mousePressedEvent)
             {
                 autoScrollDelay.reset();
@@ -146,7 +146,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         });
         
         decreaseBtn.addMouseListener(new MouseAdapter() {
-            @Override
+            
             public void mousePressed(MousePressedEvent mousePressedEvent)
             {
                 autoScrollDelay.reset();
@@ -154,6 +154,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         });
         
         increaseBtn.addButtonPressedListener(new IButtonPressedListener() {
+            
             
             public void buttonPressed(ButtonPressedEvent e)
             {
@@ -163,6 +164,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         
         decreaseBtn.addButtonPressedListener(new IButtonPressedListener() {
             
+            
             public void buttonPressed(ButtonPressedEvent e)
             {
                 slider.setValue(slider.getValue() - buttonJump);
@@ -170,7 +172,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         });
     }
     
-    @Override
+    
     public void addedToWidgetTree()
     {
         increaseBtn.addedToWidgetTree();
@@ -178,7 +180,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         decreaseBtn.addedToWidgetTree();
     }
     
-    @Override
+    
     public void removedFromWidgetTree()
     {
         increaseBtn.removedFromWidgetTree();
@@ -241,7 +243,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         
     }
     
-    @Override
+    
     public void layout()
     {
         decreaseBtn.setSizeToMinSize();
@@ -278,13 +280,13 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         slider.layout();
     }
     
-    @Override
+    
     public DefaultAppearance getAppearance()
     {
         return appearance;
     }
     
-    @Override
+    
     public IWidget getWidget(int x, int y)
     {
         if (!getAppearance().insideMargin(x, y))
@@ -313,27 +315,31 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         return this;
     }
     
+    
     public IWidget getNextTraversableWidget(IWidget start)
     {
         return getParent().getNextTraversableWidget(this);
     }
+    
     
     public IWidget getPreviousTraversableWidget(IWidget start)
     {
         return getParent().getPreviousTraversableWidget(this);
     }
     
+    
     public IWidget getNextWidget(IWidget start)
     {
         return getParent().getNextWidget(this);
     }
+    
     
     public IWidget getPreviousWidget(IWidget start)
     {
         return getParent().getPreviousWidget(this);
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -353,7 +359,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         }
     }
     
-    @Override
+    
     public Dimension getMinContentSize()
     {
         // add 1 so its possible to scroll from min to max.
@@ -377,7 +383,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         }
     }
     
-    @Override
+    
     public void paintContent(Graphics g, IOpenGL gl)
     {
         g.translate(decreaseBtn.getX(), decreaseBtn.getY());
@@ -405,6 +411,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
         }
     }
     
+    
     public boolean isKeyTraversalRoot()
     {
         return false;
@@ -415,7 +422,7 @@ public class ScrollBar extends StandardWidget implements IBasicContainer,
      * 
      * @see org.fenggui.Widget#clone()
      */
-    @Override
+    
     public ScrollBar clone()
     {
         final ScrollBar result = (ScrollBar) super.clone();

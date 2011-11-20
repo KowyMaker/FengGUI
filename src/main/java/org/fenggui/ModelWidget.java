@@ -113,6 +113,7 @@ public abstract class ModelWidget<T extends DecoratorAppearance, M extends IMode
      * 
      * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
      */
+    
     public void update(Observable o, Object arg)
     {
         ModelUpdated(model, false);
@@ -124,7 +125,7 @@ public abstract class ModelWidget<T extends DecoratorAppearance, M extends IMode
      * @see org.fenggui.StatefullWidget#clone()
      */
     @SuppressWarnings("unchecked")
-    @Override
+    
     public ModelWidget<T, M> clone()
     {
         final ModelWidget<T, M> result = (ModelWidget<T, M>) super.clone();

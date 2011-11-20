@@ -74,6 +74,7 @@ public class PixmapDecorator extends Decorator
         this(label, Span.PADDING, true, pixmap);
     }
     
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         if (pixmap == null || !this.isEnabled())
@@ -101,7 +102,7 @@ public class PixmapDecorator extends Decorator
         }
     }
     
-    @Override
+    
     public String getUniqueName()
     {
         return "PixmapDecorator";
@@ -112,7 +113,7 @@ public class PixmapDecorator extends Decorator
         return pixmap;
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -127,7 +128,7 @@ public class PixmapDecorator extends Decorator
                 Color.WHITE, Color.class);
     }
     
-    @Override
+    
     public IDecorator copy()
     {
         final PixmapDecorator result = new PixmapDecorator(this.getLabel(),

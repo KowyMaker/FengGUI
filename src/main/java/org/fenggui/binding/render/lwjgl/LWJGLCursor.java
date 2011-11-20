@@ -79,7 +79,7 @@ public class LWJGLCursor extends Cursor
         }
     }
     
-    @Override
+    
     public void show()
     {
         try

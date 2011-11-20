@@ -104,7 +104,7 @@ public class PixmapBorder16FixedCenters extends PixmapBorder16
     {
     }
     
-    @Override
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         g.setColor(getModulationColor());
@@ -162,7 +162,7 @@ public class PixmapBorder16FixedCenters extends PixmapBorder16
      * 
      * @see org.fenggui.decorator.border.Border#copy()
      */
-    @Override
+    
     public IDecorator copy()
     {
         final PixmapBorder16FixedCenters result = new PixmapBorder16FixedCenters(

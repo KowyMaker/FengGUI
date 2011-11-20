@@ -26,10 +26,12 @@ import org.fenggui.util.Dimension;
 public class DummyAppearance implements IAppearance, Cloneable
 {
     
+    
     public Dimension getMinSizeHint()
     {
         return new Dimension(0, 0);
     }
+    
     
     public void paint(Graphics g, IOpenGL gl)
     {
@@ -41,7 +43,7 @@ public class DummyAppearance implements IAppearance, Cloneable
      * 
      * @see java.lang.Object#clone()
      */
-    @Override
+    
     public DummyAppearance clone() throws CloneNotSupportedException
     {
         return (DummyAppearance) super.clone();

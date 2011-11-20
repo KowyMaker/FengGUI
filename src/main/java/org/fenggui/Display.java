@@ -114,6 +114,7 @@ public class Display extends Container
         setLayoutManager(new StaticLayout());
         binding.addDisplayResizedListener(new IDisplayResizedListener() {
             
+            
             public void displayResized(DisplayResizedEvent displayResizedEvent)
             {
                 setSize(displayResizedEvent.getWidth(),
@@ -126,6 +127,7 @@ public class Display extends Container
         
         binding.addTickEventListener(new ITickListener() {
             
+            
             public void tick(TickEvent tickEvent)
             {
                 // Distribute tick event as global event
@@ -135,7 +137,7 @@ public class Display extends Container
         });
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -155,7 +157,7 @@ public class Display extends Container
     }
     
     /** Returns true as the display is the root of the widget tree. */
-    @Override
+    
     public final boolean isInWidgetTree()
     {
         return true;
@@ -193,13 +195,13 @@ public class Display extends Container
     }
     
     /** Returns null because the display is the root of the widget tree. */
-    @Override
+    
     public final Container getParent()
     {
         return null;
     }
     
-    @Override
+    
     public boolean isKeyTraversalRoot()
     {
         // has to be the absolute root of traversal
@@ -210,7 +212,7 @@ public class Display extends Container
      * Returns this <code>Display</code> instance. Realize the this method marks
      * the end of recursive <code>getDisplay</code> calls.
      */
-    @Override
+    
     public final Display getDisplay()
     {
         return this;
@@ -641,7 +643,7 @@ public class Display extends Container
      * Returns 0 because the display is the root of the widget tree. Realize
      * that this method marks the end of a recursive call.
      */
-    @Override
+    
     public int getDisplayX()
     {
         return 0;
@@ -651,7 +653,7 @@ public class Display extends Container
      * Returns 0 becayse the display is the root of the widget tree. Realize
      * that this method marks the end of a recursive call.
      */
-    @Override
+    
     public int getDisplayY()
     {
         return 0;
@@ -698,7 +700,7 @@ public class Display extends Container
         return !w.equals(this);
     }
     
-    @Override
+    
     public IWidget getWidget(int x, int y)
     {
         final IWidget w = super.getWidget(x, y);
@@ -929,7 +931,7 @@ public class Display extends Container
      * 
      * @see org.fenggui.Container#getMinContentSize()
      */
-    @Override
+    
     public Dimension getMinContentSize()
     {
         // Displays content size doesn't count

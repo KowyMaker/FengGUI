@@ -121,6 +121,7 @@ public class Window extends Container implements IWindow
         if (autoClose)
         {
             addWindowClosedListener(new IWindowClosedListener() {
+                
                 public void windowClosed(WindowClosedEvent windowClosedEvent)
                 {
                     windowClosedEvent.getWindow().close();
@@ -240,6 +241,7 @@ public class Window extends Container implements IWindow
         minimizeButton = new Button("_");
         titleBar.addWidget(minimizeButton);
         minimizeButton.addButtonPressedListener(new IButtonPressedListener() {
+            
             public void buttonPressed(ButtonPressedEvent e)
             {
                 throw new UnsupportedOperationException(
@@ -257,6 +259,7 @@ public class Window extends Container implements IWindow
         maximizeButton = new Button();
         titleBar.addWidget(maximizeButton);
         maximizeButton.addButtonPressedListener(new IButtonPressedListener() {
+            
             public void buttonPressed(ButtonPressedEvent e)
             {
                 throw new UnsupportedOperationException(
@@ -274,6 +277,7 @@ public class Window extends Container implements IWindow
         titleBar.addWidget(closeButton);
         closeButton.setText("X");
         closeButton.addButtonPressedListener(new IButtonPressedListener() {
+            
             public void buttonPressed(ButtonPressedEvent e)
             {
                 fireWindowClosedEvent();
@@ -288,11 +292,13 @@ public class Window extends Container implements IWindow
         int oldX = 0;
         int oldY = 0;
         
+        
         public void select(int x, int y, Set<Key> modifiers)
         {
             oldX = x;
             oldY = y;
         }
+        
         
         public void drag(int x, int y, Set<Key> modifiers)
         {
@@ -309,9 +315,11 @@ public class Window extends Container implements IWindow
             oldY = y;
         }
         
+        
         public void drop(int x, int y, IWidget dropOn, Set<Key> modifiers)
         {
         }
+        
         
         public boolean isDndWidget(IWidget w, int x, int y)
         {
@@ -336,6 +344,7 @@ public class Window extends Container implements IWindow
         final int SOUTH_WEST = 6;
         final int NORTH_EAST = 7;
         final int NORTH_WEST = 8;
+        
         
         public void select(int x, int y, Set<Key> modifiers)
         {
@@ -385,6 +394,7 @@ public class Window extends Container implements IWindow
             }
             
         }
+        
         
         public void drag(int x, int y, Set<Key> modifiers)
         {
@@ -462,10 +472,12 @@ public class Window extends Container implements IWindow
             }
         }
         
+        
         public void drop(int x, int y, IWidget dropOn, Set<Key> modifiers)
         {
             type = -1;
         }
+        
         
         public boolean isDndWidget(IWidget w, int displayX, int displayY)
         {
@@ -621,7 +633,7 @@ public class Window extends Container implements IWindow
         return flag;
     }
     
-    @Override
+    
     public void mouseMoved(int displayX, int displayY)
     {
         if (!isResizable())
@@ -685,7 +697,7 @@ public class Window extends Container implements IWindow
         }
     }
     
-    @Override
+    
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         if (isShowingResizeCursors)
@@ -824,7 +836,7 @@ public class Window extends Container implements IWindow
     /**
      * Overridden to register necessary listeners on current display.
      */
-    @Override
+    
     public void addedToWidgetTree()
     {
         super.addedToWidgetTree();
@@ -839,7 +851,7 @@ public class Window extends Container implements IWindow
      * Notifies this window that it has been removed from the widget tree. It
      * will unregister its drag and drop listeners from the display.
      */
-    @Override
+    
     public void removedFromWidgetTree()
     {
         super.removedFromWidgetTree();
@@ -914,7 +926,7 @@ public class Window extends Container implements IWindow
     /**
      * Reads in appearance related parameters from streams (e.g. XML).
      */
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {

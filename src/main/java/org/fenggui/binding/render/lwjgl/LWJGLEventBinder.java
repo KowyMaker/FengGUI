@@ -16,8 +16,8 @@ import org.lwjgl.input.Mouse;
  */
 public class LWJGLEventBinder
 {
-    private Display                 display;
-    private Map<MouseButton, State> mouseStates = new HashMap<MouseButton, State>();
+    private Display                       display;
+    private final Map<MouseButton, State> mouseStates = new HashMap<MouseButton, State>();
     
     public LWJGLEventBinder(Display display)
     {
@@ -63,11 +63,11 @@ public class LWJGLEventBinder
                     MouseButton.LEFT, 1);
         }
         
-        for (MouseButton mouseButton : mouseStates.keySet())
+        for (final MouseButton mouseButton : mouseStates.keySet())
         {
-            State state = mouseStates.get(mouseButton);
-            long current = System.currentTimeMillis();
-            long diff = current - state.getLastPressed();
+            final State state = mouseStates.get(mouseButton);
+            final long current = System.currentTimeMillis();
+            final long diff = current - state.getLastPressed();
             
             if (Mouse.isButtonDown(mouseButton.getCode()))
             {

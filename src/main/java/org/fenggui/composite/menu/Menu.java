@@ -107,7 +107,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
         addMouseListener(new MouseAdapter() {
             // translated the drag event into a mouse moved event
             // so that the mouseOverIndex gets updated accordingly
-            @Override
+            
             public void mouseDragged(MouseDraggedEvent mp)
             {
                 Menu.this.mouseMoved(mp.getDisplayX(), mp.getDisplayY());
@@ -115,7 +115,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
             }
             
             // set the mouseOverRow index according to the mouse position
-            @Override
+            
             public void mouseMoved(MouseMovedEvent mouseMovedEvent)
             {
                 isDragging = false;
@@ -132,7 +132,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
             }
             
             // select item on mouse pressed
-            @Override
+            
             public void mousePressed(MousePressedEvent mp)
             {
                 final int row = computeRow(mp.getLocalY(Menu.this));
@@ -142,7 +142,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
             
             // when draggin, pretend that the mouse was pressed
             // to select the currently selected item
-            @Override
+            
             public void mouseReleased(MouseReleasedEvent mr)
             {
                 if (isDragging)
@@ -160,7 +160,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
         // keypressed listener to make items navigable
         addKeyListener(new KeyAdapter() {
             
-            @Override
+            
             public void keyPressed(KeyPressedEvent kpe)
             {
                 if (kpe.getKeyClass().equals(Key.DOWN))
@@ -259,6 +259,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
     /**
      * Closes this menu and all open submenus.
      */
+    
     public void closeForward()
     {
         
@@ -314,6 +315,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
     {
         this.previousMenu = previousMenu;
     }
+    
     
     public void closeBackward()
     {
@@ -466,7 +468,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
         return mouseOverRow;
     }
     
-    @Override
+    
     public void removedFromWidgetTree()
     {
         super.removedFromWidgetTree();
@@ -481,6 +483,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
     /**
      * @return next menu in chain
      **/
+    
     public IMenuChainElement getNextMenu()
     {
         return nextMenu;
@@ -489,12 +492,13 @@ public class Menu extends ObservableWidget implements IMenuChainElement
     /**
      * @return previous menu in chain
      **/
+    
     public IMenuChainElement getPreviousMenu()
     {
         return previousMenu;
     }
     
-    @Override
+    
     public EntryAppearance getAppearance()
     {
         return appearance;
@@ -539,7 +543,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
         }
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -559,7 +563,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
         }
     }
     
-    @Override
+    
     public Dimension getMinContentSize()
     {
         int minWidth = 0;
@@ -584,7 +588,7 @@ public class Menu extends ObservableWidget implements IMenuChainElement
         return new Dimension(minWidth, minHeight);
     }
     
-    @Override
+    
     public void paintContent(Graphics g, IOpenGL gl)
     {
         if (getItemCount() == 0)

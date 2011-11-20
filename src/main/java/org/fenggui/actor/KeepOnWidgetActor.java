@@ -51,12 +51,14 @@ public class KeepOnWidgetActor implements IActor
         this.target = target;
         this.align = align;
         sizeListener = new ISizeChangedListener() {
+            
             public void sizeChanged(SizeChangedEvent event)
             {
                 positionWidget(widget);
             }
         };
         positionListener = new IPositionChangedListener() {
+            
             public void positionChanged(PositionChangedEvent event)
             {
                 positionWidget(widget);
@@ -71,6 +73,7 @@ public class KeepOnWidgetActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#hook(org.fenggui.IWidget)
      */
+    
     public void hook(IWidget widget)
     {
         if (this.widget != null)
@@ -88,6 +91,7 @@ public class KeepOnWidgetActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook(org.fenggui.IWidget)
      */
+    
     public void unHook(IWidget widget)
     {
         if (this.widget != null)

@@ -39,6 +39,7 @@ public abstract class ObservableWidgetActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#setup(org.fenggui.IWidget)
      */
+    
     public void hook(IWidget widget)
     {
         if (widget instanceof ObservableWidget)
@@ -57,6 +58,7 @@ public abstract class ObservableWidgetActor implements IActor
      * 
      * @see org.fenggui.actor.IActor#unHook(org.fenggui.IWidget)
      */
+    
     public void unHook(IWidget widget)
     {
         if (widget instanceof ObservableWidget)

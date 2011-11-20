@@ -108,6 +108,7 @@ public interface IEditableTextContentManager extends ITextContentManager
      * @return
      * @see org.fenggui.text.content.ContentManager#addSizeChangedListener(org.fenggui.event.ISizeChangedListener)
      */
+    
     public boolean addSizeChangedListener(ISizeChangedListener listener);
     
     /**
@@ -115,5 +116,6 @@ public interface IEditableTextContentManager extends ITextContentManager
      * @return
      * @see org.fenggui.text.content.ContentManager#removeSizeChangedListener(org.fenggui.event.ISizeChangedListener)
      */
+    
     public boolean removeSizeChangedListener(ISizeChangedListener listener);
 }

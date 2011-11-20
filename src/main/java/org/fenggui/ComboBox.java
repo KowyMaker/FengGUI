@@ -176,7 +176,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
         list.getToggableWidgetGroup().removeSelectionChangedListener(l);
     }
     
-    @Override
+    
     public void layout()
     {
         final int height = getAppearance().getContentHeight();
@@ -343,7 +343,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
      * @see org.fenggui.ObservableWidget#keyReleased(org.fenggui.event.key.
      * KeyReleasedEvent)
      */
-    @Override
+    
     public void keyReleased(KeyReleasedEvent keyReleasedEvent)
     {
         if (!keyReleasedEvent.isAlreadyUsed()
@@ -364,7 +364,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
      * @see org.fenggui.ObservableWidget#mouseClicked(org.fenggui.event.mouse.
      * MouseClickedEvent)
      */
-    @Override
+    
     public void mouseClicked(MouseClickedEvent event)
     {
         if (!event.isAlreadyUsed() && event.getButton() == MouseButton.LEFT)
@@ -385,7 +385,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
      * org.fenggui.ObservableWidget#mouseDoubleClicked(org.fenggui.event.mouse
      * .MouseDoubleClickedEvent)
      */
-    @Override
+    
     public void mouseDoubleClicked(MouseDoubleClickedEvent event)
     {
         if (!event.isAlreadyUsed() && event.getButton() == MouseButton.LEFT)
@@ -408,6 +408,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
         return getParent().getNextTraversableWidget(this);
     }
     
+    
     public IWidget getPreviousTraversableWidget(IWidget start)
     {
         if (start == null)
@@ -418,17 +419,19 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
         return getParent().getPreviousTraversableWidget(this);
     }
     
+    
     public IWidget getNextWidget(IWidget start)
     {
         return null;
     }
+    
     
     public IWidget getPreviousWidget(IWidget start)
     {
         return null;
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -460,7 +463,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
         return null;
     }
     
-    @Override
+    
     public Dimension getMinContentSize()
     {
         int pixmapWidth = 0, pixmapHeight = 0;
@@ -485,7 +488,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
         return d;
     }
     
-    @Override
+    
     public void paintContent(Graphics g, IOpenGL gl)
     {
         g.translate(label.getX(), label.getY());
@@ -501,6 +504,7 @@ public class ComboBox extends StatefullWidget<DefaultAppearance> implements
                     (getAppearance().getContentHeight() - pixmap.getHeight()) / 2);
         }
     }
+    
     
     public boolean isKeyTraversalRoot()
     {

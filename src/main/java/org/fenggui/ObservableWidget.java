@@ -129,7 +129,7 @@ public abstract class ObservableWidget extends StandardWidget
         return getParent().getPreviousTraversableWidget(this);
     }
     
-    @Override
+    
     public boolean isTraversable()
     {
         return traversable && enabled && isVisible();
@@ -387,7 +387,7 @@ public abstract class ObservableWidget extends StandardWidget
      * org.fenggui.Widget#mouseEntered(org.fenggui.event.mouse.MouseEnteredEvent
      * )
      */
-    @Override
+    
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -432,7 +432,7 @@ public abstract class ObservableWidget extends StandardWidget
      * @see
      * org.fenggui.Widget#mouseExited(org.fenggui.event.mouse.MouseExitedEvent)
      */
-    @Override
+    
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -458,7 +458,7 @@ public abstract class ObservableWidget extends StandardWidget
      * org.fenggui.Widget#mousePressed(org.fenggui.event.mouse.MousePressedEvent
      * )
      */
-    @Override
+    
     public void mousePressed(MousePressedEvent mousePressedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -486,7 +486,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#mouseMoved(int, int)
      */
-    @Override
+    
     public void mouseMoved(int displayX, int displayY)
     {
         if (mouseHook.isEmpty() && mouseMovedHook.isEmpty() || !enabled
@@ -518,7 +518,7 @@ public abstract class ObservableWidget extends StandardWidget
      * org.fenggui.Widget#mouseDragged(org.fenggui.event.mouse.MouseDraggedEvent
      * )
      */
-    @Override
+    
     public void mouseDragged(MouseDraggedEvent mouseDraggedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -545,7 +545,7 @@ public abstract class ObservableWidget extends StandardWidget
      * org.fenggui.Widget#mouseClicked(org.fenggui.event.mouse.MouseClickedEvent
      * )
      */
-    @Override
+    
     public void mouseClicked(MouseClickedEvent event)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -567,7 +567,7 @@ public abstract class ObservableWidget extends StandardWidget
      * @see org.fenggui.Widget#mouseDoubleClicked(org.fenggui.event.mouse.
      * MouseDoubleClickedEvent)
      */
-    @Override
+    
     public void mouseDoubleClicked(MouseDoubleClickedEvent event)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -590,7 +590,7 @@ public abstract class ObservableWidget extends StandardWidget
      * org.fenggui.Widget#mouseReleased(org.fenggui.event.mouse.MouseReleasedEvent
      * )
      */
-    @Override
+    
     public void mouseReleased(MouseReleasedEvent mouseReleasedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -617,7 +617,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#keyPressed(org.fenggui.event.key.KeyPressedEvent)
      */
-    @Override
+    
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -665,7 +665,7 @@ public abstract class ObservableWidget extends StandardWidget
      * @see
      * org.fenggui.Widget#keyReleased(org.fenggui.event.key.KeyReleasedEvent)
      */
-    @Override
+    
     public void keyReleased(KeyReleasedEvent keyReleasedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -690,7 +690,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#keyTyped(org.fenggui.event.key.KeyTypedEvent)
      */
-    @Override
+    
     public void keyTyped(KeyTypedEvent keyTypedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -715,7 +715,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#focusChanged(org.fenggui.event.FocusEvent)
      */
-    @Override
+    
     public void focusChanged(FocusEvent focusGainedEvent)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -736,7 +736,7 @@ public abstract class ObservableWidget extends StandardWidget
      * @see
      * org.fenggui.Widget#mouseWheel(org.fenggui.event.mouse.MouseWheelEvent)
      */
-    @Override
+    
     public void mouseWheel(MouseWheelEvent e)
     {
         if (!enabled || !isVisible() || !isInWidgetTree())
@@ -761,7 +761,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#toString()
      */
-    @Override
+    
     public String toString()
     {
         final StringBuffer sb = new StringBuffer(super.toString());
@@ -807,7 +807,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#addedToWidgetTree()
      */
-    @Override
+    
     public void addedToWidgetTree()
     {
         super.addedToWidgetTree();
@@ -816,6 +816,7 @@ public abstract class ObservableWidget extends StandardWidget
             // Send a mouse released event to the widget if the mouse was
             // pressed here
             globalListener = new IEventListener() {
+                
                 public void processEvent(Event event)
                 {
                     if (event instanceof MouseReleasedEvent)
@@ -839,7 +840,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#removedFromWidgetTree()
      */
-    @Override
+    
     public void removedFromWidgetTree()
     {
         super.removedFromWidgetTree();
@@ -857,7 +858,7 @@ public abstract class ObservableWidget extends StandardWidget
      * 
      * @see org.fenggui.Widget#clone()
      */
-    @Override
+    
     public ObservableWidget clone()
     {
         final ObservableWidget result = (ObservableWidget) super.clone();

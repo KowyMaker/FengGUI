@@ -36,7 +36,7 @@ public class FontSAXHandler extends DefaultHandler
         this.texHashMap = texHashMap;
     }
     
-    @Override
+    
     public void characters(char[] ch, int start, int length)
             throws SAXException
     {
@@ -46,7 +46,7 @@ public class FontSAXHandler extends DefaultHandler
         }
     }
     
-    @Override
+    
     public void startElement(String uri, String localName, String qName,
             Attributes attributes) throws SAXException
     {
@@ -71,7 +71,7 @@ public class FontSAXHandler extends DefaultHandler
         }
     }
     
-    @Override
+    
     public void endElement(String uri, String localName, String qName)
             throws SAXException
     {

@@ -32,6 +32,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseDragged(org.fenggui.event
      * .mouse.MouseDraggedEvent)
      */
+    
     public void mouseDragged(MouseDraggedEvent mouseDraggedEvent)
     {
     }
@@ -43,6 +44,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseEntered(org.fenggui.event
      * .mouse.MouseEnteredEvent)
      */
+    
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
     }
@@ -54,6 +56,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseExited(org.fenggui.event.
      * mouse.MouseExitedEvent)
      */
+    
     public void mouseExited(MouseExitedEvent mouseExited)
     {
     }
@@ -65,6 +68,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseMoved(org.fenggui.event.mouse
      * .MouseMovedEvent)
      */
+    
     public void mouseMoved(MouseMovedEvent mouseMovedEvent)
     {
     }
@@ -76,6 +80,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mousePressed(org.fenggui.event
      * .mouse.MousePressedEvent)
      */
+    
     public void mousePressed(MousePressedEvent mousePressedEvent)
     {
     }
@@ -87,6 +92,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseClicked(org.fenggui.event
      * .mouse.MouseClickedEvent)
      */
+    
     public void mouseClicked(MouseClickedEvent mouseClickedEvent)
     {
     }
@@ -98,6 +104,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseDoubleClicked(org.fenggui
      * .event.mouse.MouseDoubleClickedEvent)
      */
+    
     public void mouseDoubleClicked(
             MouseDoubleClickedEvent mouseDoubleClickedEvent)
     {
@@ -110,6 +117,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseReleased(org.fenggui.event
      * .mouse.MouseReleasedEvent)
      */
+    
     public void mouseReleased(MouseReleasedEvent mouseReleasedEvent)
     {
     }
@@ -121,6 +129,7 @@ public abstract class MouseAdapter implements IMouseListener
      * org.fenggui.event.mouse.IMouseListener#mouseWheel(org.fenggui.event.mouse
      * .MouseWheelEvent)
      */
+    
     public void mouseWheel(MouseWheelEvent mouseWheelEvent)
     {
     }

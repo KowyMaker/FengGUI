@@ -46,17 +46,19 @@ public class LabelTooltipDecorator extends Decorator implements ITooltipData
         
     }
     
+    
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         // no painting here
     }
     
-    @Override
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
         setTooltip(stream.processAttribute("tooltip", getTooltip(), ""));
     }
+    
     
     public String getTooltip()
     {
@@ -68,7 +70,7 @@ public class LabelTooltipDecorator extends Decorator implements ITooltipData
         this.tooltip = tooltip;
     }
     
-    @Override
+    
     public LabelTooltipDecorator copy()
     {
         final LabelTooltipDecorator result = new LabelTooltipDecorator();

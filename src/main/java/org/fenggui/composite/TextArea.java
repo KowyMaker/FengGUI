@@ -45,6 +45,7 @@ public class TextArea extends ScrollContainer implements ITextWidget
     {
         textEditor = new TextEditor();
         textEditor.addTextChangedListener(new ITextChangedListener() {
+            
             public void textChanged(TextChangedEvent textChangedEvent)
             {
                 layout();
@@ -67,6 +68,7 @@ public class TextArea extends ScrollContainer implements ITextWidget
     /**
      * @return the text editor's text
      */
+    
     public String getText()
     {
         return textEditor.getText();
@@ -78,6 +80,7 @@ public class TextArea extends ScrollContainer implements ITextWidget
      * @param text
      *            Text to set
      */
+    
     public void setText(String text)
     {
         textEditor.setText(text);

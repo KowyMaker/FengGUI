@@ -126,7 +126,7 @@ public class Button extends ObservableLabelWidget
      * 
      * @see org.fenggui.StatefullWidget#updateState(java.lang.String)
      */
-    @Override
+    
     protected void updateState(String newActiveState)
     {
         getAppearance().setEnabled(STATE_PRESSED, pressed);
@@ -140,7 +140,7 @@ public class Button extends ObservableLabelWidget
      * org.fenggui.ObservableWidget#keyPressed(org.fenggui.event.key.KeyPressedEvent
      * )
      */
-    @Override
+    
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         if (isEnabled())
@@ -164,7 +164,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.ObservableWidget#keyReleased(org.fenggui.event.key.
      * KeyReleasedEvent)
      */
-    @Override
+    
     public void keyReleased(KeyReleasedEvent e)
     {
         if (isEnabled())
@@ -187,7 +187,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.ObservableWidget#mousePressed(org.fenggui.event.mouse.
      * MousePressedEvent)
      */
-    @Override
+    
     public void mousePressed(MousePressedEvent mousePressedEvent)
     {
         if (isEnabled())
@@ -208,7 +208,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.ObservableWidget#mouseReleased(org.fenggui.event.mouse.
      * MouseReleasedEvent)
      */
-    @Override
+    
     public void mouseReleased(MouseReleasedEvent mouseReleasedEvent)
     {
         if (isEnabled())
@@ -232,7 +232,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.ObservableWidget#mouseEntered(org.fenggui.event.mouse.
      * MouseEnteredEvent)
      */
-    @Override
+    
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         if (isEnabled())
@@ -256,7 +256,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.ObservableWidget#mouseExited(org.fenggui.event.mouse.
      * MouseExitedEvent)
      */
-    @Override
+    
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         if (isEnabled())
@@ -305,7 +305,7 @@ public class Button extends ObservableLabelWidget
      * 
      * @see org.fenggui.ObservableLabelWidget#clone()
      */
-    @Override
+    
     public Button clone()
     {
         final Button result = (Button) super.clone();

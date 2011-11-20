@@ -53,6 +53,7 @@ public abstract class Decorator implements IDecorator
      * 
      * @see org.fenggui.decorator.IDecorator#copy()
      */
+    
     public IDecorator copy()
     {
         return null;
@@ -63,6 +64,7 @@ public abstract class Decorator implements IDecorator
      * 
      * @see org.fenggui.decorator.IDecorator#getLabel()
      */
+    
     public String getLabel()
     {
         return label;
@@ -73,6 +75,7 @@ public abstract class Decorator implements IDecorator
      * 
      * @see org.fenggui.decorator.IDecorator#getSpan()
      */
+    
     public Span getSpan()
     {
         // TODO Auto-generated method stub
@@ -84,6 +87,7 @@ public abstract class Decorator implements IDecorator
      * 
      * @see org.fenggui.decorator.IDecorator#isEnabled()
      */
+    
     public boolean isEnabled()
     {
         // TODO Auto-generated method stub
@@ -95,6 +99,7 @@ public abstract class Decorator implements IDecorator
      * 
      * @see org.fenggui.decorator.IDecorator#setEnabled(boolean)
      */
+    
     public void setEnabled(boolean enable)
     {
         enabled = enable;
@@ -105,6 +110,7 @@ public abstract class Decorator implements IDecorator
      * 
      * @see org.fenggui.theme.xml.IXMLStreamable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;
@@ -116,6 +122,7 @@ public abstract class Decorator implements IDecorator
      * @see org.fenggui.theme.xml.IXMLStreamable#process(org.fenggui.theme.xml.
      * InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {

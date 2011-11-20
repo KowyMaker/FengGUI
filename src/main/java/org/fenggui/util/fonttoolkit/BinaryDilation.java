@@ -67,7 +67,7 @@ public class BinaryDilation extends RenderStage
     /**
      * Performs binary dilation.
      */
-    @Override
+    
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

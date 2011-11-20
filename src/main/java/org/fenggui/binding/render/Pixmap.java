@@ -137,7 +137,7 @@ public class Pixmap implements IXMLStreamable
         return width;
     }
     
-    @Override
+    
     public String toString()
     {
         return "Pixmap pos: " + x + ", " + y + " size: " + width + ", "
@@ -196,6 +196,7 @@ public class Pixmap implements IXMLStreamable
      * @see
      * org.fenggui.io.IOStreamSaveable#process(org.fenggui.io.InputOutputStream)
      */
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -218,6 +219,7 @@ public class Pixmap implements IXMLStreamable
      * 
      * @see org.fenggui.io.IOStreamSaveable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         return GENERATE_NAME;

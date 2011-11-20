@@ -27,11 +27,13 @@ import org.fenggui.theme.xml.InputOutputStream;
 public class DummyTexture implements ITexture
 {
     
+    
     public void bind()
     {
         // does nothing! It's a dummy implementation
         
     }
+    
     
     public void dispose()
     {
@@ -39,11 +41,13 @@ public class DummyTexture implements ITexture
         
     }
     
+    
     public int getTextureWidth()
     {
         // does nothing! It's a dummy implementation
         return 200;
     }
+    
     
     public int getTextureHeight()
     {
@@ -51,11 +55,13 @@ public class DummyTexture implements ITexture
         return 100;
     }
     
+    
     public int getImageWidth()
     {
         // does nothing! It's a dummy implementation
         return 82;
     }
+    
     
     public int getImageHeight()
     {
@@ -69,16 +75,19 @@ public class DummyTexture implements ITexture
         
     }
     
+    
     public boolean hasAlpha()
     {
         // does nothing! It's a dummy implementation
         return false;
     }
     
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
     }
+    
     
     public String getUniqueName()
     {
@@ -89,6 +98,7 @@ public class DummyTexture implements ITexture
             ByteBuffer buffer)
     {
     }
+    
     
     public int getID()
     {

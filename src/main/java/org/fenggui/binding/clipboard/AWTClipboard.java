@@ -47,6 +47,7 @@ public class AWTClipboard implements IClipboard
      * 
      * @see org.fenggui.binding.clipboard.IClipboard#getText()
      */
+    
     public String getText()
     {
         final Transferable contents = clipboard.getContents(null);
@@ -77,10 +78,12 @@ public class AWTClipboard implements IClipboard
      * 
      * @see org.fenggui.binding.clipboard.IClipboard#setText(java.lang.String)
      */
+    
     public void setText(String text)
     {
         // System.out.println("Clipboard-set: " + text);
         clipboard.setContents(new StringSelection(text), new ClipboardOwner() {
+            
             
             public void lostOwnership(Clipboard clipboard, Transferable contents)
             {

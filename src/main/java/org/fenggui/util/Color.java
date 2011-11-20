@@ -534,6 +534,7 @@ public class Color implements IXMLStreamable, Cloneable
         alpha = c.alpha;
     }
     
+    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -598,7 +599,7 @@ public class Color implements IXMLStreamable, Cloneable
         alpha = stream.processAttribute("alpha", alpha, 1.0f);
     }
     
-    @Override
+    
     public String toString()
     {
         return red + ", " + green + ", " + blue + ", " + alpha;
@@ -614,6 +615,7 @@ public class Color implements IXMLStreamable, Cloneable
      * 
      * @see org.fenggui.io.IOStreamSaveable#getUniqueName()
      */
+    
     public String getUniqueName()
     {
         for (final String key : colorMap.keySet())
@@ -636,7 +638,7 @@ public class Color implements IXMLStreamable, Cloneable
         return GENERATE_NAME;
     }
     
-    @Override
+    
     public boolean equals(Object o)
     {
         if (this == o)
@@ -670,7 +672,7 @@ public class Color implements IXMLStreamable, Cloneable
         return true;
     }
     
-    @Override
+    
     public int hashCode()
     {
         int result;
@@ -688,7 +690,7 @@ public class Color implements IXMLStreamable, Cloneable
      * 
      * @see java.lang.Object#clone()
      */
-    @Override
+    
     public Color clone()
     {
         try

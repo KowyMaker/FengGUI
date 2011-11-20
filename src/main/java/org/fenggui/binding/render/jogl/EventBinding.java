@@ -73,6 +73,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void keyTyped(KeyEvent e)
     {
         display.fireKeyTypedEvent(e.getKeyChar());
@@ -84,6 +85,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void keyPressed(KeyEvent e)
     {
         final String key = KeyEvent.getKeyText(e.getKeyCode());
@@ -102,6 +104,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void keyReleased(KeyEvent e)
     {
         final String key = KeyEvent.getKeyText(e.getKeyCode());
@@ -120,6 +123,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void mouseDragged(MouseEvent e)
     {
         display.fireMouseDraggedEvent(e.getX(), display.getHeight() - e.getY(),
@@ -132,6 +136,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void mouseMoved(MouseEvent e)
     {
         display.fireMouseMovedEvent(e.getX(), display.getHeight() - e.getY(),
@@ -144,6 +149,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param arg0
      *            the event
      */
+    
     public void mouseClicked(MouseEvent e)
     {
         if (e.getClickCount() % 2 == 0)
@@ -167,6 +173,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void mousePressed(MouseEvent e)
     {
         display.fireMousePressedEvent(e.getX(), display.getHeight() - e.getY(),
@@ -179,6 +186,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void mouseReleased(MouseEvent e)
     {
         display.fireMouseReleasedEvent(e.getX(),
@@ -192,6 +200,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void mouseEntered(MouseEvent e)
     {
     }
@@ -202,6 +211,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @param e
      *            the event
      */
+    
     public void mouseExited(MouseEvent e)
     {
     }
@@ -212,6 +222,7 @@ public class EventBinding implements KeyListener, MouseMotionListener,
      * @see java.awt.event.MouseWheelListener#mouseWheelMoved(java.awt.event.
      * MouseWheelEvent)
      */
+    
     public void mouseWheelMoved(MouseWheelEvent e)
     {
         display.fireMouseWheel(e.getX(), display.getHeight() - e.getY(),
