@@ -63,7 +63,7 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         return mouseOver;
     }
     
-    
+    @Override
     public EntryAppearance getAppearance()
     {
         return appearance;
@@ -104,7 +104,7 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         
         submenu.addKeyListener(new KeyAdapter() {
             
-            
+            @Override
             public void keyPressed(KeyPressedEvent kpe)
             {
                 if (kpe.getKeyClass().equals(Key.ESCAPE))
@@ -179,7 +179,6 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         
     }
     
-    
     public void closeForward()
     {
         currentlyOpen.closeForward();
@@ -189,7 +188,6 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         }
         aktiveMenu = null;
     }
-    
     
     public void closeBackward()
     {
@@ -209,19 +207,19 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         }
     }
     
-    
+    @Override
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         mouseOver = null;
     }
     
-    
+    @Override
     public void mouseDragged(MouseDraggedEvent mp)
     {
         this.mouseMoved(mp.getDisplayX(), mp.getDisplayY());
     }
     
-    
+    @Override
     public void mouseMoved(int displayX, int displayY)
     {
         final int mouseX = displayX - getDisplayX();
@@ -252,7 +250,7 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         }
     }
     
-    
+    @Override
     public void keyPressed(KeyPressedEvent kpe)
     {
         super.keyPressed(kpe);
@@ -343,7 +341,7 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         }
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -352,7 +350,7 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         // XXX implement me!!
     }
     
-    
+    @Override
     public void mousePressed(MousePressedEvent mp)
     {
         if (mouseOver == null)
@@ -363,19 +361,17 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         openMenu(mouseOver.getMenu());
     }
     
-    
     public IMenuChainElement getNextMenu()
     {
         return currentlyOpen;
     }
-    
     
     public IMenuChainElement getPreviousMenu()
     {
         return null;
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         final int sum = this.getMenuBarItemCount() * GAP;
@@ -392,7 +388,7 @@ public class MenuBar extends StandardWidget implements IMenuChainElement
         return new Dimension(itemWidth, itemHeight);
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         final MenuBar menuBar = this;

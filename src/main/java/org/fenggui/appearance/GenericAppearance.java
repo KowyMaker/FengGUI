@@ -97,6 +97,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
          * @see java.lang.Object#clone()
          */
         
+        @Override
         public IntegerStore clone()
         {
             IntegerStore result;
@@ -144,7 +145,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
         super(w, appearance);
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -318,6 +319,7 @@ public abstract class GenericAppearance extends DecoratorAppearance
      * )
      */
     
+    @Override
     protected DecoratorAppearance clone(StandardWidget widget)
     {
         final GenericAppearance result = (GenericAppearance) super

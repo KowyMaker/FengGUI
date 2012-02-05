@@ -168,7 +168,6 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         }
     }
     
-    
     public void setContent(String text, TextAppearance appearance)
     {
         if (!this.text.equals(text))
@@ -177,7 +176,6 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
             updateText(getRenderer(appearance));
         }
     }
-    
     
     public void setContent(Object text, TextAppearance appearance)
     {
@@ -192,30 +190,25 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         }
     }
     
-    
     public String getContent()
     {
         return text;
     }
-    
     
     public String getUniqueName()
     {
         return GENERATE_NAME;
     }
     
-    
     public boolean isMultiline()
     {
         return multiline;
     }
     
-    
     public boolean isWordWarping()
     {
         return wordWarping;
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
@@ -227,7 +220,6 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         wordWarping = stream.processAttribute("wordwarped", wordWarping, false);
     }
     
-    
     public void setMultiline(boolean multiline, TextAppearance appearance)
     {
         if (multiline != this.multiline)
@@ -237,7 +229,6 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
             updateText(getRenderer(appearance));
         }
     }
-    
     
     public void setWordWarping(boolean warp, TextAppearance appearance)
     {
@@ -257,12 +248,10 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         }
     }
     
-    
     public boolean addSizeChangedListener(ISizeChangedListener listener)
     {
         return sizeChangedListeners.add(listener);
     }
-    
     
     public boolean removeSizeChangedListener(ISizeChangedListener listener)
     {
@@ -270,12 +259,10 @@ public class TextContentManager implements ITextContentManager, IXMLStreamable
         
     }
     
-    
     public Dimension getSize()
     {
         return contentSizeCache;
     }
-    
     
     public void adaptChange(int x, int y, TextAppearance appearance)
     {

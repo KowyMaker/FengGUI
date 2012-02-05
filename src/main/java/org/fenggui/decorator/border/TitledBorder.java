@@ -98,7 +98,7 @@ public class TitledBorder extends Border
         this.textColor = textColor;
     }
     
-    
+    @Override
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         g.setColor(textColor);
@@ -139,6 +139,7 @@ public class TitledBorder extends Border
      * @see org.fenggui.decorator.border.Border#copy()
      */
     
+    @Override
     public TitledBorder copy()
     {
         final TitledBorder border = new TitledBorder(font, "", textColor);

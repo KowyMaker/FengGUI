@@ -41,14 +41,14 @@ public abstract class OutputOnlyStream extends InputOutputStream
         dontSaveDefaultValues = !saveDefaultValues;
     }
     
-    
+    @Override
     public boolean startSubcontext(String name)
     {
         contextHandler.startSubcontext(name);
         return true;
     }
     
-    
+    @Override
     public void endSubcontext()
     {
         contextHandler.endSubcontext();
@@ -81,6 +81,7 @@ public abstract class OutputOnlyStream extends InputOutputStream
      * @see org.fenggui.io.InputOutputStream#modifiesValues()
      */
     
+    @Override
     public boolean isInputStream()
     {
         return false;
@@ -100,6 +101,7 @@ public abstract class OutputOnlyStream extends InputOutputStream
      *             if an I/O exception is occured
      */
     
+    @Override
     public int processAttribute(String name, int value, int defaultValue)
             throws IOException, MalformedElementException
     {
@@ -132,6 +134,7 @@ public abstract class OutputOnlyStream extends InputOutputStream
      *             if an I/O exception is occured
      */
     
+    @Override
     public double processAttribute(String name, double value,
             double defaultValue) throws IOException, MalformedElementException
     {
@@ -166,6 +169,7 @@ public abstract class OutputOnlyStream extends InputOutputStream
      *             if an I/O exception is occured
      */
     
+    @Override
     public boolean processAttribute(String name, boolean value,
             boolean defaultValue) throws IOException, MalformedElementException
     {
@@ -198,6 +202,7 @@ public abstract class OutputOnlyStream extends InputOutputStream
      *             if an I/O exception is occured
      */
     
+    @Override
     public String processAttribute(String name, String value,
             String defaultValue) throws IOException, MalformedElementException
     {

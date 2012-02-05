@@ -39,7 +39,6 @@ public class KeepOnPositionActor implements IActor
     private Point                         offset   = new Point(0, 0);
     private final IDisplayResizedListener listener = new IDisplayResizedListener() {
                                                        
-                                                       
                                                        public void displayResized(
                                                                DisplayResizedEvent displayResizedEvent)
                                                        {

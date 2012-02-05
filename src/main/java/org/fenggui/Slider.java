@@ -185,6 +185,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
      * org.fenggui.ObservableWidget#activated(org.fenggui.event.ActivationEvent)
      */
     
+    @Override
     public void activated(ActivationEvent activationEvent)
     {
         final boolean enabled = activationEvent.isEnabled();
@@ -209,7 +210,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         super.activated(activationEvent);
     }
     
-    
+    @Override
     public IWidget getWidget(int x, int y)
     {
         if (!getAppearance().insideMargin(x, y))
@@ -239,7 +240,6 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
             sliderButton = slider;
         }
         
-        
         public void select(int x, int y, Set<Key> modifiers)
         {
             cacheDisplayX = sliderButton.getDisplayX();
@@ -250,7 +250,6 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
             deltaX = sliderButton.getSliderStart() - x;
             deltaY = sliderButton.getSliderStart() - y;
         }
-        
         
         public void drag(int x, int y, Set<Key> modifiers)
         {
@@ -286,12 +285,10 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
             }
         }
         
-        
         public void drop(int x, int y, IWidget dropOn, Set<Key> modifiers)
         {
             // pressed = false;
         }
-        
         
         public boolean isDndWidget(IWidget w, int x, int y)
         {
@@ -299,7 +296,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         }
     }
     
-    
+    @Override
     public void addedToWidgetTree()
     {
         if (getDisplay() != null && isEnabled())
@@ -312,7 +309,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         super.addedToWidgetTree();
     }
     
-    
+    @Override
     public void removedFromWidgetTree()
     {
         if (getDisplay() != null)
@@ -364,7 +361,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         this.clickJump = clickJump;
     }
     
-    
+    @Override
     public void layout()
     {
         final int contentHeight = getAppearance().getContentHeight();
@@ -404,7 +401,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         }
     }
     
-    
+    @Override
     public void mousePressed(MousePressedEvent mousePressedEvent)
     {
         super.mousePressed(mousePressedEvent);
@@ -484,24 +481,20 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         setValue(getValue());
     }
     
-    
     public IWidget getNextTraversableWidget(IWidget start)
     {
         return getParent().getNextTraversableWidget(this);
     }
-    
     
     public IWidget getPreviousTraversableWidget(IWidget start)
     {
         return getParent().getPreviousTraversableWidget(this);
     }
     
-    
     public IWidget getNextWidget(IWidget start)
     {
         return getParent().getNextWidget(this);
     }
-    
     
     public IWidget getPreviousWidget(IWidget start)
     {
@@ -545,7 +538,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         }
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -566,7 +559,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         // Size in slider direction + 1 so it is movable from min to max value.
@@ -582,7 +575,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         }
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         // If the slider is part of a scrollbar,
@@ -597,7 +590,6 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
         }
     }
     
-    
     public boolean isKeyTraversalRoot()
     {
         return false;
@@ -609,6 +601,7 @@ public class Slider extends StatefullWidget<DefaultAppearance> implements
      * @see org.fenggui.StatefullWidget#clone()
      */
     
+    @Override
     public Slider clone()
     {
         final Slider result = (Slider) super.clone();

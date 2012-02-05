@@ -46,7 +46,7 @@ public class PixelReplacer extends RenderStage
         this.matchColor = matchColor;
     }
     
-    
+    @Override
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

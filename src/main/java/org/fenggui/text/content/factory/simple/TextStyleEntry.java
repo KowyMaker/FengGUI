@@ -159,7 +159,7 @@ public class TextStyleEntry implements IXMLStreamable, Cloneable
         return appearance.getRenderer(fontStyle);
     }
     
-    
+    @Override
     public TextStyleEntry clone()
     {
         TextStyleEntry result;

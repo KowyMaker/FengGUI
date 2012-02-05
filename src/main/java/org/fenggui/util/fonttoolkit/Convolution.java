@@ -47,7 +47,7 @@ public class Convolution extends RenderStage
         this.normalize = normalize;
     }
     
-    
+    @Override
     public void renderChar(FontMetrics fontMetrics, BufferedImage image,
             char c, int safetyMargin)
     {

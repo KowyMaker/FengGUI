@@ -88,7 +88,6 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
     {
         sizeChangedListener = new ISizeChangedListener() {
             
-            
             public void sizeChanged(SizeChangedEvent event)
             {
                 ObservableLabelWidget.this.updateMinSize();
@@ -108,6 +107,7 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
      * DecoratorAppearance)
      */
     
+    @Override
     public void setAppearance(LabelAppearance appearance)
     {
         super.setAppearance(appearance);
@@ -166,6 +166,7 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
      * @see org.fenggui.Widget#sizeChanged(org.fenggui.event.SizeChangedEvent)
      */
     
+    @Override
     public void sizeChanged(SizeChangedEvent event)
     {
         textData.adaptChange(getAppearance().getContentWidth(), getAppearance()
@@ -181,6 +182,7 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
      * )
      */
     
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -203,6 +205,7 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
      * @see org.fenggui.StandardWidget#getMinContentSize()
      */
     
+    @Override
     public Dimension getMinContentSize()
     {
         int width = 0;
@@ -241,6 +244,7 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
      * , org.fenggui.binding.render.IOpenGL)
      */
     
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         int x = 0;
@@ -345,6 +349,7 @@ public class ObservableLabelWidget extends StatefullWidget<LabelAppearance>
      * @see org.fenggui.StatefullWidget#clone()
      */
     
+    @Override
     public ObservableLabelWidget clone()
     {
         final ObservableLabelWidget result = (ObservableLabelWidget) super

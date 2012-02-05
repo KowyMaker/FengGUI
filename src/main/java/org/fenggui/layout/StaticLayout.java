@@ -44,6 +44,7 @@ public class StaticLayout extends LayoutManager
      * Does nothing!
      */
     
+    @Override
     public void doLayout(Container container, List<IWidget> content)
     {
     }
@@ -65,7 +66,7 @@ public class StaticLayout extends LayoutManager
                 - widget.getSize().getHeight() / 2);
     }
     
-    
+    @Override
     public Dimension computeMinSize(List<IWidget> content)
     {
         int width = 0;
@@ -77,7 +78,6 @@ public class StaticLayout extends LayoutManager
         }
         return new Dimension(width, height);
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

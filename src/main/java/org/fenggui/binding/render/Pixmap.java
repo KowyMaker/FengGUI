@@ -137,7 +137,7 @@ public class Pixmap implements IXMLStreamable
         return width;
     }
     
-    
+    @Override
     public String toString()
     {
         return "Pixmap pos: " + x + ", " + y + " size: " + width + ", "

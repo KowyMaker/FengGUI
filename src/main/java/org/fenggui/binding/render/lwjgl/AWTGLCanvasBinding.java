@@ -70,16 +70,13 @@ public class AWTGLCanvasBinding extends Binding
                 fireDisplayResizedEvent(canvas.getWidth(), canvas.getHeight());
             }
             
-            
             public void componentMoved(ComponentEvent arg0)
             {
             }
             
-            
             public void componentShown(ComponentEvent arg0)
             {
             }
-            
             
             public void componentHidden(ComponentEvent arg0)
             {
@@ -87,37 +84,37 @@ public class AWTGLCanvasBinding extends Binding
         });
     }
     
-    
+    @Override
     public ITexture getTexture(InputStream is) throws IOException
     {
         return LWJGLTexture.uploadTextureToVideoRAM(ImageIO.read(is));
     }
     
-    
+    @Override
     public ITexture getTexture(BufferedImage bi)
     {
         return LWJGLTexture.uploadTextureToVideoRAM(bi);
     }
     
-    
+    @Override
     public int getCanvasWidth()
     {
         return canvas.getWidth();
     }
     
-    
+    @Override
     public int getCanvasHeight()
     {
         return canvas.getHeight();
     }
     
-    
+    @Override
     public JOGLCursorFactory getCursorFactory()
     {
         return cursorFactory;
     }
     
-    
+    @Override
     public IClipboard getClipboard()
     {
         return clipboard;

@@ -80,6 +80,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * org.fenggui.ObservableWidget#focusChanged(org.fenggui.event.FocusEvent)
      */
     
+    @Override
     public void focusChanged(FocusEvent focusGainedEvent)
     {
         updateState();
@@ -93,6 +94,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * MouseEnteredEvent)
      */
     
+    @Override
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         StatefullWidget.this.setHovered(true);
@@ -109,6 +111,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * MouseExitedEvent)
      */
     
+    @Override
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         StatefullWidget.this.setHovered(false);
@@ -198,6 +201,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * @see org.fenggui.StandardWidget#getAppearance()
      */
     
+    @Override
     public T getAppearance()
     {
         return this.appearance;
@@ -267,6 +271,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * @see org.fenggui.ObservableWidget#setEnabled(boolean)
      */
     
+    @Override
     public void setEnabled(boolean enabled)
     {
         super.setEnabled(enabled);
@@ -279,6 +284,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * @see org.fenggui.ObservableWidget#toString()
      */
     
+    @Override
     public String toString()
     {
         final StringBuffer sb = new StringBuffer(super.toString());
@@ -326,8 +332,8 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
      * 
      * @see org.fenggui.ObservableWidget#clone()
      */
+    @Override
     @SuppressWarnings("unchecked")
-    
     public StatefullWidget<T> clone()
     {
         final StatefullWidget<T> result = (StatefullWidget<T>) super.clone();

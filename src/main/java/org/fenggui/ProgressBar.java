@@ -45,7 +45,6 @@ public class ProgressBar extends StandardWidget
     
     protected ISizeChangedListener sizeChangedListener = new ISizeChangedListener() {
                                                            
-                                                           
                                                            public void sizeChanged(
                                                                    SizeChangedEvent event)
                                                            {
@@ -102,13 +101,13 @@ public class ProgressBar extends StandardWidget
         updateMinSize();
     }
     
-    
+    @Override
     public EntryAppearance getAppearance()
     {
         return appearance;
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         if (textData.isEmpty())
@@ -121,7 +120,7 @@ public class ProgressBar extends StandardWidget
         }
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         if (horizontal)
@@ -156,6 +155,7 @@ public class ProgressBar extends StandardWidget
      * @see org.fenggui.Widget#sizeChanged(org.fenggui.event.SizeChangedEvent)
      */
     
+    @Override
     public void sizeChanged(SizeChangedEvent event)
     {
         super.sizeChanged(event);

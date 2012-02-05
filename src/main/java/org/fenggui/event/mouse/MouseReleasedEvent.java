@@ -49,13 +49,13 @@ public class MouseReleasedEvent extends MouseEvent
         return button;
     }
     
-    
+    @Override
     public int getDisplayX()
     {
         return displayX;
     }
     
-    
+    @Override
     public int getDisplayY()
     {
         return displayY;

@@ -98,7 +98,6 @@ public class Label extends StandardWidget implements ILabel, Cloneable
     {
         sizeChangedListener = new ISizeChangedListener() {
             
-            
             public void sizeChanged(SizeChangedEvent event)
             {
                 Label.this.updateMinSize();
@@ -110,18 +109,16 @@ public class Label extends StandardWidget implements ILabel, Cloneable
         textData.addSizeChangedListener(sizeChangedListener);
     }
     
-    
+    @Override
     public LabelAppearance getAppearance()
     {
         return appearance;
     }
     
-    
     public Pixmap getPixmap()
     {
         return pixmap;
     }
-    
     
     public void setPixmap(Pixmap pixmap)
     {
@@ -135,6 +132,7 @@ public class Label extends StandardWidget implements ILabel, Cloneable
      * @see org.fenggui.Widget#sizeChanged(org.fenggui.event.SizeChangedEvent)
      */
     
+    @Override
     public void sizeChanged(SizeChangedEvent event)
     {
         textData.adaptChange(getAppearance().getContentWidth(), getAppearance()
@@ -164,7 +162,7 @@ public class Label extends StandardWidget implements ILabel, Cloneable
         textData.setContent(text, getAppearance());
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -178,7 +176,7 @@ public class Label extends StandardWidget implements ILabel, Cloneable
         }
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         int width = 0;
@@ -209,7 +207,7 @@ public class Label extends StandardWidget implements ILabel, Cloneable
         return new Dimension(width, height);
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         int x = 0;
@@ -291,6 +289,7 @@ public class Label extends StandardWidget implements ILabel, Cloneable
      * @see org.fenggui.Widget#clone()
      */
     
+    @Override
     public Label clone()
     {
         final Label result = (Label) super.clone();

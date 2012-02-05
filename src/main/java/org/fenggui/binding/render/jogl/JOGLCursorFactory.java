@@ -71,7 +71,7 @@ public class JOGLCursorFactory extends CursorFactory
                 parent));
     }
     
-    
+    @Override
     public Cursor createCursor(int xHotspot, int yHotspot, BufferedImage image)
     {
         final Toolkit tk = Toolkit.getDefaultToolkit();

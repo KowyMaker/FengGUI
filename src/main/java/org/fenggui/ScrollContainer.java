@@ -109,7 +109,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
     
     private final ISizeChangedListener sizeChangedListener        = new ISizeChangedListener() {
                                                                       
-                                                                      
                                                                       public void sizeChanged(
                                                                               SizeChangedEvent event)
                                                                       {
@@ -226,7 +225,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         }
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -307,7 +306,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         verticalScrollBar.getSlider().getSliderButton().setTraversable(false);
     }
     
-    
+    @Override
     public void addedToWidgetTree()
     {
         if (innerWidget != null)
@@ -324,7 +323,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         }
     }
     
-    
+    @Override
     public void removedFromWidgetTree()
     {
         if (innerWidget != null)
@@ -346,6 +345,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
      * Widget or one of the scroll bars.
      */
     
+    @Override
     public IWidget getWidget(int x, int y)
     {
         if (!getAppearance().insideMargin(x, y))
@@ -640,7 +640,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         this.scrollVertical(1.0d);
     }
     
-    
+    @Override
     public void mouseWheel(MouseWheelEvent mouseWheelEvent)
     {
         if (displayVerticalScrollBar && !mouseWheelEvent.isAlreadyUsed())
@@ -656,7 +656,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         super.mouseWheel(mouseWheelEvent);
     }
     
-    
+    @Override
     public DefaultAppearance getAppearance()
     {
         return appearance;
@@ -667,6 +667,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
      * bars (if required).
      */
     
+    @Override
     public void layout()
     {
         if (innerWidget == null)
@@ -854,12 +855,10 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         
     }
     
-    
     public void addWidget(IWidget w, int position)
     {
         setInnerWidget(w);
     }
-    
     
     public IWidget getNextTraversableWidget(IWidget start)
     {
@@ -879,7 +878,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         
         return null;
     }
-    
     
     public IWidget getPreviousTraversableWidget(IWidget start)
     {
@@ -901,7 +899,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         
     }
     
-    
     public IWidget getNextWidget(IWidget start)
     {
         if (start == null)
@@ -913,7 +910,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
             return null;
         }
     }
-    
     
     public IWidget getPreviousWidget(IWidget start)
     {
@@ -934,6 +930,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
      * @see org.fenggui.Widget#isTraversable()
      */
     
+    @Override
     public boolean isTraversable()
     {
         if (innerWidget == null)
@@ -964,7 +961,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         return verticalBarOnLeft;
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         // calc min height from scrollbars that are currently in use
@@ -1006,7 +1003,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         return new Dimension(tmpWidth, tmpHeight);
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         final IWidget innerWidget = this.getInnerWidget();
@@ -1096,7 +1093,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         }
     }
     
-    
     public void removeWidget(IWidget... c)
     {
         if (c.length >= 1 && c[0] == innerWidget)
@@ -1104,7 +1100,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
             removeInnerWidget();
         }
     }
-    
     
     public List<IWidget> getContent()
     {
@@ -1117,7 +1112,6 @@ public class ScrollContainer extends StandardWidget implements IContainer,
     {
         keyTraversalRoot = root;
     }
-    
     
     public boolean isKeyTraversalRoot()
     {
@@ -1159,6 +1153,7 @@ public class ScrollContainer extends StandardWidget implements IContainer,
      * @see org.fenggui.Widget#clone()
      */
     
+    @Override
     public ScrollContainer clone()
     {
         final ScrollContainer result = (ScrollContainer) super.clone();

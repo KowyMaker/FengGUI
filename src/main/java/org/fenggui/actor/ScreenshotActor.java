@@ -50,7 +50,6 @@ public class ScreenshotActor implements IActor
     private File                 screenshotFile    = null;
     private final IEventListener keylistener       = new IEventListener() {
                                                        
-                                                       
                                                        public void processEvent(
                                                                Event event)
                                                        {

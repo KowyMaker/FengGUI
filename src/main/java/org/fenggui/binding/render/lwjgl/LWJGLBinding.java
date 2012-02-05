@@ -59,7 +59,7 @@ public class LWJGLBinding extends Binding
         XMLTheme.TYPE_REGISTRY.register("Texture", LWJGLTexture.class);
     }
     
-    
+    @Override
     public ITexture getTexture(InputStream is) throws IOException
     {
         if (!this.getOpenGL().isOpenGLThread())
@@ -70,7 +70,7 @@ public class LWJGLBinding extends Binding
         return LWJGLTexture.uploadTextureToVideoRAM(ImageIO.read(is));
     }
     
-    
+    @Override
     public ITexture getTexture(BufferedImage bi)
     {
         if (!this.getOpenGL().isOpenGLThread())
@@ -88,6 +88,7 @@ public class LWJGLBinding extends Binding
      * @see joglui.binding.Binding#getCanvasWidth()
      */
     
+    @Override
     public int getCanvasWidth()
     {
         return Display.getDisplayMode().getWidth();
@@ -99,18 +100,19 @@ public class LWJGLBinding extends Binding
      * @see joglui.binding.Binding#getCanvasHeight()
      */
     
+    @Override
     public int getCanvasHeight()
     {
         return Display.getDisplayMode().getHeight();
     }
     
-    
+    @Override
     public LWJGLCursorFactory getCursorFactory()
     {
         return cursorFactory;
     }
     
-    
+    @Override
     public IClipboard getClipboard()
     {
         return clipboard;

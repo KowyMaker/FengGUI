@@ -61,6 +61,7 @@ public class XMLInputStream extends InputOnlyStream
      * @see org.fenggui.io.InputOutputStream#process(java.lang.String, int)
      */
     
+    @Override
     public int processAttribute(String name, int value) throws IOException,
             MissingAttributeException, MalformedElementException
     {
@@ -91,6 +92,7 @@ public class XMLInputStream extends InputOnlyStream
      * java.lang.String)
      */
     
+    @Override
     public String processAttribute(String name, String value)
             throws IOException, MissingAttributeException
     {
@@ -137,6 +139,7 @@ public class XMLInputStream extends InputOnlyStream
      * @see org.fenggui.io.InputOutputStream#process(java.lang.String, float)
      */
     
+    @Override
     public double processAttribute(String name, double value)
             throws IOException, MissingAttributeException,
             MalformedElementException
@@ -160,7 +163,7 @@ public class XMLInputStream extends InputOnlyStream
                 .createDefault(name, getParsingContext());
     }
     
-    
+    @Override
     public boolean processAttribute(String name, boolean value)
             throws IOException, MalformedElementException,
             MissingAttributeException
@@ -189,7 +192,7 @@ public class XMLInputStream extends InputOnlyStream
         }
     }
     
-    
+    @Override
     protected IParseContext getParsingContext()
     {
         final Element parent = activeElement.getParent();
@@ -231,6 +234,7 @@ public class XMLInputStream extends InputOnlyStream
      * @throws MissingElementException
      */
     
+    @Override
     public boolean startSubcontext(String name) throws IXMLStreamableException
     {
         Element child = null;
@@ -267,12 +271,13 @@ public class XMLInputStream extends InputOnlyStream
      * @see org.fenggui.io.InputOutputStream#endSubcontext()
      */
     
+    @Override
     public void endSubcontext()
     {
         activeElement = activeElement.getParent();
     }
     
-    
+    @Override
     public <T extends IXMLStreamable> T processChild(String name, T value,
             Class<T> clazz) throws IOException, IXMLStreamableException
     {
@@ -290,7 +295,7 @@ public class XMLInputStream extends InputOnlyStream
         return t;
     }
     
-    
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends IXMLStreamable> T processChild(T value,
             TypeRegister typeRegister) throws IOException,
@@ -321,7 +326,7 @@ public class XMLInputStream extends InputOnlyStream
                 getParsingContext());
     }
     
-    
+    @Override
     @SuppressWarnings("unchecked")
     public <T extends IXMLStreamable> void processChildren(String childName,
             List children, Class<T> childClass) throws IOException,
@@ -345,6 +350,7 @@ public class XMLInputStream extends InputOnlyStream
      * java.util.Map, java.lang.Class)
      */
     
+    @Override
     public <T extends IXMLStreamable> void processChildren(String childName,
             Map<String, T> children, Class<T> childClass) throws IOException,
             IXMLStreamableException
@@ -372,6 +378,7 @@ public class XMLInputStream extends InputOnlyStream
      * java.util.Map, java.lang.Enum)
      */
     
+    @Override
     public <T extends Enum<T>> void processEnumChildren(String childName,
             Map<String, T> children, Class<T> enumClass) throws IOException,
             IXMLStreamableException
@@ -423,8 +430,8 @@ public class XMLInputStream extends InputOnlyStream
         }
     }
     
+    @Override
     @SuppressWarnings("unchecked")
-    
     public <T extends IXMLStreamable> void processChildren(List<T> children,
             TypeRegister typeRegister) throws IOException,
             IXMLStreamableException
@@ -463,8 +470,8 @@ public class XMLInputStream extends InputOnlyStream
      * org.fenggui.theme.xml.InputOutputStream#processChildren(java.util.Map,
      * org.fenggui.theme.xml.TypeRegister)
      */
+    @Override
     @SuppressWarnings("unchecked")
-    
     public <T extends IXMLStreamable> void processChildren(
             Map<String, T> children, TypeRegister typeRegister)
             throws IOException, IXMLStreamableException
@@ -512,7 +519,7 @@ public class XMLInputStream extends InputOnlyStream
         return activeElement.getName();
     }
     
-    
+    @Override
     public <T extends IXMLStreamable> void processInherentChild(String name,
             T value) throws IOException, IXMLStreamableException
     {
@@ -662,7 +669,7 @@ public class XMLInputStream extends InputOnlyStream
         }
     }
     
-    
+    @Override
     public void close() throws IOException
     {
         in.close();

@@ -63,6 +63,7 @@ public abstract class StandardWidget extends Widget implements IXMLStreamable
      * @return The minimal size of the content.
      */
     
+    @Override
     public abstract Dimension getMinContentSize();
     
     /**
@@ -89,6 +90,7 @@ public abstract class StandardWidget extends Widget implements IXMLStreamable
      * @see org.fenggui.Widget#getWidget(int, int)
      */
     
+    @Override
     public IWidget getWidget(int x, int y)
     {
         if (!isVisible())
@@ -117,6 +119,7 @@ public abstract class StandardWidget extends Widget implements IXMLStreamable
      * @see org.fenggui.Widget#paint(org.fenggui.binding.render.Graphics)
      */
     
+    @Override
     public void paint(Graphics g)
     {
         if (isVisible())
@@ -138,6 +141,7 @@ public abstract class StandardWidget extends Widget implements IXMLStreamable
      * @see org.fenggui.Widget#updateMinSize()
      */
     
+    @Override
     public void updateMinSize()
     {
         Dimension minSize;
@@ -227,6 +231,7 @@ public abstract class StandardWidget extends Widget implements IXMLStreamable
      * @see org.fenggui.Widget#process(org.fenggui.theme.xml.InputOutputStream)
      */
     
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -261,6 +266,7 @@ public abstract class StandardWidget extends Widget implements IXMLStreamable
      * @see org.fenggui.Widget#getUniqueName()
      */
     
+    @Override
     public String getUniqueName()
     {
         return GENERATE_NAME;

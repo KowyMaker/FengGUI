@@ -123,7 +123,6 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
         setDefaultHoverCursorType(CursorType.TEXT);
         textSizeChangedListener = new ISizeChangedListener() {
             
-            
             public void sizeChanged(SizeChangedEvent event)
             {
                 updateMinSize();
@@ -141,6 +140,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * org.fenggui.StatefullWidget#focusChanged(org.fenggui.event.FocusEvent)
      */
     
+    @Override
     public void focusChanged(FocusEvent focusGainedEvent)
     {
         textData.setEditMode(focusGainedEvent.isFocusGained());
@@ -154,6 +154,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * @see org.fenggui.Widget#sizeChanged(org.fenggui.event.SizeChangedEvent)
      */
     
+    @Override
     public void sizeChanged(SizeChangedEvent event)
     {
         textData.adaptChange(getAppearance().getContentWidth(), getAppearance()
@@ -171,6 +172,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * )
      */
     
+    @Override
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         if (isEnabled())
@@ -195,6 +197,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * )
      */
     
+    @Override
     public void keyTyped(KeyTypedEvent keyTypedEvent)
     {
         if (isEnabled())
@@ -218,6 +221,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * .MouseDoubleClickedEvent)
      */
     
+    @Override
     public void mouseDoubleClicked(MouseDoubleClickedEvent event)
     {
         if (isEnabled())
@@ -239,6 +243,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * MouseEnteredEvent)
      */
     
+    @Override
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         if (isEnabled())
@@ -257,6 +262,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * MouseExitedEvent)
      */
     
+    @Override
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         Binding.getInstance().getCursorFactory()
@@ -548,7 +554,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
         textData.addContentAtBeginning(content, getAppearance());
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -561,6 +567,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * @see org.fenggui.StatefullWidget#setEnabled(boolean)
      */
     
+    @Override
     public void setEnabled(boolean enabled)
     {
         super.setEnabled(enabled);
@@ -580,12 +587,10 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
             this.parent = parent;
         }
         
-        
         public boolean isDndWidget(IWidget w, int displayX, int displayY)
         {
             return w.equals(parent);
         }
-        
         
         public void select(int displayX, int displayY, Set<Key> modifiers)
         {
@@ -612,7 +617,6 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
             textData.clickedOn(xPos, yPos, modifiers, getAppearance());
         }
         
-        
         public void drag(int displayX, int displayY, Set<Key> modifiers)
         {
             if (!parent.isEnabled())
@@ -637,7 +641,6 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
             
             textData.dragedTo(xPos, yPos, modifiers, getAppearance());
         }
-        
         
         public void drop(int displayX, int displayY, IWidget droppedOn,
                 Set<Key> modifiers)
@@ -723,6 +726,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * @see org.fenggui.StandardWidget#updateMinSize()
      */
     
+    @Override
     public void updateMinSize()
     {
         textData.Update(getAppearance());
@@ -730,7 +734,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
         super.updateMinSize();
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         final Dimension size = textData.getSize();
@@ -743,7 +747,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
         return size;
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
         // user contribution to make text appear within visible area
@@ -876,6 +880,7 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
      * @see org.fenggui.StatefullWidget#clone()
      */
     
+    @Override
     public TextEditor clone()
     {
         final TextEditor result = (TextEditor) super.clone();

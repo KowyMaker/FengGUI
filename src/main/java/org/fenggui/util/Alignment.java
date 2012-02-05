@@ -38,12 +38,13 @@ public enum Alignment
     TOP_LEFT(0.0, 1.0)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX(), o.getY() + s.getHeight() - 1);
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX(), o.getY() + s.getHeight() - b.getHeight());
@@ -54,13 +55,14 @@ public enum Alignment
     TOP(0.5, 1.0)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX() + (s.getWidth() - 1) / 2, o.getY()
                     + s.getHeight() - 1);
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX() + (s.getWidth() - b.getWidth()) / 2,
@@ -71,13 +73,14 @@ public enum Alignment
     TOP_RIGHT(1.0, 1.0)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX() + s.getWidth() - 1, o.getY()
                     + s.getHeight() - 1);
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX() + s.getWidth() - b.getWidth(), o.getY()
@@ -88,12 +91,13 @@ public enum Alignment
     LEFT(0.0, 0.5)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX(), o.getY() + (s.getHeight() - 1) / 2);
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX(), o.getY()
@@ -104,13 +108,14 @@ public enum Alignment
     MIDDLE(0.5, 0.5)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX() + (s.getWidth() - 1) / 2, o.getY()
                     + (s.getHeight() - 1) / 2);
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX() + (s.getWidth() - b.getWidth()) / 2,
@@ -121,13 +126,14 @@ public enum Alignment
     RIGHT(1.0, 0.5)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX() + s.getWidth() - 1, o.getY()
                     + (s.getHeight() - 1) / 2);
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX() + s.getWidth() - b.getWidth(), o.getY()
@@ -138,12 +144,13 @@ public enum Alignment
     BOTTOM_LEFT(0.0, 0.0)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX(), o.getY());
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX(), o.getY());
@@ -153,12 +160,13 @@ public enum Alignment
     BOTTOM(0.5, 0.0)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX() + (s.getWidth() - 1) / 2, o.getY());
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX() + (s.getWidth() - b.getWidth()) / 2,
@@ -169,12 +177,13 @@ public enum Alignment
     BOTTOM_RIGHT(1.0, 0.0)
     {
         
+        @Override
         public Point align(Point o, Dimension s)
         {
             return new Point(o.getX() + s.getWidth() - 1, o.getY());
         }
         
-        
+        @Override
         public Point alignBox(Point o, Dimension s, Dimension b)
         {
             return new Point(o.getX() + s.getWidth() - b.getWidth(), o.getY());
@@ -182,7 +191,6 @@ public enum Alignment
     };
     
     public static final StorageFormat<Alignment, String> STORAGE_FORMAT = new StorageFormat<Alignment, String>() {
-                                                                            
                                                                             
                                                                             public String encode(
                                                                                     Alignment obj)
@@ -212,7 +220,6 @@ public enum Alignment
                                                                                         return "left";
                                                                                 }
                                                                             }
-                                                                            
                                                                             
                                                                             public Alignment decode(
                                                                                     String encodedObj)

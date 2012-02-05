@@ -48,7 +48,6 @@ import org.fenggui.composite.menu.MenuBar;
 public abstract class StandardTheme implements ITheme
 {
     
-    
     public void setUp(IWidget widget)
     {
         if (widget instanceof Button)

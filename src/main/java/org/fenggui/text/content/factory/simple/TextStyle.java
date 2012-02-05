@@ -113,7 +113,7 @@ public class TextStyle implements IXMLStreamable, Cloneable
         stream.processChildren("Style", styles, TextStyleEntry.class);
     }
     
-    
+    @Override
     public TextStyle clone()
     {
         TextStyle result;

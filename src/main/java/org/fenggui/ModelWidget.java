@@ -124,8 +124,8 @@ public abstract class ModelWidget<T extends DecoratorAppearance, M extends IMode
      * 
      * @see org.fenggui.StatefullWidget#clone()
      */
+    @Override
     @SuppressWarnings("unchecked")
-    
     public ModelWidget<T, M> clone()
     {
         final ModelWidget<T, M> result = (ModelWidget<T, M>) super.clone();

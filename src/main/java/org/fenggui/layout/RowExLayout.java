@@ -95,6 +95,7 @@ public class RowExLayout extends LayoutManager
      * java.util.List)
      */
     
+    @Override
     public Dimension computeMinSize(List<IWidget> content)
     {
         int minW = 0;
@@ -149,6 +150,7 @@ public class RowExLayout extends LayoutManager
      * java.util.List)
      */
     
+    @Override
     public void doLayout(Container container, List<IWidget> content)
     {
         int leftSpace;

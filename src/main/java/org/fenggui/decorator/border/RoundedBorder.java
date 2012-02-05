@@ -82,7 +82,7 @@ public class RoundedBorder extends Border
         return weight;
     }
     
-    
+    @Override
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         g.setColor(color);
@@ -98,6 +98,7 @@ public class RoundedBorder extends Border
      * @see org.fenggui.decorator.border.Border#copy()
      */
     
+    @Override
     public IDecorator copy()
     {
         final RoundedBorder result = new RoundedBorder(color, weight, radius);

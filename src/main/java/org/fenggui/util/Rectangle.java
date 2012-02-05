@@ -170,13 +170,13 @@ public class Rectangle implements Cloneable
                 && y <= this.y + height;
     }
     
-    
+    @Override
     public String toString()
     {
         return "[" + x + "," + y + " " + width + "x" + height + "]";
     }
     
-    
+    @Override
     public boolean equals(Object o)
     {
         if (this == o)
@@ -210,7 +210,7 @@ public class Rectangle implements Cloneable
         return true;
     }
     
-    
+    @Override
     public int hashCode()
     {
         int result;
@@ -227,6 +227,7 @@ public class Rectangle implements Cloneable
      * @see java.lang.Object#clone()
      */
     
+    @Override
     public Rectangle clone() throws CloneNotSupportedException
     {
         return (Rectangle) super.clone();

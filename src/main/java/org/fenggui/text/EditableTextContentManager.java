@@ -62,7 +62,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     
     private final ISizeChangedListener       contentListener      = new ISizeChangedListener() {
                                                                       
-                                                                      
                                                                       public void sizeChanged(
                                                                               SizeChangedEvent event)
                                                                       {
@@ -90,7 +89,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         clipboard = data.clipboard;
         manager.addSizeChangedListener(contentListener);
     }
-    
     
     public ContentManager getManager()
     {
@@ -128,18 +126,15 @@ public class EditableTextContentManager implements IEditableTextContentManager,
                 Color.BLACK, Color.class);
     }
     
-    
     public boolean isWordWarping()
     {
         return manager.isAutoWarp();
     }
     
-    
     public boolean isMultiline()
     {
         return manager.isMultiline();
     }
-    
     
     public void setWordWarping(boolean warping, TextAppearance appearance)
     {
@@ -148,7 +143,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
             manager.setAutoWarp(warping, width, appearance);
         }
     }
-    
     
     public void setMultiline(boolean multiline, TextAppearance appearance)
     {
@@ -176,7 +170,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         }
     }
     
-    
     public void clickedOn(int x, int y, Set<Key> modifiers,
             TextAppearance appearance)
     {
@@ -194,7 +187,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         }
         manager.updateContent(width, appearance);
     }
-    
     
     public void dragedTo(int x, int y, Set<Key> modifiers,
             TextAppearance appearance)
@@ -222,12 +214,10 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         }
     }
     
-    
     public boolean addMinSizeChangedListener(ISizeChangedListener listener)
     {
         return sizeChangedListeners.add(listener);
     }
-    
     
     public boolean removeMinSizeChangedListener(ISizeChangedListener listener)
     {
@@ -294,7 +284,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     {
         this.cursorColor = cursorColor;
     }
-    
     
     public boolean handleKeyPresses(Key key, Set<Key> modifiers,
             TextAppearance appearance)
@@ -505,7 +494,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         return result;
     }
     
-    
     public boolean handleTextInput(char character, TextAppearance appearance)
     {
         boolean result = false;
@@ -542,94 +530,78 @@ public class EditableTextContentManager implements IEditableTextContentManager,
         return manager.removeSizeChangedListener(listener);
     }
     
-    
     public Dimension getSize()
     {
         return manager.getSize();
     }
-    
     
     public void addContentAtBeginning(Object content, TextAppearance appearance)
     {
         manager.addContentAtBeginning(content, appearance);
     }
     
-    
     public void addContentAtEnd(Object content, TextAppearance appearance)
     {
         manager.addContentAtEnd(content, appearance);
     }
     
-    
     public void removeContentLineFromBeginning()
     {
     }
     
-    
     public void removeContentLineFromEnd()
     {
     }
-    
     
     public int getContentLineCount()
     {
         return manager.getContentLineCount();
     }
     
-    
     public int getMaxLines()
     {
         return manager.getMaxLines();
     }
-    
     
     public void setMaxLines(int lines)
     {
         manager.setMaxLines(lines);
     }
     
-    
     public boolean isReadonly()
     {
         return readonly;
     }
-    
     
     public void setReadonly(boolean readonly)
     {
         this.readonly = readonly;
     }
     
-    
     public int getActivePositionIndex()
     {
         return (int) manager.getActiveAtom();
     }
-    
     
     public boolean hasSelection()
     {
         return manager.hasSelection();
     }
     
-    
     public int getSelectionEndIndex()
     {
         return manager.getSelectionEnd();
     }
-    
     
     public int getSelectionStartIndex()
     {
         return manager.getSelectionStart();
     }
     
-    
     public void setActivePositionIndex(int index)
     {
         manager.setActiveAtom(index);
     }
-    
     
     public void setSelectionIndex(int index1, int index2,
             TextAppearance appearance)
@@ -641,7 +613,6 @@ public class EditableTextContentManager implements IEditableTextContentManager,
     {
         this.manager = manager;
     }
-    
     
     public String getContent()
     {

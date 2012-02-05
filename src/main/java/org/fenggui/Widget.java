@@ -655,7 +655,7 @@ public class Widget implements IWidget
         this.parent = parent;
     }
     
-    
+    @Override
     public String toString()
     {
         final StringBuffer sb = new StringBuffer();
@@ -1095,6 +1095,7 @@ public class Widget implements IWidget
      * of this widget.
      */
     
+    @Override
     public Widget clone()
     {
         Widget result;

@@ -149,7 +149,7 @@ public class PlainBorder extends Border
         gl.startLines();
     }
     
-    
+    @Override
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         
@@ -219,7 +219,7 @@ public class PlainBorder extends Border
         gl.lineWidth(1);
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -240,6 +240,7 @@ public class PlainBorder extends Border
      * @see org.fenggui.decorator.border.Border#copy()
      */
     
+    @Override
     public IDecorator copy()
     {
         final PlainBorder result = new PlainBorder(this, color);

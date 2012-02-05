@@ -37,6 +37,7 @@ public class LowerCaseEnumFormat<T extends Enum<?>> extends EnumFormat<T>
      * @see org.fenggui.io.EnumFormat#encodeName(java.lang.String)
      */
     
+    @Override
     protected String encodeName(String name) throws EncodingException
     {
         name = name.toLowerCase();
@@ -60,6 +61,7 @@ public class LowerCaseEnumFormat<T extends Enum<?>> extends EnumFormat<T>
      * @see org.fenggui.io.EnumFormat#decodeName(java.lang.String)
      */
     
+    @Override
     protected String decodeName(String encodedName)
     {
         if (!encodedName.contains("_"))
@@ -70,7 +72,7 @@ public class LowerCaseEnumFormat<T extends Enum<?>> extends EnumFormat<T>
         return encodedName;
     }
     
-    
+    @Override
     protected boolean equalityOperation(String enumName, String decodedName)
     {
         return enumName.equalsIgnoreCase(decodedName);

@@ -236,7 +236,6 @@ public class ImageFont extends Font implements IDisposable, IImageFont
         }
     }
     
-    
     public boolean isCharacterMapped(char c)
     {
         return texHashMap.containsKey(c);
@@ -284,7 +283,6 @@ public class ImageFont extends Font implements IDisposable, IImageFont
         }
         return length;
     }
-    
     
     public BufferedImage getImage()
     {
@@ -382,7 +380,6 @@ public class ImageFont extends Font implements IDisposable, IImageFont
             t.dispose();
         }
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

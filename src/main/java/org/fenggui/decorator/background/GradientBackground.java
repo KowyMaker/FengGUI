@@ -165,6 +165,7 @@ public class GradientBackground extends Background
      * org.fenggui.io.IOStreamSaveable#process(org.fenggui.io.InputOutputStream)
      */
     
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -184,6 +185,7 @@ public class GradientBackground extends Background
      * @see org.fenggui.decorator.background.Background#copy()
      */
     
+    @Override
     public IDecorator copy()
     {
         final GradientBackground result = new GradientBackground(lowerLeft,

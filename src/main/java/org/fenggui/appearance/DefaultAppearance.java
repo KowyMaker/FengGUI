@@ -51,7 +51,7 @@ public class DefaultAppearance extends GenericAppearance implements Cloneable
         super(w, stream);
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -66,6 +66,7 @@ public class DefaultAppearance extends GenericAppearance implements Cloneable
      * )
      */
     
+    @Override
     public DefaultAppearance clone(StandardWidget widget)
     {
         return (DefaultAppearance) super.clone(widget);

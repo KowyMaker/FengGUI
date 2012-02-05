@@ -46,7 +46,6 @@ public class LabelTooltipManager extends Label implements ITooltipManager
         super(widget);
     }
     
-    
     public void showTooltip(IWidget widget)
     {
         final ITooltipData tooltip = (ITooltipData) widget
@@ -87,6 +86,7 @@ public class LabelTooltipManager extends Label implements ITooltipManager
      * @see org.fenggui.Label#process(org.fenggui.theme.xml.InputOutputStream)
      */
     
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {

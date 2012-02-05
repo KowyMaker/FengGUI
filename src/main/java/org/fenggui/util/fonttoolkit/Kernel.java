@@ -153,7 +153,7 @@ public class Kernel
         return kernel[0].length;
     }
     
-    
+    @Override
     public String toString()
     {
         String s = "";

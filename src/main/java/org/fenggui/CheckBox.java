@@ -90,6 +90,7 @@ public class CheckBox<E> extends ObservableLabelWidget implements
      * )
      */
     
+    @Override
     public void keyTyped(KeyTypedEvent keyTypedEvent)
     {
         if (keyTypedEvent.getKeyClass() == Key.ENTER
@@ -110,6 +111,7 @@ public class CheckBox<E> extends ObservableLabelWidget implements
      * MouseClickedEvent)
      */
     
+    @Override
     public void mouseClicked(MouseClickedEvent event)
     {
         event.setUsed();
@@ -217,7 +219,7 @@ public class CheckBox<E> extends ObservableLabelWidget implements
         }
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -231,6 +233,7 @@ public class CheckBox<E> extends ObservableLabelWidget implements
      * @see org.fenggui.ObservableLabelWidget#clone()
      */
     
+    @Override
     public CheckBox<E> clone()
     {
         final CheckBox<E> result = (CheckBox<E>) super.clone();

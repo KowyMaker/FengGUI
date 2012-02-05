@@ -81,7 +81,7 @@ public class CenteringLayout extends LayoutManager
         }
     }
     
-    
+    @Override
     public Dimension computeMinSize(List<IWidget> content)
     {
         if (content.isEmpty())
@@ -92,7 +92,7 @@ public class CenteringLayout extends LayoutManager
         
     }
     
-    
+    @Override
     public void doLayout(Container container, List<IWidget> content)
     {
         if (content.isEmpty())
@@ -174,7 +174,6 @@ public class CenteringLayout extends LayoutManager
     {
         xOffset = offset;
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

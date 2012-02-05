@@ -83,6 +83,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * @see org.fenggui.io.InputOutputStream#process(java.lang.String, int)
      */
     
+    @Override
     public int processAttribute(String name, int value) throws IOException
     {
         writtenAnythingNow = true;
@@ -97,6 +98,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * java.lang.String)
      */
     
+    @Override
     public String processAttribute(String name, String value)
             throws IOException
     {
@@ -111,6 +113,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * @see org.fenggui.io.InputOutputStream#process(java.lang.String, float)
      */
     
+    @Override
     public double processAttribute(String name, double value)
             throws IOException
     {
@@ -125,6 +128,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * @see org.fenggui.io.InputOutputStream#process(java.lang.String, boolean)
      */
     
+    @Override
     public boolean processAttribute(String name, boolean value)
             throws IOException
     {
@@ -139,6 +143,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * @see org.fenggui.io.InputOnlyStream#getParsingContext()
      */
     
+    @Override
     protected IParseContext getParsingContext()
     {
         final Element parent = activeElement.getParent();
@@ -158,6 +163,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * @see org.fenggui.io.InputOutputStream#startSubcontext(java.lang.String)
      */
     
+    @Override
     public boolean startSubcontext(String name)
     {
         super.startSubcontext(name);
@@ -173,6 +179,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * @see org.fenggui.io.InputOutputStream#endSubcontext()
      */
     
+    @Override
     public void endSubcontext()
     {
         super.endSubcontext();
@@ -264,7 +271,7 @@ public class XMLOutputStream extends OutputOnlyStream
         return existingElement;
     }
     
-    
+    @Override
     public <T extends IXMLStreamable> T processChild(String name, T value,
             Class<T> objectClass) throws IOException, IXMLStreamableException
     {
@@ -276,7 +283,7 @@ public class XMLOutputStream extends OutputOnlyStream
         return value;
     }
     
-    
+    @Override
     public <T extends IXMLStreamable> T processChild(T value,
             TypeRegister typeRegister) throws IOException,
             IXMLStreamableException
@@ -286,8 +293,8 @@ public class XMLOutputStream extends OutputOnlyStream
         return value;
     }
     
+    @Override
     @SuppressWarnings("unchecked")
-    
     public <T extends IXMLStreamable> void processChildren(String childName,
             List children, Class<T> childClass) throws IOException,
             IXMLStreamableException
@@ -306,6 +313,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * java.util.Map, java.lang.Class)
      */
     
+    @Override
     public <T extends IXMLStreamable> void processChildren(String childName,
             Map<String, T> children, Class<T> childClass) throws IOException,
             IXMLStreamableException
@@ -326,6 +334,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * java.util.Map, java.lang.Class, java.lang.Enum)
      */
     
+    @Override
     public <T extends Enum<T>> void processEnumChildren(String childName,
             Map<String, T> children, Class<T> enumClass) throws IOException,
             IXMLStreamableException
@@ -342,7 +351,7 @@ public class XMLOutputStream extends OutputOnlyStream
         }
     }
     
-    
+    @Override
     public <T extends IXMLStreamable> void processChildren(List<T> children,
             TypeRegister typeRegister) throws IOException,
             IXMLStreamableException
@@ -366,6 +375,7 @@ public class XMLOutputStream extends OutputOnlyStream
      * org.fenggui.theme.xml.TypeRegister)
      */
     
+    @Override
     public <T extends IXMLStreamable> void processChildren(
             Map<String, T> children, TypeRegister typeRegister)
             throws IOException, IXMLStreamableException
@@ -386,14 +396,14 @@ public class XMLOutputStream extends OutputOnlyStream
         
     }
     
-    
+    @Override
     public <T extends IXMLStreamable> void processInherentChild(String name,
             T value) throws IOException, IXMLStreamableException
     {
         handleChild(value, name);
     }
     
-    
+    @Override
     public void close()
     {
         out.write(document.toXML());

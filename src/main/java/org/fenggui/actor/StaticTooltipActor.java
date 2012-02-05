@@ -106,7 +106,6 @@ public abstract class StaticTooltipActor implements IActor
         {
             listener = new IEventListener() {
                 
-                
                 public void processEvent(Event event)
                 {
                     if (event instanceof FocusEvent)

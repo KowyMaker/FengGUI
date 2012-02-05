@@ -63,6 +63,7 @@ public class Dimension implements Cloneable
      * @see java.lang.Object#clone()
      */
     
+    @Override
     public Dimension clone()
     {
         try
@@ -117,6 +118,7 @@ public class Dimension implements Cloneable
      * @return string
      */
     
+    @Override
     public String toString()
     {
         return "(" + width + ", " + height + ")";
@@ -144,7 +146,7 @@ public class Dimension implements Cloneable
         this.height = height;
     }
     
-    
+    @Override
     public boolean equals(Object o)
     {
         if (this == o)
@@ -170,7 +172,7 @@ public class Dimension implements Cloneable
         return true;
     }
     
-    
+    @Override
     public int hashCode()
     {
         int result;

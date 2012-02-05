@@ -36,13 +36,13 @@ public class MouseMovedEvent extends MouseEvent
         this.displayY = displayY;
     }
     
-    
+    @Override
     public int getDisplayX()
     {
         return displayX;
     }
     
-    
+    @Override
     public int getDisplayY()
     {
         return displayY;

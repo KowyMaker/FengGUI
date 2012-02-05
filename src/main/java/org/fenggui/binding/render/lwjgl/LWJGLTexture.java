@@ -19,10 +19,14 @@
 package org.fenggui.binding.render.lwjgl;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
+
+import javax.imageio.ImageIO;
 
 import org.fenggui.binding.render.Binding;
 import org.fenggui.binding.render.ITexture;
@@ -116,7 +120,6 @@ public class LWJGLTexture implements ITexture
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, textureID);
     }
     
-    
     public void dispose()
     {
         assertCorrectTextureID();
@@ -168,12 +171,10 @@ public class LWJGLTexture implements ITexture
         return texHeight;
     }
     
-    
     public boolean hasAlpha()
     {
         return true;
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
@@ -231,6 +232,15 @@ public class LWJGLTexture implements ITexture
         return tmp.get(0);
     }
     
+    public static LWJGLTexture uploadTextureToVideoRAM(byte[] data)
+            throws IOException
+    {
+        final InputStream in = new ByteArrayInputStream(data);
+        final BufferedImage bufferedImage = ImageIO.read(in);
+        
+        return uploadTextureToVideoRAM(bufferedImage);
+    }
+    
     public static LWJGLTexture uploadTextureToVideoRAM(BufferedImage awtImage)
     {
         final int textureID = createTextureID();
@@ -263,7 +273,6 @@ public class LWJGLTexture implements ITexture
         return new LWJGLTexture(textureID, awtImage.getWidth(),
                 awtImage.getHeight(), texWidth, texHeight);
     }
-    
     
     public int getID()
     {

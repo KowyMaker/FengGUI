@@ -60,19 +60,16 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         
         textCursorRenderer = new ITextCursorRenderer() {
             
-            
             public void render(int x, int y, int w, int h, Graphics g)
             {
                 g.setColor(Color.BLACK);
                 g.drawFilledRectangle(x, y, w, h);
             }
             
-            
             public int getHeight()
             {
                 return DYNAMICSIZE;
             }
-            
             
             public int getWidth()
             {
@@ -94,19 +91,16 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         defaultStyleKey = TextStyle.DEFAULTSTYLEKEY;
         textCursorRenderer = new ITextCursorRenderer() {
             
-            
             public void render(int x, int y, int w, int h, Graphics g)
             {
                 g.setColor(Color.BLACK);
                 g.drawFilledRectangle(x, y, w, h);
             }
             
-            
             public int getHeight()
             {
                 return DYNAMICSIZE;
             }
-            
             
             public int getWidth()
             {
@@ -137,19 +131,16 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
         defaultFactory = factory;
     }
     
-    
     public String getUniqueName()
     {
         return GENERATE_NAME;
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
         
     }
-    
     
     public AbstractContentPart getEmptyContentPart(TextAppearance appearance)
     {
@@ -172,7 +163,6 @@ public class ContentFactory implements IContentFactory, IXMLStreamable
     {
         this.character = character;
     }
-    
     
     public String getContentObject(Object obj)
     {

@@ -54,7 +54,6 @@ public class KeepOnMouseActor implements IActor
         {
             mouseListener = new IEventListener() {
                 
-                
                 public void processEvent(Event event)
                 {
                     if (event instanceof MouseMovedEvent)

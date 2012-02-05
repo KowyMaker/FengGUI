@@ -119,7 +119,6 @@ public class FengFonts extends JDialog implements ActionListener
         final FengFonts fc = new FengFonts();
     }
     
-    
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource().equals(quitButton))
@@ -214,13 +213,14 @@ public class FengFonts extends JDialog implements ActionListener
         // restrict to *.png files
         final FileFilter ff = new FileFilter() {
             
+            @Override
             public boolean accept(File f)
             {
                 return f.getName().toLowerCase().endsWith(".png")
                         || f.isDirectory();
             }
             
-            
+            @Override
             public String getDescription()
             {
                 return "PNG";

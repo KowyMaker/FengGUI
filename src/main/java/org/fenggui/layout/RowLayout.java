@@ -68,6 +68,7 @@ public class RowLayout extends LayoutManager
      * windowtoolkit.event.List)
      */
     
+    @Override
     public void doLayout(Container container, List<IWidget> content)
     {
         double freeSpacePerComp = 0;
@@ -168,6 +169,7 @@ public class RowLayout extends LayoutManager
      * @see joglui.LayoutManager#updateMinSize(joglui.Container, joglui.List)
      */
     
+    @Override
     public Dimension computeMinSize(List<IWidget> content)
     {
         int minW = 0;
@@ -197,7 +199,6 @@ public class RowLayout extends LayoutManager
         // System.out.println("RowLayout "+container+" "+minW +" "+minH);
         return new Dimension(minW, minH);
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

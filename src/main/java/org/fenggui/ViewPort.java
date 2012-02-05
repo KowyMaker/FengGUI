@@ -38,7 +38,7 @@ public class ViewPort extends Widget
     private IViewPortPaintListener viewPortPaintListener = null;
     private Display                display               = null;
     
-    
+    @Override
     public void addedToWidgetTree()
     {
         display = getDisplay();
@@ -49,7 +49,7 @@ public class ViewPort extends Widget
         updateMinSize();
     }
     
-    
+    @Override
     public void paint(Graphics g)
     {
         if (viewPortPaintListener == null)

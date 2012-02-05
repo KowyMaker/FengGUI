@@ -159,7 +159,6 @@ public class ContentUserLine implements IContentSelection,
         return activeLine;
     }
     
-    
     public int getAtomCount()
     {
         return atomCountCache;
@@ -257,7 +256,6 @@ public class ContentUserLine implements IContentSelection,
         return uline;
     }
     
-    
     public void mergeContent(ContentUserLine line)
     {
         content.addAll(line.content);
@@ -271,7 +269,6 @@ public class ContentUserLine implements IContentSelection,
         size.setWidth(Math.max(line.size.getWidth(), size.getWidth()));
         atomCountCache += line.atomCountCache;
     }
-    
     
     public void optimizeContent(TextAppearance appearance)
     {
@@ -406,7 +403,6 @@ public class ContentUserLine implements IContentSelection,
         
     }
     
-    
     public void removeAll(IContentFactory factory, TextAppearance appearance)
     {
         final boolean activePart = this.hasActiveLine();
@@ -427,7 +423,6 @@ public class ContentUserLine implements IContentSelection,
         
     }
     
-    
     public void getContent(StringBuilder result)
     {
         for (final ContentLine part : content)
@@ -435,7 +430,6 @@ public class ContentUserLine implements IContentSelection,
             part.getContent(result);
         }
     }
-    
     
     public void getSelectedContent(StringBuilder result)
     {
@@ -447,7 +441,6 @@ public class ContentUserLine implements IContentSelection,
             }
         }
     }
-    
     
     public boolean addChar(char c, TextAppearance appearance)
     {
@@ -468,7 +461,6 @@ public class ContentUserLine implements IContentSelection,
             return false;
         }
     }
-    
     
     public void addContent(Object content, int width, boolean wordwarp,
             IContentFactory factory, TextAppearance appearance)
@@ -627,7 +619,6 @@ public class ContentUserLine implements IContentSelection,
         activeLineAtoms = 0;
         return null;
     }
-    
     
     public Dimension getSize()
     {

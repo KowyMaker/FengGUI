@@ -45,7 +45,6 @@ public class KeepInsideDisplayActor implements IActor
         this.display = display;
         listener = new IDisplayResizedListener() {
             
-            
             public void displayResized(DisplayResizedEvent displayResizedEvent)
             {
                 for (final IWidget widget : display.getWidgets())

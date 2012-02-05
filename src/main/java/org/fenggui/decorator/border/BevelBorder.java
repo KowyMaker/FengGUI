@@ -67,7 +67,7 @@ public class BevelBorder extends Border
         setSpacing(1, 1, 1, 1);
     }
     
-    
+    @Override
     public void paint(Graphics g, int localX, int localY, int width, int height)
     {
         
@@ -150,7 +150,7 @@ public class BevelBorder extends Border
         gl.startLines();
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -166,6 +166,7 @@ public class BevelBorder extends Border
      * @see org.fenggui.decorator.border.Border#copy()
      */
     
+    @Override
     public IDecorator copy()
     {
         final BevelBorder result = new BevelBorder(elevated, lowered);

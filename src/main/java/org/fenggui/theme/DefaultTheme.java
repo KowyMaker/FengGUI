@@ -117,7 +117,7 @@ public class DefaultTheme extends StandardTheme
         titleFontRenderer = new DirectTextRenderer(titleFont);
     }
     
-    
+    @Override
     public void setUp(Button b)
     {
         // ((ComplexTextRendererData)b.getAppearance().getData()).setColor(Color.BLACK);
@@ -149,7 +149,7 @@ public class DefaultTheme extends StandardTheme
         // ((ComplexTextRendererData)b.getAppearance().getData()).setColor(Color.WHITE);
     }
     
-    
+    @Override
     public void setUp(CheckBox<?> b)
     {
         // ((ComplexTextRendererData)b.getAppearance().getData()).setColor(Color.BLACK);
@@ -178,7 +178,7 @@ public class DefaultTheme extends StandardTheme
         b.getAppearance().setGap(5);
     }
     
-    
+    @Override
     public void setUp(RadioButton<?> b)
     {
         b.getAppearance().setGap(5);
@@ -208,7 +208,7 @@ public class DefaultTheme extends StandardTheme
                         Binding.getInstance().getTexture(bi1))));
     }
     
-    
+    @Override
     public void setUp(TextEditor te)
     {
         te.getAppearance().add(new PlainBackground(Color.WHITE));
@@ -216,7 +216,7 @@ public class DefaultTheme extends StandardTheme
         // te.getAppearance().getData().setColor(Color.BLACK);
     }
     
-    // 
+    //
     // public void setUp(Tree l)
     // {
     // l.getAppearance().add(new PlainBackground(Color.WHITE));
@@ -247,12 +247,12 @@ public class DefaultTheme extends StandardTheme
     //
     // }
     
-    // 
+    //
     // public void setUp(Table w)
     // {
     // }
     
-    
+    @Override
     public void setUp(ComboBox b)
     {
         b.getAppearance().add(new PlainBorder(Color.DARK_GRAY));
@@ -275,7 +275,7 @@ public class DefaultTheme extends StandardTheme
         b.getPopupContainer().getAppearance().add(new PlainBorder(Color.GRAY));
     }
     
-    
+    @Override
     public void setUp(ScrollBar l)
     {
         if (l.isHorizontal())
@@ -338,12 +338,12 @@ public class DefaultTheme extends StandardTheme
         
     }
     
-    
+    @Override
     public void setUp(Label l)
     {
     }
     
-    
+    @Override
     public void setUp(Window w)
     {
         w.getAppearance().add(new PlainBackground(windowBackground));
@@ -417,7 +417,7 @@ public class DefaultTheme extends StandardTheme
                 .setPadding(new Spacing(2, 2, 2, 2));
     }
     
-    
+    @Override
     public void setUp(Slider l)
     {
         final Background defaultbg = new PlainBackground(
@@ -450,14 +450,14 @@ public class DefaultTheme extends StandardTheme
         
     }
     
-    
+    @Override
     public void setUp(ScrollContainer w)
     {
         setUp(w.getHorizontalScrollBar());
         setUp(w.getVerticalScrollBar());
     }
     
-    
+    @Override
     public void setUp(ProgressBar l)
     {
         l.getAppearance().setBorder(new PlainBorder(Color.GRAY));
@@ -465,17 +465,17 @@ public class DefaultTheme extends StandardTheme
         l.getAppearance().getHoverUnderlay().add(hoveredBackground);
     }
     
-    
+    @Override
     public void setUp(Container w)
     {
     }
     
-    
+    @Override
     public void setUpUnknown(IWidget w)
     {
     }
     
-    
+    @Override
     public void setUp(Menu m)
     {
         m.getAppearance().add(
@@ -487,7 +487,7 @@ public class DefaultTheme extends StandardTheme
         m.getAppearance().getSelectionUnderlay().add(selectionBackground);
     }
     
-    
+    @Override
     public void setUp(MenuBar mn)
     {
         mn.getAppearance().add(
@@ -498,21 +498,21 @@ public class DefaultTheme extends StandardTheme
         mn.getAppearance().getSelectionUnderlay().add(selectionBackground);
     }
     
-    
+    @Override
     public void setUp(List l)
     {
         l.getAppearance().getHoverUnderlay().add(hoveredBackground);
         l.getAppearance().getSelectionUnderlay().add(selectionBackground);
     }
     
-    // 
+    //
     // public void setUp(VerticalList b)
     // {
     // b.getAppearance().add(new PlainBorder(Color.BLACK));
     // b.getAppearance().add(new PlainBackground(Color.WHITE));
     // }
     //
-    // 
+    //
     // public void setUp(TabItemLabel b)
     // {
     // b.getAppearance().add(new PlainBorder(Color.BLACK));
@@ -528,7 +528,7 @@ public class DefaultTheme extends StandardTheme
     //
     // }
     
-    
+    @Override
     public void setUp(SplitContainer w)
     {
         // w.getAppearance().getBarDecorator().add(new
@@ -536,7 +536,7 @@ public class DefaultTheme extends StandardTheme
         // w.getAppearance().getBarDecorator().add(new PlainBorder(Color.GRAY));
     }
     
-    // 
+    //
     // public void setUp(Console w)
     // {
     // w.getAppearance().add(new PlainBackground(Color.WHITE));
@@ -544,7 +544,7 @@ public class DefaultTheme extends StandardTheme
     // w.getAppearance().setPadding(new Spacing(5, 5, 5, 5));
     // }
     //
-    // 
+    //
     // public void setUp(SnappingSlider w)
     // {
     // BufferedImage bi = new BufferedImage(14, 30,

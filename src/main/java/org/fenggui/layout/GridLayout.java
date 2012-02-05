@@ -45,7 +45,7 @@ public class GridLayout extends LayoutManager
         this.columns = columns;
     }
     
-    
+    @Override
     public Dimension computeMinSize(List<IWidget> content)
     {
         if (content.isEmpty())
@@ -135,7 +135,7 @@ public class GridLayout extends LayoutManager
         return height;
     }
     
-    
+    @Override
     public void doLayout(Container container, List<IWidget> content)
     {
         final IWidget[][] grid = buildWidgetGrid(content);
@@ -191,7 +191,6 @@ public class GridLayout extends LayoutManager
         }
         
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

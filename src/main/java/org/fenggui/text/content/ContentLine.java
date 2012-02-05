@@ -73,7 +73,6 @@ public class ContentLine implements IContentSelection, IContent<ContentLine>
         }
     }
     
-    
     public void getSelectedContent(StringBuilder result)
     {
         for (final AbstractContentPart part : content)

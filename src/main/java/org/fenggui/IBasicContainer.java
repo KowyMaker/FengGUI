@@ -42,7 +42,6 @@ public interface IBasicContainer extends IWidget, IXMLStreamable
     
     public boolean isKeyTraversalRoot();
     
-    
     public void layout();
     
 }

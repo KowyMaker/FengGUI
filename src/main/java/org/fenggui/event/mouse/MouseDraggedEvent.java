@@ -50,13 +50,13 @@ public class MouseDraggedEvent extends MouseEvent
         return mouseButton;
     }
     
-    
+    @Override
     public int getDisplayX()
     {
         return displayX;
     }
     
-    
+    @Override
     public int getDisplayY()
     {
         return displayY;

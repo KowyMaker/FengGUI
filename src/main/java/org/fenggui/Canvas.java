@@ -48,7 +48,7 @@ public class Canvas extends StandardWidget
         appearance = new DefaultAppearance(this);
     }
     
-    
+    @Override
     public DecoratorAppearance getAppearance()
     {
         return appearance;
@@ -59,12 +59,12 @@ public class Canvas extends StandardWidget
         this.appearance = appearance;
     }
     
-    
+    @Override
     public void paintContent(Graphics g, IOpenGL gl)
     {
     }
     
-    
+    @Override
     public Dimension getMinContentSize()
     {
         return new Dimension(0, 0);

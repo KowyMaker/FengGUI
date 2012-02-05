@@ -224,7 +224,7 @@ public class Spacing implements IXMLStreamable, Cloneable
     
     public static final Spacing ZERO_SPACING = new Spacing(0, 0, 0, 0);
     
-    
+    @Override
     public String toString()
     {
         return "(l: " + left + ", r: " + right + ", t: " + top + ", b: "
@@ -279,6 +279,7 @@ public class Spacing implements IXMLStreamable, Cloneable
      * @see java.lang.Object#clone()
      */
     
+    @Override
     public Spacing clone()
     {
         try

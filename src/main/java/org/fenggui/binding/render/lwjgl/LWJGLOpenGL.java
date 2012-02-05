@@ -24,6 +24,7 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
 import org.fenggui.binding.render.IOpenGL;
+import org.fenggui.util.Color;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
@@ -51,48 +52,40 @@ public class LWJGLOpenGL implements IOpenGL
         this.openGLThread = openGLThread;
     }
     
-    
     public void setModelMatrixMode()
     {
         GL11.glMatrixMode(GL11.GL_MODELVIEW);
     }
-    
     
     public void setProjectionMatrixMode()
     {
         GL11.glMatrixMode(GL11.GL_PROJECTION);
     }
     
-    
     public void pushMatrix()
     {
         GL11.glPushMatrix();
     }
-    
     
     public void popMatrix()
     {
         GL11.glPopMatrix();
     }
     
-    
     public void loadIdentity()
     {
         GL11.glLoadIdentity();
     }
-    
     
     public void pushAllAttribs()
     {
         GL11.glPushAttrib(GL11.GL_ALL_ATTRIB_BITS);
     }
     
-    
     public void popAllAttribs()
     {
         GL11.glPopAttrib();
     }
-    
     
     public boolean[] getBoolean(Attribute attrib)
     {
@@ -109,7 +102,6 @@ public class LWJGLOpenGL implements IOpenGL
         return result;
     }
     
-    
     public double[] getDouble(Attribute attrib)
     {
         final int pname = getAttrib(attrib);
@@ -124,7 +116,6 @@ public class LWJGLOpenGL implements IOpenGL
         
         return result;
     }
-    
     
     public float[] getFloat(Attribute attrib)
     {
@@ -141,7 +132,6 @@ public class LWJGLOpenGL implements IOpenGL
         return result;
     }
     
-    
     public int[] getInt(Attribute attrib)
     {
         final int pname = getAttrib(attrib);
@@ -157,25 +147,21 @@ public class LWJGLOpenGL implements IOpenGL
         return result;
     }
     
-    
     public String getString(Attribute attrib)
     {
         final int pname = getAttrib(attrib);
         return GL11.glGetString(pname);
     }
     
-    
     public void enable(Attribute attrib)
     {
         GL11.glEnable(getAttrib(attrib));
     }
     
-    
     public void disable(Attribute attrib)
     {
         GL11.glDisable(getAttrib(attrib));
     }
-    
     
     public void enableLighting(boolean b)
     {
@@ -189,7 +175,6 @@ public class LWJGLOpenGL implements IOpenGL
         }
     }
     
-    
     public void enableTexture2D(boolean b)
     {
         if (b)
@@ -202,7 +187,6 @@ public class LWJGLOpenGL implements IOpenGL
         }
     }
     
-    
     public void setTexEnvModeDecal()
     {
         // GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
@@ -212,7 +196,6 @@ public class LWJGLOpenGL implements IOpenGL
         // GL11.GL_LUMINANCE_ALPHA);
     }
     
-    
     public void setTexEnvModeModulate()
     {
         GL11.glTexEnvf(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE,
@@ -220,7 +203,6 @@ public class LWJGLOpenGL implements IOpenGL
         // GL11.glTexEnvf(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE,
         // GL11.GL_MODULATE);
     }
-    
     
     public void setViewPort(int x, int y, int width, int height)
     {
@@ -233,18 +215,15 @@ public class LWJGLOpenGL implements IOpenGL
         GL11.glOrtho(left, right, bottom, top, near, far);
     }
     
-    
     public void setDepthFunctionToLEqual()
     { // XXX: special case function...
         GL11.glDepthFunc(GL11.GL_LEQUAL);
     }
     
-    
     public void translateZ(float z)
     {
         GL11.glTranslatef(0, 0, z);
     }
-    
     
     public void translateXY(int x, int y)
     {
@@ -262,108 +241,101 @@ public class LWJGLOpenGL implements IOpenGL
         GL11.glRotatef(angle, 0, 0, 1);
     }
     
-    
     public void end()
     {
         GL11.glEnd();
     }
-    
     
     public int genLists(int range)
     {
         return GL11.glGenLists(range);
     }
     
-    
     public void startList(int list)
     {
         GL11.glNewList(list, GL11.GL_COMPILE);
     }
-    
     
     public void endList()
     {
         GL11.glEndList();
     }
     
-    
     public void callList(int list)
     {
         GL11.glCallList(list);
     }
-    
     
     public void startQuads()
     {
         GL11.glBegin(GL11.GL_QUADS);
     }
     
-    
     public void startLines()
     {
         GL11.glBegin(GL11.GL_LINES);
     }
-    
     
     public void startLineStrip()
     {
         GL11.glBegin(GL11.GL_LINE_STRIP);
     }
     
-    
     public void startLineLoop()
     {
         GL11.glBegin(GL11.GL_LINE_LOOP);
     }
-    
     
     public void startTriangles()
     {
         GL11.glBegin(GL11.GL_TRIANGLES);
     }
     
-    
     public void startTriangleStrip()
     {
         GL11.glBegin(GL11.GL_TRIANGLE_STRIP);
     }
-    
     
     public void startTriangleFan()
     {
         GL11.glBegin(GL11.GL_TRIANGLE_FAN);
     }
     
-    
     public void startQuadStrip()
     {
         GL11.glBegin(GL11.GL_QUAD_STRIP);
     }
-    
     
     public void startPoints()
     {
         GL11.glBegin(GL11.GL_POINTS);
     }
     
-    
     public void vertex(float x, float y)
     {
         GL11.glVertex2f(x, y);
     }
     
+    public void vertex(float x, float y, float z)
+    {
+        GL11.glVertex3f(x, y, z);
+    }
     
     public void rect(float x1, float y1, float x2, float y2)
     {
         GL11.glRectf(x1, y1, x2, y2);
     }
     
-    
     public void texCoord(float x, float y)
     {
         GL11.glTexCoord2f(x, y);
     }
     
+    public void color(Color color)
+    {
+        color(color.getRed(), color.getGreen(), color.getBlue(),
+                color.getAlpha());
+    }
     
     public void color(float red, float green, float blue, float alpha)
     {
@@ -371,12 +343,10 @@ public class LWJGLOpenGL implements IOpenGL
         GL11.glColor4f(red, green, blue, alpha);
     }
     
-    
     public void scale(float scaleX, float scaleY)
     {
         GL11.glScalef(scaleX, scaleY, 0);
     }
-    
     
     public void setupStateVariables(boolean depthTestEnabled)
     {
@@ -423,36 +393,30 @@ public class LWJGLOpenGL implements IOpenGL
         GL11.glDisable(GL11.GL_TEXTURE_1D);
     }
     
-    
     public void lineWidth(float width)
     {
         GL11.glLineWidth(width);
     }
-    
     
     public void pointSize(float size)
     {
         GL11.glPointSize(size);
     }
     
-    
     public void enableStipple()
     {
         GL11.glEnable(GL11.GL_LINE_STIPPLE);
     }
-    
     
     public void disableStipple()
     {
         GL11.glDisable(GL11.GL_LINE_STIPPLE);
     }
     
-    
     public void lineStipple(int stretch, short pattern)
     {
         GL11.glLineStipple(stretch, pattern);
     }
-    
     
     public void enableAlpha(boolean state)
     {
@@ -466,25 +430,21 @@ public class LWJGLOpenGL implements IOpenGL
         }
     }
     
-    
     public void readPixels(int x, int y, int width, int height, ByteBuffer bgr)
     {
         GL11.glReadPixels(x, y, width, height, GL12.GL_BGR,
                 GL11.GL_UNSIGNED_BYTE, bgr);
     }
     
-    
     public void setOrtho2D(int left, int right, int bottom, int top)
     {
         GLU.gluOrtho2D(left, right, bottom, top);
     }
     
-    
     public void setScissor(int x, int width, int y, int height)
     {
         GL11.glScissor(x, y, width, height);
     }
-    
     
     public void activateTexture(int i)
     {
@@ -497,7 +457,6 @@ public class LWJGLOpenGL implements IOpenGL
             // Unsupported, ignore.
         }
     }
-    
     
     public void rotate(float angle, int x, int y, int z)
     {
@@ -519,7 +478,6 @@ public class LWJGLOpenGL implements IOpenGL
         }
     }
     
-    
     public void enableAlternateBlending(boolean b)
     {
         if (b)
@@ -531,7 +489,6 @@ public class LWJGLOpenGL implements IOpenGL
             GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
         }
     }
-    
     
     public boolean isOpenGLThread()
     {

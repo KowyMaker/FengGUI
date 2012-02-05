@@ -58,7 +58,7 @@ public class SetMarginSwitch extends Switch
         defaultSpacing = defaultSpace;
     }
     
-    
+    @Override
     public void setup(IWidget widget)
     {
         if (widget instanceof StandardWidget)
@@ -78,7 +78,7 @@ public class SetMarginSwitch extends Switch
         }
     }
     
-    
+    @Override
     public SetMarginSwitch copy()
     {
         return new SetMarginSwitch(this.getLabel(), defaultSpacing, upDown,

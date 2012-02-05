@@ -127,6 +127,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.StatefullWidget#updateState(java.lang.String)
      */
     
+    @Override
     protected void updateState(String newActiveState)
     {
         getAppearance().setEnabled(STATE_PRESSED, pressed);
@@ -141,6 +142,7 @@ public class Button extends ObservableLabelWidget
      * )
      */
     
+    @Override
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         if (isEnabled())
@@ -165,6 +167,7 @@ public class Button extends ObservableLabelWidget
      * KeyReleasedEvent)
      */
     
+    @Override
     public void keyReleased(KeyReleasedEvent e)
     {
         if (isEnabled())
@@ -188,6 +191,7 @@ public class Button extends ObservableLabelWidget
      * MousePressedEvent)
      */
     
+    @Override
     public void mousePressed(MousePressedEvent mousePressedEvent)
     {
         if (isEnabled())
@@ -209,6 +213,7 @@ public class Button extends ObservableLabelWidget
      * MouseReleasedEvent)
      */
     
+    @Override
     public void mouseReleased(MouseReleasedEvent mouseReleasedEvent)
     {
         if (isEnabled())
@@ -233,6 +238,7 @@ public class Button extends ObservableLabelWidget
      * MouseEnteredEvent)
      */
     
+    @Override
     public void mouseEntered(MouseEnteredEvent mouseEnteredEvent)
     {
         if (isEnabled())
@@ -257,6 +263,7 @@ public class Button extends ObservableLabelWidget
      * MouseExitedEvent)
      */
     
+    @Override
     public void mouseExited(MouseExitedEvent mouseExitedEvent)
     {
         if (isEnabled())
@@ -306,6 +313,7 @@ public class Button extends ObservableLabelWidget
      * @see org.fenggui.ObservableLabelWidget#clone()
      */
     
+    @Override
     public Button clone()
     {
         final Button result = (Button) super.clone();

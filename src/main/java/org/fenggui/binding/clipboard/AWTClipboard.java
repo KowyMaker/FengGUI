@@ -84,7 +84,6 @@ public class AWTClipboard implements IClipboard
         // System.out.println("Clipboard-set: " + text);
         clipboard.setContents(new StringSelection(text), new ClipboardOwner() {
             
-            
             public void lostOwnership(Clipboard clipboard, Transferable contents)
             {
                 // do nothing

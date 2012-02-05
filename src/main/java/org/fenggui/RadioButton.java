@@ -108,6 +108,7 @@ public class RadioButton<E> extends ObservableLabelWidget implements
      * )
      */
     
+    @Override
     public void keyPressed(KeyPressedEvent keyPressedEvent)
     {
         if (keyPressedEvent.getKeyClass() == Key.ENTER
@@ -125,12 +126,12 @@ public class RadioButton<E> extends ObservableLabelWidget implements
      * MousePressedEvent)
      */
     
+    @Override
     public void mousePressed(MousePressedEvent mousePressedEvent)
     {
         setSelected(true);
         super.mousePressed(mousePressedEvent);
     }
-    
     
     public boolean isSelected()
     {
@@ -145,7 +146,6 @@ public class RadioButton<E> extends ObservableLabelWidget implements
             l.selectionChanged(e);
         }
     }
-    
     
     public RadioButton<E> setSelected(boolean s)
     {
@@ -205,6 +205,7 @@ public class RadioButton<E> extends ObservableLabelWidget implements
      * @see org.fenggui.ObservableLabelWidget#clone()
      */
     
+    @Override
     public RadioButton<E> clone()
     {
         final RadioButton<E> result = (RadioButton<E>) super.clone();

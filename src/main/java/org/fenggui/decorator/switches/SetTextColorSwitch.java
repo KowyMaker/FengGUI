@@ -47,7 +47,7 @@ public class SetTextColorSwitch extends Switch
         c = colorToSet;
     }
     
-    
+    @Override
     public void setup(IWidget w)
     {
         // kinda ugly casting, I know. But I think this should work in 99% of
@@ -58,7 +58,7 @@ public class SetTextColorSwitch extends Switch
                 .setColor(c);
     }
     
-    
+    @Override
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -67,7 +67,7 @@ public class SetTextColorSwitch extends Switch
         c = stream.processChild(c, XMLTheme.TYPE_REGISTRY);
     }
     
-    
+    @Override
     public SetTextColorSwitch copy()
     {
         return new SetTextColorSwitch(this.getLabel(), c);

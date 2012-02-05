@@ -107,12 +107,10 @@ public class Item implements IXMLStreamable, IToggable<Item>
         return userData;
     }
     
-    
     public boolean isSelected()
     {
         return isSelected;
     }
-    
     
     public Item setSelected(boolean b)
     {
@@ -232,7 +230,6 @@ public class Item implements IXMLStreamable, IToggable<Item>
             textData.render(localX, localY, g, appearance);
         }
     }
-    
     
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException

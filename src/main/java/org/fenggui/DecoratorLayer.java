@@ -93,7 +93,6 @@ public class DecoratorLayer implements IXMLStreamable, Cloneable
         }
     }
     
-    
     public void process(InputOutputStream stream) throws IOException,
             IXMLStreamableException
     {
@@ -124,7 +123,7 @@ public class DecoratorLayer implements IXMLStreamable, Cloneable
         return GENERATE_NAME;
     }
     
-    
+    @Override
     public DecoratorLayer clone()
     {
         DecoratorLayer result;
