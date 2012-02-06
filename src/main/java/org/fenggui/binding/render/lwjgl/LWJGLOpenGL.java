@@ -331,6 +331,17 @@ public class LWJGLOpenGL implements IOpenGL
         GL11.glTexCoord2f(x, y);
     }
     
+    public void clearColor(Color color)
+    {
+        clearColor(color.getRed(), color.getGreen(), color.getBlue(),
+                color.getAlpha());
+    }
+    
+    public void clearColor(float red, float green, float blue, float alpha)
+    {
+        GL11.glClearColor(red, green, blue, alpha);
+    }
+    
     public void color(Color color)
     {
         color(color.getRed(), color.getGreen(), color.getBlue(),
