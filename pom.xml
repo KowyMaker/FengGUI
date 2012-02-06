@@ -8,16 +8,12 @@
 	<url>http://www.fenggui.org</url>
 	<description>LWJGL GUI Framework forked by KokaKiwi (http://kokaelkiwi.tk) for Kowy Maker (http://www.kowymaker.com).
 Contains somes changes and improvements. And include LWJGL 2.X support!</description>
-	<repositories>
-		<repository>
-			<id>kokabsolu-repo</id>
-			<url>http://maven.kokabsolu.com/maven2/</url>
-		</repository>
-		<repository>
-			<id>jenkins-kokakiwi</id>
-			<url>http://ci.kokaelkiwi.tk:8080/plugin/repository/everything/</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <id>kiwi-jenkins-repo</id>
+            <url>http://ci.kokaelkiwi.eu:8080/plugin/repository/everything/</url>
+        </repository>
+    </repositories>
 	<build>
 		<finalName>fenggui-${project.version}</finalName>
 		<plugins>

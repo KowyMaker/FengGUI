@@ -19,12 +19,14 @@
  */
 package org.fenggui.binding.render;
 
+import java.awt.Font;
 import java.util.ArrayList;
 
 import org.fenggui.util.CharacterPixmap;
 import org.fenggui.util.Color;
 import org.fenggui.util.Point;
 import org.fenggui.util.Rectangle;
+import org.fenggui.util.fonttoolkit.FontFactory;
 
 /**
  * Provides a library of graphical functions for GUI classes to utilise, rather
@@ -302,6 +304,13 @@ public class Graphics
     public Point getTranslation()
     {
         return offset;
+    }
+    
+    public void setFont(Font awtFont)
+    {
+        ImageFont font = FontFactory.renderStandardFont(awtFont);
+        
+        setFont(font);
     }
     
     /**
