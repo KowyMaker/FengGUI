@@ -63,9 +63,14 @@ public class EventHelper
     
     public static Key mapEventKey()
     {
+        return mapEventKey(Keyboard.getEventKey());
+    }
+    
+    public static Key mapEventKey(int code)
+    {
         Key keyClass;
         
-        switch (Keyboard.getEventKey())
+        switch (code)
         {
             case Keyboard.KEY_END:
                 keyClass = Key.END;

@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.fenggui.Display;
+import org.fenggui.event.key.Key;
 import org.fenggui.event.mouse.MouseButton;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 /**
@@ -18,6 +20,8 @@ public class LWJGLEventBinder
 {
     private Display                       display;
     private final Map<MouseButton, State> mouseStates = new HashMap<MouseButton, State>();
+    private final Map<Integer, State>     keyStates   = new HashMap<Integer, State>();
+    private final Map<Integer, Character> keyChars    = new HashMap<Integer, Character>();
     
     public LWJGLEventBinder(Display display)
     {
@@ -102,12 +106,73 @@ public class LWJGLEventBinder
                 }
             }
         }
+        
+        while (Keyboard.next())
+        {
+            int code = Keyboard.getEventKey();
+            char c = EventHelper.mapKeyChar();
+            Key key = EventHelper.mapEventKey();
+            
+            System.out.println("Key '" + code + "' - State: "
+                    + (Keyboard.getEventKeyState() ? "pressed" : "released"));
+            
+            if (!keyChars.containsKey(code))
+            {
+                keyChars.put(code, c);
+            }
+            
+            if (!keyStates.containsKey(code))
+            {
+                State state = new State(Keyboard.getEventKeyState());
+                keyStates.put(code, state);
+            }
+            
+            State state = keyStates.get(code);
+            final long current = System.currentTimeMillis();
+            final long diff = current - state.getLastPressed();
+            
+            if (Keyboard.getEventKeyState())
+            {
+                if (!state.isPressed())
+                {
+                    display.fireKeyPressedEvent(c, key);
+                    state.setPressed(true);
+                    state.setLastPressed(current);
+                }
+            }
+            else
+            {
+                if (state.isPressed())
+                {
+                    display.fireKeyReleasedEvent(c, key);
+                    
+                    if (diff < 300)
+                    {
+                        display.fireKeyTypedEvent(c);
+                    }
+                    
+                    state.setPressed(false);
+                }
+            }
+        }
+        
+        for (int code : keyStates.keySet())
+        {
+            if (Keyboard.isKeyDown(code))
+            {
+                char c = keyChars.get(code);
+                Key key = EventHelper.mapEventKey(code);
+                
+                display.fireKeyPressedEvent(c, key);
+            }
+        }
     }
     
     public static class State
     {
-        private boolean pressed;
-        private long    lastPressed;
+        private boolean                   pressed;
+        private long                      lastPressed;
+        private final Map<String, Object> data = new HashMap<String, Object>();
         
         public State()
         {
@@ -148,6 +213,16 @@ public class LWJGLEventBinder
         public void setLastPressed(long lastPressed)
         {
             this.lastPressed = lastPressed;
+        }
+        
+        public void setData(String name, Object value)
+        {
+            data.put(name, value);
+        }
+        
+        public Object getData(String name)
+        {
+            return data.get(name);
         }
     }
 }

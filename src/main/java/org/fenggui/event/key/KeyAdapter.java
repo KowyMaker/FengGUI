@@ -24,7 +24,7 @@ package org.fenggui.event.key;
  * @author marcmenghin, last edited by $Author$, $Date$
  * @version $Revision$
  */
-public class KeyAdapter implements IKeyListener
+public abstract class KeyAdapter implements IKeyListener
 {
     
     /*
