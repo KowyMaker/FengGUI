@@ -291,6 +291,14 @@ public class Color implements IXMLStreamable, Cloneable
         blue = value.blue;
     }
     
+    public Color(java.awt.Color awtColor)
+    {
+        red = awtColor.getRed();
+        green = awtColor.getGreen();
+        blue = awtColor.getBlue();
+        alpha = awtColor.getAlpha();
+    }
+    
     /**
      * Creates a new Color object
      * 
