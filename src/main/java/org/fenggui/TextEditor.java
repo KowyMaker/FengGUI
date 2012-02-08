@@ -358,8 +358,9 @@ public class TextEditor extends StatefullWidget<TextAppearance> implements
                 }
                 else
                 {
-                    return textData.handleKeyPresses(e.getKeyClass(),
+                    final boolean result = textData.handleKeyPresses(e.getKeyClass(),
                             e.getModifiers(), getAppearance());
+                    return result;
                 }
             default:
                 final boolean result = textData.handleKeyPresses(
