@@ -26,7 +26,13 @@ public class KeyTypedEvent extends KeyEvent
     
     public KeyTypedEvent(IWidget source, char key, Set<Key> modifiers)
     {
-        super(source, key, Key.UNDEFINED, modifiers);
+        this(source, key, Key.UNDEFINED, modifiers);
+    }
+    
+    public KeyTypedEvent(IWidget source, char key, Key keyClass,
+            Set<Key> modifiers)
+    {
+        super(source, key, keyClass, modifiers);
     }
     
 }
