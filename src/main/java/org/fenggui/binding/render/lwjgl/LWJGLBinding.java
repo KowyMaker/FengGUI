@@ -52,9 +52,14 @@ public class LWJGLBinding extends Binding
     
     public LWJGLBinding(IOpenGL gl)
     {
+        this(gl, new LWJGLCursorFactory());
+    }
+    
+    public LWJGLBinding(IOpenGL gl, LWJGLCursorFactory cursorFactory)
+    {
         super(gl);
         
-        cursorFactory = new LWJGLCursorFactory();
+        this.cursorFactory = cursorFactory;
         
         XMLTheme.TYPE_REGISTRY.register("Texture", LWJGLTexture.class);
     }

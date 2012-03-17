@@ -33,7 +33,7 @@ public interface IOpenGL
     
     public enum Attribute
     {
-        CURRENT_COLOR, LINE_WIDTH, POINT_SIZE;
+        CURRENT_COLOR, LINE_WIDTH, POINT_SIZE, BLEND;
     }
     
     public boolean isOpenGLThread();

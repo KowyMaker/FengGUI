@@ -484,6 +484,8 @@ public class LWJGLOpenGL implements IOpenGL
                 return GL11.GL_LINE_WIDTH;
             case POINT_SIZE:
                 return GL11.GL_POINT_SIZE;
+            case BLEND:
+                return GL11.GL_BLEND;
             default:
                 return 0;
         }

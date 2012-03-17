@@ -626,6 +626,23 @@ public class Graphics
      */
     public void drawImage(ITexture tex, int x, int y)
     {
+        drawImage(tex, x, y, 1.0F);
+    }
+    
+    /**
+     * Draws an image to the screen. The image is not scaled in any way.
+     * 
+     * @param tex
+     *            The image to draw.
+     * @param x
+     *            The x-coordinate to place the image at
+     * @param y
+     *            The y-coordinate to place the image at
+     * @param scale
+     * 
+     */
+    public void drawImage(ITexture tex, int x, int y, float scale)
+    {
         x += offset.getX();
         y += offset.getY();
         
@@ -649,13 +666,13 @@ public class Graphics
         gl.vertex(x, y);
         
         gl.texCoord(startX, startY);
-        gl.vertex(x, imgHeight + y);
+        gl.vertex(x, imgHeight * scale + y);
         
         gl.texCoord(endX, startY);
-        gl.vertex(imgWidth + x, imgHeight + y);
+        gl.vertex(imgWidth * scale + x, imgHeight * scale + y);
         
         gl.texCoord(endX, endY);
-        gl.vertex(imgWidth + x, y);
+        gl.vertex(imgWidth * scale + x, y);
         gl.end();
         // gl.translate(0,0,-0.1f);
         gl.enableTexture2D(false);
