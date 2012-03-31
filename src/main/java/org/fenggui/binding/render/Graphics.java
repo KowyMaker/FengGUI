@@ -1036,6 +1036,29 @@ public class Graphics
         gl.end();
     }
     
+    public void drawFilledCircle(int x, int y, double radius, Color color)
+    {
+        final double TWO_PI = Math.PI * 2.0;
+        final int STEPS = 18 * 3;
+        x += offset.getX();
+        y += offset.getY();
+        
+        setColor(color);
+        
+        gl.startTriangles();
+        
+        for (double d = 0; d <= TWO_PI; d += TWO_PI / STEPS)
+        {
+            gl.vertex(x, y);
+            gl.vertex((int) (Math.cos(d) * radius + x + 0.5),
+                    (int) (Math.sin(d) * radius + y + 0.5));
+            gl.vertex((int) (Math.cos(d + (TWO_PI / STEPS)) * radius + x + 0.5),
+                    (int) (Math.sin(d + (TWO_PI / STEPS)) * radius + y + 0.5));
+        }
+        
+        gl.end();
+    }
+    
     public void drawPixel(int x, int y)
     {
         
