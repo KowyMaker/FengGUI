@@ -2,6 +2,7 @@ package org.fenggui.theme.css;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import org.fenggui.IWidget;
 import org.fenggui.theme.ITheme;
@@ -14,9 +15,14 @@ public class CSSTheme implements ITheme
     
     public CSSTheme(File file) throws IOException
     {
+        this(file.toURI().toURL());
+    }
+    
+    public CSSTheme(URL styleUrl)
+    {
         FengGUIStyle.init();
         
-        style = new Style(file.toURI().toURL());
+        style = new Style(styleUrl);
     }
     
     public void setUp(IWidget widget)
