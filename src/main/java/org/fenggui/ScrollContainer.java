@@ -1172,5 +1172,10 @@ public class ScrollContainer extends StandardWidget implements IContainer,
         
         return result;
     }
+
+    public Object[] getChildren()
+    {
+        return getContent().toArray();
+    }
     
 }

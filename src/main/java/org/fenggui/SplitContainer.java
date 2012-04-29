@@ -709,5 +709,10 @@ public class SplitContainer extends StandardWidget implements IContainer
     {
         return firstWidget != null || secondWidget != null;
     }
+
+    public Object[] getChildren()
+    {
+        return getContent().toArray();
+    }
     
 }

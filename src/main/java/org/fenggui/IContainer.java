@@ -19,13 +19,15 @@
  */
 package org.fenggui;
 
+import aurelienribon.ui.css.Container;
+
 /**
  * A Container is a set of Widgets. The layout manager that is assigned to the
  * Container is responsible for the size and position of its content. In terms
  * of the tree data structure, a container is a node with an arbitrary number of
  * child nodes.
  */
-public interface IContainer extends IBasicContainer
+public interface IContainer extends IBasicContainer, Container
 {
     
     /**

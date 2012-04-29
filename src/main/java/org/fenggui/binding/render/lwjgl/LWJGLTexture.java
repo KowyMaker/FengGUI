@@ -282,7 +282,7 @@ public class LWJGLTexture implements ITexture
     @Override
     public String toString()
     {
-        StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder();
         builder.append("LWJGLTexture [textureID=");
         builder.append(textureID);
         builder.append(", imgHeight=");

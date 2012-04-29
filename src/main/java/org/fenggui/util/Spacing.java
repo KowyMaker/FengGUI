@@ -185,7 +185,7 @@ public class Spacing implements IXMLStreamable, Cloneable
      * @param bottom
      *            The spacing to the bottom.
      */
-    protected void setSpacing(int top, int left, int right, int bottom)
+    public void setSpacing(int top, int left, int right, int bottom)
     {
         this.top = top;
         this.left = left;
@@ -208,18 +208,38 @@ public class Spacing implements IXMLStreamable, Cloneable
      * 
      * 
      */
-    protected void setSpacing(int topbottom, int leftright)
+    public void setSpacing(int topbottom, int leftright)
     {
         left = right = leftright;
         bottom = top = topbottom;
     }
     
-    protected void setSpacing(Spacing s)
+    public void setSpacing(Spacing s)
     {
         left = s.left;
         right = s.right;
         top = s.top;
         bottom = s.bottom;
+    }
+    
+    public void setTop(int top)
+    {
+        this.top = top;
+    }
+    
+    public void setLeft(int left)
+    {
+        this.left = left;
+    }
+    
+    public void setRight(int right)
+    {
+        this.right = right;
+    }
+    
+    public void setBottom(int bottom)
+    {
+        this.bottom = bottom;
     }
     
     public static final Spacing ZERO_SPACING = new Spacing(0, 0, 0, 0);

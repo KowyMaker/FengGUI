@@ -45,6 +45,7 @@ public abstract class StatefullWidget<T extends DecoratorAppearance> extends
     public static final String STATE_HOVERED          = "hovered";
     public static final String STATE_DISABLED         = "disabled";
     public static final String STATE_ERROR            = "error";
+    public static final String STATE_ACTIVE           = "pressed";
     
     private T                  appearance             = null;
     private boolean            hovered                = false;

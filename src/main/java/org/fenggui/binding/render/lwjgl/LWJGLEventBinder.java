@@ -109,9 +109,9 @@ public class LWJGLEventBinder
         
         while (Keyboard.next())
         {
-            int code = Keyboard.getEventKey();
-            char c = EventHelper.mapKeyChar();
-            Key key = EventHelper.mapEventKey();
+            final int code = Keyboard.getEventKey();
+            final char c = EventHelper.mapKeyChar();
+            final Key key = EventHelper.mapEventKey();
             
             System.out.println("Key '" + code + "' - State: "
                     + (Keyboard.getEventKeyState() ? "pressed" : "released"));
@@ -123,11 +123,11 @@ public class LWJGLEventBinder
             
             if (!keyStates.containsKey(code))
             {
-                State state = new State(Keyboard.getEventKeyState());
+                final State state = new State(Keyboard.getEventKeyState());
                 keyStates.put(code, state);
             }
             
-            State state = keyStates.get(code);
+            final State state = keyStates.get(code);
             final long current = System.currentTimeMillis();
             final long diff = current - state.getLastPressed();
             
@@ -156,12 +156,12 @@ public class LWJGLEventBinder
             }
         }
         
-        for (int code : keyStates.keySet())
+        for (final int code : keyStates.keySet())
         {
             if (Keyboard.isKeyDown(code))
             {
-                char c = keyChars.get(code);
-                Key key = EventHelper.mapEventKey(code);
+                final char c = keyChars.get(code);
+                final Key key = EventHelper.mapEventKey(code);
                 
                 display.fireKeyPressedEvent(c, key);
             }

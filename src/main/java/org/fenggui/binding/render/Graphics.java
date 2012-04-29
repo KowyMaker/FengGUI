@@ -308,7 +308,7 @@ public class Graphics
     
     public void setFont(Font awtFont)
     {
-        ImageFont font = FontFactory.renderStandardFont(awtFont);
+        final ImageFont font = FontFactory.renderStandardFont(awtFont);
         
         setFont(font);
     }
@@ -1052,8 +1052,8 @@ public class Graphics
             gl.vertex(x, y);
             gl.vertex((int) (Math.cos(d) * radius + x + 0.5),
                     (int) (Math.sin(d) * radius + y + 0.5));
-            gl.vertex((int) (Math.cos(d + (TWO_PI / STEPS)) * radius + x + 0.5),
-                    (int) (Math.sin(d + (TWO_PI / STEPS)) * radius + y + 0.5));
+            gl.vertex((int) (Math.cos(d + TWO_PI / STEPS) * radius + x + 0.5),
+                    (int) (Math.sin(d + TWO_PI / STEPS) * radius + y + 0.5));
         }
         
         gl.end();

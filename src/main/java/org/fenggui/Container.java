@@ -434,6 +434,7 @@ public class Container extends StandardWidget implements IContainer, Cloneable
     @Override
     public void addedToWidgetTree()
     {
+        super.addedToWidgetTree();
         synchronized (notifyList)
         {
             for (final IWidget w : notifyList)
@@ -1063,5 +1064,10 @@ public class Container extends StandardWidget implements IContainer, Cloneable
         result.appearance = appearance.clone(result);
         
         return result;
+    }
+    
+    public Object[] getChildren()
+    {
+        return getContent().toArray();
     }
 }

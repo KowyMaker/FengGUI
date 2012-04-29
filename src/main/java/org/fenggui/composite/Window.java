@@ -182,11 +182,13 @@ public class Window extends Container implements IWindow
             boolean minimizeBtn)
     {
         titleBar = new Container();
+        titleBar.setStyleClass("title-bar");
         this.addWidget(titleBar);
         
         setLayoutManager(new BorderLayout());
         
         content = new Container();
+        content.setStyleClass("content");
         ((Container) content).setLayoutData(BorderLayoutData.CENTER);
         ((Container) content).setKeyTraversalRoot(true);
         this.addWidget(content);
@@ -239,6 +241,9 @@ public class Window extends Container implements IWindow
     protected void buildMinimizeButton()
     {
         minimizeButton = new Button("_");
+        minimizeButton.setStyleClass("window-minimize");
+        minimizeButton.setExpandable(false);
+        minimizeButton.setShrinkable(false);
         titleBar.addWidget(minimizeButton);
         minimizeButton.addButtonPressedListener(new IButtonPressedListener() {
             
@@ -256,7 +261,10 @@ public class Window extends Container implements IWindow
      */
     protected void buildMaximizeButton()
     {
-        maximizeButton = new Button();
+        maximizeButton = new Button(" ");
+        maximizeButton.setStyleClass("window-maximize");
+        maximizeButton.setExpandable(false);
+        maximizeButton.setShrinkable(false);
         titleBar.addWidget(maximizeButton);
         maximizeButton.addButtonPressedListener(new IButtonPressedListener() {
             
@@ -273,9 +281,11 @@ public class Window extends Container implements IWindow
      */
     protected void buildCloseButton()
     {
-        closeButton = new Button();
+        closeButton = new Button("X");
+        closeButton.setStyleClass("window-close");
+        closeButton.setExpandable(false);
+        closeButton.setShrinkable(false);
         titleBar.addWidget(closeButton);
-        closeButton.setText("X");
         closeButton.addButtonPressedListener(new IButtonPressedListener() {
             
             public void buttonPressed(ButtonPressedEvent e)

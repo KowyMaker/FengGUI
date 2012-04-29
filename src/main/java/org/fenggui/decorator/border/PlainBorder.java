@@ -68,6 +68,11 @@ public class PlainBorder extends Border
         setSpacing(1, 1, 1, 1);
     }
     
+    public PlainBorder(int lineWidth)
+    {
+        setSpacing(lineWidth, lineWidth, lineWidth, lineWidth);
+    }
+    
     public PlainBorder(InputOnlyStream stream) throws IOException,
             IXMLStreamableException
     {

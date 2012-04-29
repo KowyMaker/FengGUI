@@ -21,13 +21,16 @@ package org.fenggui;
 
 import org.fenggui.binding.render.Graphics;
 import org.fenggui.event.FocusEvent;
+import org.fenggui.event.IFocusListener;
 import org.fenggui.event.IPositionChangedListener;
 import org.fenggui.event.ISizeChangedListener;
 import org.fenggui.event.PositionChangedEvent;
 import org.fenggui.event.SizeChangedEvent;
+import org.fenggui.event.key.IKeyListener;
 import org.fenggui.event.key.KeyPressedEvent;
 import org.fenggui.event.key.KeyReleasedEvent;
 import org.fenggui.event.key.KeyTypedEvent;
+import org.fenggui.event.mouse.IMouseListener;
 import org.fenggui.event.mouse.MouseClickedEvent;
 import org.fenggui.event.mouse.MouseDoubleClickedEvent;
 import org.fenggui.event.mouse.MouseDraggedEvent;
@@ -71,6 +74,8 @@ public interface IWidget extends IXMLStreamable
      * @return parent container or <code>null</code>.
      */
     public IBasicContainer getParent();
+    
+    public boolean hasFocus();
     
     /**
      * The <code>clone</code> method creates a shallow copy of the Widget. The
@@ -516,4 +521,34 @@ public interface IWidget extends IXMLStreamable
      * @see org.fenggui.util.Util
      */
     public Object getData(String key);
+    
+    /**
+     * Return the style ID which identify the widget.
+     * 
+     * @return the widget style ID.
+     */
+    public String getId();
+    
+    /**
+     * Set the style ID which identify the widget.
+     * 
+     * @param id
+     *            The widget style ID.
+     */
+    public void setId(String id);
+    
+    /**
+     * Return the style class which determine how to represent the widget.
+     * 
+     * @return the widget style class.
+     */
+    public String getStyleClass();
+    
+    /**
+     * Set the style class which determine how to represent the widget
+     * 
+     * @param styleClass
+     *            the widget style class
+     */
+    public void setStyleClass(String styleClass);
 }

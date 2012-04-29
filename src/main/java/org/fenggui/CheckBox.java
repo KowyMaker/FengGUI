@@ -233,6 +233,7 @@ public class CheckBox<E> extends ObservableLabelWidget implements
      * @see org.fenggui.ObservableLabelWidget#clone()
      */
     
+    @SuppressWarnings("unchecked")
     @Override
     public CheckBox<E> clone()
     {

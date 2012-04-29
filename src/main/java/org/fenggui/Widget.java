@@ -26,18 +26,22 @@ import java.util.Map;
 
 import org.fenggui.binding.render.Graphics;
 import org.fenggui.event.FocusEvent;
+import org.fenggui.event.IFocusListener;
 import org.fenggui.event.IPositionChangedListener;
 import org.fenggui.event.ISizeChangedListener;
 import org.fenggui.event.PositionChangedEvent;
 import org.fenggui.event.SizeChangedEvent;
+import org.fenggui.event.key.IKeyListener;
 import org.fenggui.event.key.KeyPressedEvent;
 import org.fenggui.event.key.KeyReleasedEvent;
 import org.fenggui.event.key.KeyTypedEvent;
+import org.fenggui.event.mouse.IMouseListener;
 import org.fenggui.event.mouse.MouseClickedEvent;
 import org.fenggui.event.mouse.MouseDoubleClickedEvent;
 import org.fenggui.event.mouse.MouseDraggedEvent;
 import org.fenggui.event.mouse.MouseEnteredEvent;
 import org.fenggui.event.mouse.MouseExitedEvent;
+import org.fenggui.event.mouse.MouseMovedEvent;
 import org.fenggui.event.mouse.MousePressedEvent;
 import org.fenggui.event.mouse.MouseReleasedEvent;
 import org.fenggui.event.mouse.MouseWheelEvent;
@@ -48,6 +52,8 @@ import org.fenggui.theme.xml.InputOutputStream;
 import org.fenggui.util.Dimension;
 import org.fenggui.util.Log;
 import org.fenggui.util.Point;
+
+import aurelienribon.ui.css.Style;
 
 /**
  * Implementation of a widget. A widget is the most basic unit of a GUI system. <br/>
@@ -69,6 +75,8 @@ import org.fenggui.util.Point;
  */
 public class Widget implements IWidget
 {
+    private String                              id         = null;
+    private String                              styleClass = null;
     
     private Dimension                           size;
     private Dimension                           minSize;
@@ -503,7 +511,7 @@ public class Widget implements IWidget
     
     public void addedToWidgetTree()
     {
-        // does nothing. Supposed to be overridden
+        
     }
     
     /*
@@ -682,7 +690,7 @@ public class Widget implements IWidget
     
     public void focusChanged(FocusEvent focusEvent)
     {
-        // does nothing. Supposed to be overridden
+        
     }
     
     /**
@@ -886,6 +894,16 @@ public class Widget implements IWidget
     public void setMinSize(int minWidth, int minHeight)
     {
         this.setMinSize(new Dimension(minWidth, minHeight));
+    }
+    
+    public void setMinWidth(int minWidth)
+    {
+        this.setMinSize(new Dimension(minWidth, minSize.getHeight()));
+    }
+    
+    public void setMinHeight(int minHeight)
+    {
+        this.setMinSize(new Dimension(minSize.getWidth(), minHeight));
     }
     
     /**
@@ -1121,5 +1139,32 @@ public class Widget implements IWidget
         result.initHooks();
         
         return result;
+    }
+    
+    public String getId()
+    {
+        return id;
+    }
+    
+    public void setId(String id)
+    {
+        this.id = id;
+        Style.registerCssClasses(this, "#" + id);
+    }
+    
+    public String getStyleClass()
+    {
+        return styleClass;
+    }
+    
+    public void setStyleClass(String styleClass)
+    {
+        this.styleClass = styleClass;
+        Style.registerCssClasses(this, "." + styleClass);
+    }
+    
+    public void applyTheme()
+    {
+        FengGUI.getTheme().setUp(this);
     }
 }

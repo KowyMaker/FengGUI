@@ -468,11 +468,19 @@ public class DefaultTheme extends StandardTheme
     @Override
     public void setUp(Container w)
     {
+        for (IWidget child : w.getContent())
+        {
+            setUp(child);
+        }
     }
     
     @Override
     public void setUpUnknown(IWidget w)
     {
+        if (w instanceof Container)
+        {
+            setUp((Container) w);
+        }
     }
     
     @Override

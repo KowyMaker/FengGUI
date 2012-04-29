@@ -105,6 +105,17 @@ public class FengGUI
         }
     }
     
+    public static <T extends IWidget> T createWidget(Class<T> widgetClass)
+    {
+        return createWidget(widgetClass, null);
+    }
+    
+    public static <T extends IWidget> T createWidget(Class<T> widgetClass,
+            String id)
+    {
+        return createWidget(widgetClass, id, null);
+    }
+    
     /**
      * Created a themed instance of a Widget. This is the preferred way to
      * create widgets. It handles a cache of prototype widgets to improve speed.
@@ -114,10 +125,15 @@ public class FengGUI
      * @param <T>
      * @param widgetClass
      *            The class of the Widget to create a instance from.
+     * @param id
+     *            The widget ID
+     * @param styleClass
+     *            The widget style class
      * @return a themed instance of a widget.
      */
     @SuppressWarnings("unchecked")
-    public static <T extends IWidget> T createWidget(Class<T> widgetClass)
+    public static <T extends IWidget> T createWidget(Class<T> widgetClass,
+            String id, String styleClass)
     {
         T widget = null;
         final boolean cloneableClass = Cloneable.class
@@ -137,6 +153,8 @@ public class FengGUI
         }
         
         widget = Util.createInstanceOfClass(widgetClass);
+        widget.setId(id);
+        widget.setStyleClass(styleClass);
         FengGUI.setUpAppearance(widget);
         
         if (cloneableClass)
@@ -503,7 +521,7 @@ public class FengGUI
     {
         if (ptLabel == null)
         {
-            ptLabel = new Label();
+            ptLabel = createWidget(Label.class);
             FengGUI.setUpAppearance(ptLabel);
         }
         final Label l = new Label(ptLabel);

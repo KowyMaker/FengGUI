@@ -111,7 +111,7 @@ public abstract class DecoratorAppearance extends SpacingAppearance
     
     public void add(Background background)
     {
-        add("default", background, Span.PADDING);
+        add("default", background);
     }
     
     public void addForeground(IDecorator decorator)

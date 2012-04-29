@@ -61,6 +61,7 @@ public class AWTFont extends org.fenggui.binding.render.Font implements IFont,
         return null;
     }
     
+    @SuppressWarnings("deprecation")
     private FontMetrics getMetric()
     {
         if (metric == null)
