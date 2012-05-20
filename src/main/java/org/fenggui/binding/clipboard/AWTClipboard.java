@@ -16,7 +16,8 @@
  * 
  * Created on 26.09.2007
  * $Id$
- */package org.fenggui.binding.clipboard;
+ */
+package org.fenggui.binding.clipboard;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;

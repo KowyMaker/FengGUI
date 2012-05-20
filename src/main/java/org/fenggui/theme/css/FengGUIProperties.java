@@ -2,9 +2,11 @@ package org.fenggui.theme.css;
 
 import org.fenggui.util.Color;
 
+import aurelienribon.ui.css.Function;
 import aurelienribon.ui.css.Property;
 import aurelienribon.ui.css.Style;
 import aurelienribon.ui.css.primitives.FunctionProperty;
+import aurelienribon.ui.css.primitives.MultiFunctionProperty;
 import aurelienribon.ui.css.primitives.SingleParamProperty;
 
 public class FengGUIProperties
@@ -71,13 +73,19 @@ public class FengGUIProperties
                                                        "font");
     
     // StatefullWidget
-    public final static Property background    = new FunctionProperty(
+    public final static Property background    = new MultiFunctionProperty(
                                                        "background",
-                                                       FengGUIFunctions.background,
-                                                       "background");
+                                                       new Function[] {
+            FengGUIFunctions.backgroundColor, FengGUIFunctions.backgroundImage },
+                                                       new String[] { "color",
+            "image"                                   });
+    
     public final static Property border        = new FunctionProperty("border",
                                                        FengGUIFunctions.border,
                                                        "border");
+    public final static Property borderRadius  = new SingleParamProperty(
+                                                       "border-radius",
+                                                       Integer.class, "radius");
     
     public static void registerProperties()
     {
@@ -102,5 +110,6 @@ public class FengGUIProperties
         
         Style.registerProperty(background);
         Style.registerProperty(border);
+        Style.registerProperty(borderRadius);
     }
 }

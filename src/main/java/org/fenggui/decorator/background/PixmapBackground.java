@@ -352,6 +352,96 @@ public class PixmapBackground extends Background
         this.scaled = scaled;
     }
     
+    public Pixmap getCenter()
+    {
+        return center;
+    }
+    
+    public void setCenter(Pixmap center)
+    {
+        this.center = center;
+    }
+    
+    public Pixmap getTopLeft()
+    {
+        return topLeft;
+    }
+    
+    public void setTopLeft(Pixmap topLeft)
+    {
+        this.topLeft = topLeft;
+    }
+    
+    public Pixmap getTop()
+    {
+        return top;
+    }
+    
+    public void setTop(Pixmap top)
+    {
+        this.top = top;
+    }
+    
+    public Pixmap getTopRight()
+    {
+        return topRight;
+    }
+    
+    public void setTopRight(Pixmap topRight)
+    {
+        this.topRight = topRight;
+    }
+    
+    public Pixmap getRight()
+    {
+        return right;
+    }
+    
+    public void setRight(Pixmap right)
+    {
+        this.right = right;
+    }
+    
+    public Pixmap getBottomLeft()
+    {
+        return bottomLeft;
+    }
+    
+    public void setBottomLeft(Pixmap bottomLeft)
+    {
+        this.bottomLeft = bottomLeft;
+    }
+    
+    public Pixmap getBottom()
+    {
+        return bottom;
+    }
+    
+    public void setBottom(Pixmap bottom)
+    {
+        this.bottom = bottom;
+    }
+    
+    public Pixmap getBottomRight()
+    {
+        return bottomRight;
+    }
+    
+    public void setBottomRight(Pixmap bottomRight)
+    {
+        this.bottomRight = bottomRight;
+    }
+    
+    public Pixmap getLeft()
+    {
+        return left;
+    }
+    
+    public void setLeft(Pixmap left)
+    {
+        this.left = left;
+    }
+    
     /*
      * (non-Javadoc)
      * 

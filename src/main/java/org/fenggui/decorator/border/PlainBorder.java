@@ -70,7 +70,7 @@ public class PlainBorder extends Border
     
     public PlainBorder(int lineWidth)
     {
-        setSpacing(lineWidth, lineWidth, lineWidth, lineWidth);
+        this(lineWidth, lineWidth, lineWidth, lineWidth);
     }
     
     public PlainBorder(InputOnlyStream stream) throws IOException,

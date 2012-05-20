@@ -41,16 +41,15 @@ public class BorderFunction extends BaseFunction
         
         if (type.equals("plain"))
         {
+            Color c = Color.BLACK;
             int size = (Integer) params.get(1);
+            
             if (params.size() > 2)
             {
-                Color c = (Color) params.get(2);
-                border = new PlainBorder(c, size);
+                c = (Color) params.get(2);
             }
-            else
-            {
-                border = new PlainBorder(size);
-            }
+            
+            border = new PlainBorder(c, size);
         }
         
         return border;
